@@ -17,7 +17,8 @@ SET @@global.time_zone = '+3:00';
 
 SET @@global.time_zone = '+3:00';
 
-USE `ie_exemplo`;
+-- create schema if not exists ie_exemplo;
+-- USE `ie_exemplo`;
 --
 -- Database: `ie_exemplo`
 --
