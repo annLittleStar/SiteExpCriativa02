@@ -10,7 +10,7 @@ SET @@global.time_zone = '+3:00';
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
-alter user `root`@`localhost`;
+/*alter user `root`@`localhost`;*/
 
 SET @@global.time_zone = '+3:00';
 
