@@ -1,5 +1,5 @@
-CREATE SCHEMA IF NOT EXISTS `webCristina`;
-USE `webCristina` ;
+-- CREATE SCHEMA IF NOT EXISTS `seaP`;
+-- USE `seaP` ;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -17,8 +17,8 @@ SET @@global.time_zone = '+3:00';
 
 SET @@global.time_zone = '+3:00';
 
--- create schema if not exists ie_exemplo;
--- USE `ie_exemplo`;
+create schema if not exists `ie_exemplo`;
+USE `ie_exemplo`;
 --
 -- Database: `ie_exemplo`
 --
@@ -62,6 +62,7 @@ INSERT INTO `professor` (`CodProfessor`, `Nome`, `Celular`, `DataNasc`, `Login`,
 (9, 'Lorival Percial Arial', '(41)87654-1234', '1987-11-28', 'lori.per', '6c71dffdab29ca4d91d0cf293dc82c61');
 
 -- --------------------------------------------------------
+
 
 --
 -- Estrutura da tabela `turma`

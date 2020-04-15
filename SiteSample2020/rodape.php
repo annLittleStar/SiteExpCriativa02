@@ -1,13 +1,3 @@
-<!-------------------------------------------------------------------------------
-Oficina Desenvolvimento Web
-PUCPR
-
-RODAPE.PHP
-
-Profa. Cristina V. P. B. Souza
-Novembro/2018
----------------------------------------------------------------------------------->
-
     <!-- Sobre -->
 
     <div id="id01" class="w3-modal w3-animate-opacity">
@@ -18,11 +8,11 @@ Novembro/2018
                 <h2>IE Exemplo</h2>
             </header>
             <div class="w3-container">
-                <p>Site exemplo: <b>Desenvolvimento Web com PHP</b></p>
-                <p class="w3-small">Profa. Cristina Verçosa Pérez Barrios de Souza</p>
+                <p>Site SEA+: <b>Sistema de Estoque Automático Plus</b></p>
+                <p class="w3-small">Ana Schran, Gabriel Ernesto, Loham Akim e Victor Moreira</p>
             </div>
             <footer class="w3-container w3-theme ">
-                <p>PUCPR 2020 (revisão) </p>
+                <p>PUCPR 2020</p>
             </footer>
         </div>
     </div>
