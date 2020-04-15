@@ -2,7 +2,7 @@
 <!--
 Desenvolvimento Web
 PUCPR
-Profa. Cristina V. P. B. Souza
+SEA+
 Abril/2020
 -->
 <html>
