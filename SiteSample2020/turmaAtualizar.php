@@ -15,11 +15,11 @@ Abril/2020
     <style>
         .w3-theme {
             color: #ffff !important;
-            background-color: #380077 !important
+            background-color: #00FF00 !important
         }
 
         .w3-code {
-            border-left: 4px solid #380077
+            border-left: 4px solid #00FF00
         }
 
         .myMenu {

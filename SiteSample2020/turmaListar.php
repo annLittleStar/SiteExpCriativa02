@@ -14,11 +14,11 @@
 <style>
     .w3-theme {
         color: #ffff !important;
-        background-color: #380077 !important
+        background-color: #808000 !important
     }
 
     .w3-code {
-        border-left: 4px solid #380077
+        border-left: 4px solid #808000
     }
 
     .myMenu {
