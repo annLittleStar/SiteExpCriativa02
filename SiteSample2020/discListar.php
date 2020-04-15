@@ -7,7 +7,7 @@ Abril/2020
 -->
 <html>
 <head>
-<<<<<<< HEAD
+
 <title>AP - AKIM PNEUS</title>
 <link rel="icon" type="image/png" href="imagens/IE_favicon.png"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,7 +35,6 @@ Abril/2020
         .w3-code {
             border-left: 4px solid #380077
         }
->>>>>>> 29889aa96ebf57b28b0862ce46824d0a5c0dba7c
 
         .myMenu {
             margin-bottom: 150px
@@ -70,7 +69,7 @@ Abril/2020
                         <?php
                         $servername = "localhost:3306";
                         $username   = "root";
-                        $password   = " ";
+                        $password   = "";
                         $database   = "IE_Exemplo";
                         
 			// Verifica conexão
@@ -91,7 +90,7 @@ Abril/2020
                         mysqli_query($conn,'SET character_set_results=utf8');
 
             // Faz Select na Base de Dados
-<<<<<<< HEAD
+
             $sql = "SELECT CodDisciplina, NomeDisc, Ementa FROM Disciplina";
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
@@ -105,7 +104,7 @@ Abril/2020
                 echo "	</tr>";
                 if (mysqli_num_rows($result) > 0) {
                 	
-=======
+
                         $sql = "SELECT CodDisciplina, NomeDisc, Ementa FROM Disciplina";
                         echo "<div class='w3-responsive w3-card-4'>";
                         if ($result = mysqli_query($conn, $sql)) {
@@ -118,7 +117,7 @@ Abril/2020
                             echo "	  <th> </th>";
                             echo "	</tr>";
                             if (mysqli_num_rows($result) > 0) {
->>>>>>> 29889aa96ebf57b28b0862ce46824d0a5c0dba7c
+
                     // Apresenta cada linha da tabela
                                 while ($row = mysqli_fetch_assoc($result)) {
                                     $cod = $row["CodDisciplina"];
