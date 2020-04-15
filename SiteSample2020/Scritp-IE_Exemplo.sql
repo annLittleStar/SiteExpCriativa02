@@ -18,7 +18,7 @@ SET @@global.time_zone = '+3:00';
 SET @@global.time_zone = '+3:00';
 
 create schema if not exists `ie_exemplo`;
-USE `ie_exemplo`;
+  USE `ie_exemplo`;
 --
 -- Database: `ie_exemplo`
 --
@@ -84,21 +84,21 @@ CREATE TABLE `turma` (
 -- Índices para a tabela `disciplina`
 --
 ALTER TABLE `disciplina`
-  ADD PRIMARY KEY (`CodDisciplina`);
+ADD PRIMARY KEY (`CodDisciplina`);
 
 --
 -- Índices para a tabela `professor`
 --
 ALTER TABLE `professor`
-  ADD PRIMARY KEY (`CodProfessor`);
+ADD PRIMARY KEY (`CodProfessor`);
 
 --
 -- Índices para a tabela `turma`
 --
 ALTER TABLE `turma`
-  ADD PRIMARY KEY (`CodTurma`),
-  ADD UNIQUE KEY `CodProfessor` (`CodProfessor`,`CodDisc`,`Ano`,`Semestre`),
-  ADD KEY `FK_Disc` (`CodDisc`);
+ADD PRIMARY KEY (`CodTurma`),
+ADD UNIQUE KEY `CodProfessor` (`CodProfessor`,`CodDisc`,`Ano`,`Semestre`),
+ADD KEY `FK_Disc` (`CodDisc`);
 
 --
 -- AUTO_INCREMENT para tabelas
@@ -108,19 +108,19 @@ ALTER TABLE `turma`
 -- AUTO_INCREMENT para a tabela  `disciplina`
 --
 ALTER TABLE `disciplina`
-  MODIFY `CodDisciplina` int NOT NULL AUTO_INCREMENT;
+MODIFY `CodDisciplina` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `professor`
 --
 ALTER TABLE `professor`
-  MODIFY `CodProfessor` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+MODIFY `CodProfessor` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `turma`
 --
 ALTER TABLE `turma`
-  MODIFY `CodTurma` int NOT NULL AUTO_INCREMENT;
+MODIFY `CodTurma` int NOT NULL AUTO_INCREMENT;
 
 --
 -- Restrições (constrains) para tabelas
@@ -130,6 +130,6 @@ ALTER TABLE `turma`
 -- Restrições (constrains) para a tabela `turma`
 --
 ALTER TABLE `turma`
-  ADD CONSTRAINT `FK_Disc` FOREIGN KEY (`CodDisc`) REFERENCES `disciplina` (`CodDisciplina`),
-  ADD CONSTRAINT `FK_Prof` FOREIGN KEY (`CodProfessor`) REFERENCES `professor` (`CodProfessor`);
+ADD CONSTRAINT `FK_Disc` FOREIGN KEY (`CodDisc`) REFERENCES `disciplina` (`CodDisciplina`),
+ADD CONSTRAINT `FK_Prof` FOREIGN KEY (`CodProfessor`) REFERENCES `professor` (`CodProfessor`);
 COMMIT;

@@ -41,7 +41,7 @@
 				<h3>Funcionarios</h3>
 			</div>
 			<a class="w3-bar-item w3-button" href='discListar.php'>Relação de Funcionarios</a>
-			<a class="w3-bar-item w3-button" href='discContratar.php'>Cadastrar Funcionario</a>
+			<a class="w3-bar-item w3-button" href='discContratar.php'>Demitir Funcionario</a>
 
 		</div>
 		<div id="menuTurma" class="myMenu" >
