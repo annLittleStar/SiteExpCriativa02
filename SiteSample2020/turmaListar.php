@@ -14,17 +14,22 @@ Abril/2020
     <style>
         .w3-theme {
             color: #ffff !important;
-            background-color: #808000 !important
+            background-color: lightblue !important
         }
 
         .w3-code {
-            border-left: 4px solid #808000
+            border-left: 4px solid lightblue
         }
 
         .myMenu {
             margin-bottom: 150px
         }
+
+        .myFont {
+            font-max-size: 8px
+        }
     </style>
+
 </head>
 <body onload="w3_show_nav('menuTurma')">
     <!-- Inclui MENU.PHP  -->

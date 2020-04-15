@@ -8,19 +8,11 @@ Abril/2020
 <html>
 <head>
 
-<<<<<<< HEAD
 	  <title>AP - AKIM PNEUS</title>
 	  <link rel="icon" type="image/png" href="imagens/IE_favicon.png" />
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	  <style>
-=======
-	<title>IE - Instituição de Ensino</title>
-	<link rel="icon" type="image/png" href="imagens/IE_favicon.png" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<style>
->>>>>>> 29889aa96ebf57b28b0862ce46824d0a5c0dba7c
 		.w3-theme {color:#ffff !important;background-color:#380077 !important}
 		.w3-code{border-left:4px solid #380077}
 		.myMenu {margin-bottom:150px}
@@ -33,13 +25,8 @@ Abril/2020
 	<!-- Conteúdo Principal: deslocado para direita em 270 pixels quando a sidebar é visível -->
 	<div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
-<<<<<<< HEAD
 <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
   <h1 class="w3-xxlarge">Exclusão de Produto</h1>
-=======
-		<div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-			<h1 class="w3-xxlarge">Exclusão de Disciplina</h1>
->>>>>>> 29889aa96ebf57b28b0862ce46824d0a5c0dba7c
 
 			<p class="w3-large">
 				<div class="w3-code cssHigh notranslate">
@@ -54,7 +41,6 @@ Abril/2020
 					echo "</p> "
 					?>
 
-<<<<<<< HEAD
 	<!-- Acesso ao BD-->
 	<?php
 		
@@ -66,17 +52,6 @@ Abril/2020
 		
 		$id      = $_POST['Id'];
 		
-=======
-					<!-- Acesso ao BD-->
-					<?php
-					
-					$servername = "localhost:3306";
-					$username   = "root";
-					$password   = " ";
-					$database   = "IE_Exemplo";
-					$id      = $_POST['Id'];
-					
->>>>>>> 29889aa96ebf57b28b0862ce46824d0a5c0dba7c
 		// Cria conexão
 					$conn = mysqli_connect($servername, $username, $password, $database);
 
