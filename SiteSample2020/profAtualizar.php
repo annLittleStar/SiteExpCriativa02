@@ -7,7 +7,6 @@ Abril/2020
 -->
 <html>
 <head>
-
 	<title>AKIM PNEUS</title>
 	<link rel="icon" type="image/png" href="imagens/IE_favicon.png"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,21 +16,18 @@ Abril/2020
 			color: #ffff !important;
 			background-color: lightblue !important
 		}
-
 		.w3-code {
 			border-left: 4px solid lightblue
 		}
-
 		.myMenu {
 			margin-bottom: 150px
 		}
-
 		.myFont {
-			font-max-size: 8px
+			font-size: 8px
 		}
 	</style>
-
 </head>
+
 <body  onload="w3_show_nav('menuProf')">
 
 	<!-- Inclui MENU.PHP  -->
@@ -41,7 +37,7 @@ Abril/2020
 	<div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
 		<div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-			<h1 class="w3-xxlarge">Atualização Cadastral de Professor</h1>
+			<h1 class="w3-xxlarge">Atualização de Estoque</h1>
 
 			<p class="w3-large">
 				<div class="w3-code cssHigh notranslate">

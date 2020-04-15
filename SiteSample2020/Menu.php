@@ -1,4 +1,3 @@
-
 <div class="w3-top">
 	<div class="w3-row w3-white w3-padding">
 		<div class="w3-half" style="margin:4px 0 6px 0"><a href="."><img src='imagens/logotest.png' alt=' IE Exemplo '></a>
@@ -33,9 +32,8 @@
 		</div>
 		<a class="w3-bar-item w3-button" href="profListar.php">Relação do Estoque</a>
 		<a class="w3-bar-item w3-button" href="profContratar.php">Cadastro de Produtos</a>
-
-
 	</div>
+	
 	<div id="menuDisc" class="myMenu" >
 		<div class="w3-container">
 			<h3>Funcionarios</h3>
@@ -53,7 +51,3 @@
 
 	</div>
 </div>
-
-
-
-
