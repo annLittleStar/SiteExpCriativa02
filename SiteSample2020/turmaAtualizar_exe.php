@@ -45,7 +45,7 @@ Abril/2020
 
 					$servername = "localhost:3306";
 					$username = "root";
-					$password = " ";
+					$password = "";
 					$database = "IE_Exemplo";
 
 					$id       = $_POST['Id'];

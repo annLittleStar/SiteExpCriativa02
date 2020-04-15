@@ -15,11 +15,11 @@ Abril/2020
 	<style>
 		.w3-theme {
 			color: #ffff !important;
-			background-color: #808000 !important
+			background-color: lightblue !important
 		}
 
 		.w3-code {
-			border-left: 4px solid #808000
+			border-left: 4px solid lightblue
 		}
 
 		.myMenu {
@@ -35,7 +35,7 @@ Abril/2020
 	<div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
 		<div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-			<h1 class="w3-xxlarge">Exclusão de Turma</h1>
+			<h1 class="w3-xxlarge">Exclusão de Serviço</h1>
 
 			<p class="w3-large">
 				<div class="w3-code cssHigh notranslate">
@@ -55,7 +55,7 @@ Abril/2020
 
 					$servername = "localhost:3306";
 					$username   = "root";
-					$password   = " ";
+					$password   = "";
 					$database   = "IE_Exemplo";
 					$id         =$_GET['id'];
 
@@ -82,18 +82,18 @@ Abril/2020
 						while ($row = mysqli_fetch_assoc($result)) {
 							?>
 							<div class="w3-container w3-theme">
-								<h2>Exclusão da Turma = [<?php echo $row['codTurma']; ?>]</h2>
+								<h2>Exclusão de Serviço = [<?php echo $row['codTurma']; ?>]</h2>
 							</div>
 							<form class="w3-container" action="turmaExcluir_exe.php" method="post" onsubmit="return check(this.form)">
 								<input type="hidden" id="Id" name="Id" value="<?php echo $row['codTurma']; ?>">
 								<p>
-									<label class="w3-text-deep-purple"><b>Professor: </b> <?php echo $row['nome']; ?> </label></p>
+									<label class="w3-text-deep-purple"><b>Tipo: </b> <?php echo $row['nome']; ?> </label></p>
 									<p>
-										<label class="w3-text-deep-purple"><b>Disciplina: </b><?php echo $row['nomeDisc']; ?></label></p>
+										<label class="w3-text-deep-purple"><b>Funcionario: </b><?php echo $row['nomeDisc']; ?></label></p>
 										<p>
 											<label class="w3-text-deep-purple"><b>Ano: </b><?php echo $row['ano']; ?></label></p>
 											<p>
-												<label class="w3-text-deep-purple"><b>Semestre: </b><?php echo $row['semestre']; ?></label></p>
+												<label class="w3-text-deep-purple"><b>Valor: </b><?php echo $row['semestre']; ?></label></p>
 												<p>
 													<input type="submit" value="Confirma exclusão?" class="w3-btn w3-red" >
 													<input type="button" value="Cancelar" class="w3-btn w3-theme" onclick="window.location.href='discListar.php'"></p>

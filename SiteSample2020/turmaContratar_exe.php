@@ -13,8 +13,8 @@ Abril/2020
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<style>
-		.w3-theme {color:#ffff !important;background-color:#808000 !important}
-		.w3-code{border-left:4px solid #808000}
+		.w3-theme {color:#ffff !important;background-color:lightblue !important}
+		.w3-code{border-left:4px solid lightblue}
 		.myMenu {margin-bottom:150px}
 	</style>
 </head>
@@ -26,7 +26,7 @@ Abril/2020
 	<div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
 		<div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-			<h1 class="w3-xxlarge">Registro de Turma</h1>
+			<h1 class="w3-xxlarge">Registro de Serviço</h1>
 
 			<p class="w3-large">
 				<div class="w3-code cssHigh notranslate">
@@ -46,7 +46,7 @@ Abril/2020
 
 					$servername = "localhost:3306";
 					$username = "root";
-					$password = " ";
+					$password = "";
 					$database = "IE_Exemplo";
 
 

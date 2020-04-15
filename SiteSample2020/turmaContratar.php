@@ -15,11 +15,11 @@ Abril/2020
 	<style>
 		.w3-theme {
 			color: #ffff !important;
-			background-color: #808000 !important
+			background-color: lightblue !important
 		}
 
 		.w3-code {
-			border-left: 4px solid #808000
+			border-left: 4px solid lightblue
 		}
 
 		.myMenu {
@@ -36,7 +36,7 @@ Abril/2020
 	<div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
 		<div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-			<h1 class="w3-xxlarge">Cadastro de Turma</h1>
+			<h1 class="w3-xxlarge">Cadastro de Serviço</h1>
 
 			<p class="w3-large">
 				<div class="w3-code cssHigh notranslate">
@@ -56,7 +56,7 @@ Abril/2020
 					
 					$servername = "localhost:3306";
 					$username = "root";
-					$password = " ";
+					$password = "";
 					$database = "IE_Exemplo";
 
 				// Cria conexão
@@ -104,11 +104,11 @@ Abril/2020
 						?>
 						<div class="w3-responsive w3-card-4">
 							<div class="w3-container w3-theme">
-								<h2>Informe os dados da nova Turma</h2>
+								<h2>Informe os dados do Serviço Realizado</h2>
 							</div>
 							<form class="w3-container" action="TurmaContratar_exe.php" method="post" onsubmit="return check(this.form)">
 								<input type="hidden" id="acaoForm" name="acaoForm" value="Contratar">
-								<p><label class="w3-text-deep-purple"><b>Professor</b></label>
+								<p><label class="w3-text-deep-purple"><b>Tipo</b></label>
 									<select name="codProf" class="w3-input w3-border" required>
 										<option value=""></option>
 										<?php
@@ -117,7 +117,7 @@ Abril/2020
 										}
 										?>
 									</select></p>
-									<p>	<label class="w3-text-deep-purple"><b>Disciplina</b></label>
+									<p>	<label class="w3-text-deep-purple"><b>Funcionario</b></label>
 										<select name="codDisc" class="w3-input w3-border" required>
 											<option value=""></option>
 											<?php
@@ -131,9 +131,11 @@ Abril/2020
 											<input class="w3-input w3-border w3-light-grey" name="Ano" type="text" maxlength="4" size="4" pattern="(20)\d\d"
 											title="Ano com 4 dígitos, a partir de 2000" required></p>
 											<p>
-												<label class="w3-text-deep-purple"><b>Semestre</b></label></br>
-												<input class="w3-radio" type="radio" name="Semestre" value="1" required ><label class="w3-text-deep-purple"><b>1º</b></label>
-												<input class="w3-radio" type="radio" name="Semestre" value="2" required ><label class="w3-text-deep-purple"><b>2º</b></label></p>
+												<label class="w3-text-deep-purple"><b>Valor</b></label></br>
+												<input class="w3-radio" type="radio" name="Semestre" value="1" required ><label class="w3-text-deep-purple"><b>30,00</b></label>
+												<input class="w3-radio" type="radio" name="Semestre" value="2" required ><label class="w3-text-deep-purple"><b>15,00</b></label>
+												<input class="w3-radio" type="radio" name="Semestre" value="3" required ><label class="w3-text-deep-purple"><b>20,00</b></label>
+											</p>
 												<p>
 													<input type="submit" value="Registrar" class="w3-btn w3-theme" >
 													<input type="button" value="Cancelar" class="w3-btn w3-theme" onclick="window.location.href='.'"></p>

@@ -15,11 +15,11 @@ Abril/2020
     <style>
         .w3-theme {
             color: #ffff !important;
-            background-color: #ADD8E6 !important
+            background-color: lightblue !important
         }
 
         .w3-code {
-            border-left: 4px solid #ADD8E6
+            border-left: 4px solid lightblue
         }
 
         .myMenu {
@@ -35,7 +35,7 @@ Abril/2020
     <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
         <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-            <h1 class="w3-xxlarge">Relação de Serviços</h1>
+            <h1 class="w3-xxlarge">Relação Funcionários</h1>
 
             <p class="w3-large">
                 <p>
@@ -55,7 +55,7 @@ Abril/2020
                         <?php
                         $servername = "localhost:3306";
                         $username   = "root";
-                        $password   = "";
+                        $password   = "YES";
                         $database   = "IE_Exemplo";
                         
 			// Verifica conexão
@@ -89,20 +89,6 @@ Abril/2020
                             echo "	  <th> </th>";
                             echo "	</tr>";
                             if (mysqli_num_rows($result) > 0) {
-                               
-
-                                $sql = "SELECT CodDisciplina, NomeDisc, Ementa FROM Disciplina";
-                                echo "<div class='w3-responsive w3-card-4'>";
-                                if ($result = mysqli_query($conn, $sql)) {
-                                    echo "<table class='w3-table-all'>";
-                                    echo "	<tr>";
-                                    echo "	  <th>Código</th>";
-                                    echo "	  <th width='10%'>Nome</th>";
-                                    echo "	  <th>Ementa</th>";
-                                    echo "	  <th> </th>";
-                                    echo "	  <th> </th>";
-                                    echo "	</tr>";
-                                    if (mysqli_num_rows($result) > 0) {
 
                     // Apresenta cada linha da tabela
                                         while ($row = mysqli_fetch_assoc($result)) {
