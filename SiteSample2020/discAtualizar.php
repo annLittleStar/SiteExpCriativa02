@@ -19,7 +19,7 @@ Abril/2020
         }
 
         .w3-code {
-            border-left: 4px solid #380077
+            border-left: 4px solid #ADD8E6
         }
 
         .myMenu {
@@ -35,7 +35,7 @@ Abril/2020
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
     <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-        <h1 class="w3-xxlarge">Demissão de Funcionário</h1>
+        <h1 class="w3-xxlarge">Demissao de Funcionário</h1>
 
         <p class="w3-large">
             <div class="w3-code cssHigh notranslate">
@@ -56,7 +56,7 @@ Abril/2020
 				$servername = "localhost:3306";
 				$username = "root";
 				$password = "";
-				$database = "AP_Exemplo";
+				$database = "IE_Exemplo";
 				$id=$_GET['id'];
 				
 				// Cria conexão

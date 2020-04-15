@@ -7,6 +7,21 @@ Abril/2020
 -->
 <html>
 <head>
+
+<title>AP - AKIM PNEUS</title>
+<link rel="icon" type="image/png" href="imagens/IE_favicon.png"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+    .w3-theme {
+        color: #ffff !important;
+        background-color: #ADD8E6 !important
+    }
+
+    .w3-code {
+        border-left: 4px solid #ADD8E6
+    }
+=======
     <title>AP - AKIM PNEUS</title>
     <link rel="icon" type="image/png" href="imagens/IE_favicon.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -54,7 +69,7 @@ Abril/2020
                         <?php
                         $servername = "localhost:3306";
                         $username   = "root";
-                        $password   = " ";
+                        $password   = "";
                         $database   = "IE_Exemplo";
                         
 			// Verifica conexão
@@ -75,6 +90,21 @@ Abril/2020
                         mysqli_query($conn,'SET character_set_results=utf8');
 
             // Faz Select na Base de Dados
+
+            $sql = "SELECT CodDisciplina, NomeDisc, Ementa FROM Disciplina";
+            echo "<div class='w3-responsive w3-card-4'>";
+            if ($result = mysqli_query($conn, $sql)) {
+                echo "<table class='w3-table-all'>";
+                echo "	<tr>";
+                echo "	  <th>Código</th>";
+                echo "	  <th width='10%'>Nome</th>";
+				echo "	  <th>Ementa</th>";
+				echo "	  <th> </th>";
+				echo "	  <th> </th>";
+                echo "	</tr>";
+                if (mysqli_num_rows($result) > 0) {
+                	
+
                         $sql = "SELECT CodDisciplina, NomeDisc, Ementa FROM Disciplina";
                         echo "<div class='w3-responsive w3-card-4'>";
                         if ($result = mysqli_query($conn, $sql)) {
@@ -87,6 +117,7 @@ Abril/2020
                             echo "	  <th> </th>";
                             echo "	</tr>";
                             if (mysqli_num_rows($result) > 0) {
+
                     // Apresenta cada linha da tabela
                                 while ($row = mysqli_fetch_assoc($result)) {
                                     $cod = $row["CodDisciplina"];

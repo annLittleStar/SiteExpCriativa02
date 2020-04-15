@@ -8,6 +8,59 @@ Abril/2020
 <html>
 <head>
 
+<<<<<<< HEAD
+    <title>AP - AKIM PNEUS</title>
+    <link rel="icon" type="image/png" href="imagens/IE_favicon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        .w3-theme {
+            color: #ffff !important;
+            background-color: #ADD8E6 !important
+        }
+
+        .w3-code {
+            border-left: 4px solid #ADD8E6
+        }
+
+        .myMenu {
+            margin-bottom: 150px
+        }
+    </style>
+</head>
+<body onload="w3_show_nav('menuTurma')">
+<!-- Inclui MENU.PHP  -->
+<?php require 'menu.php'; ?>
+
+<!-- Conteúdo Principal: deslocado para direita em 270 pixels quando a sidebar é visível -->
+<div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
+
+    <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
+        <h1 class="w3-xxlarge">Registro de Serviço</h1>
+
+        <p class="w3-large">
+            <div class="w3-code cssHigh notranslate">
+                <!-- Acesso em:-->
+                <?php
+
+                date_default_timezone_set("America/Sao_Paulo");
+                $data = date("d/m/Y H:i:s", time());
+                echo "<p class='w3-small' > ";
+                echo "Acesso em: ";
+                echo $data;
+                echo "</p> "
+                ?>
+
+                <!-- Acesso ao BD-->
+				<?php
+				
+				$servername = "localhost:3306";
+				$username = "root";
+				$password = "";
+				$database = "IE_Exemplo";
+				$id=$_GET['id'];
+				
+=======
 	<title>AKIM PNEUS</title>
 	<link rel="icon" type="image/png" href="imagens/IE_favicon.png"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,6 +112,7 @@ Abril/2020
 					$database = "IE_Exemplo";
 					$id=$_GET['id'];
 
+>>>>>>> 29889aa96ebf57b28b0862ce46824d0a5c0dba7c
 				// Cria conexão
 					$conn = mysqli_connect($servername, $username, $password, $database);
 
@@ -116,6 +170,18 @@ Abril/2020
 						if ($result = mysqli_query($conn, $sql)) {
 							if (mysqli_num_rows($result) > 0) {
 								// Apresenta cada linha da tabela
+<<<<<<< HEAD
+									while ($row = mysqli_fetch_assoc($result)) {
+						?>				
+										<div class="w3-container w3-theme">
+											<h2>Registrar Servico = [<?php echo $codTurma; ?>]</h2>
+										</div>
+										<form class="w3-container" action="TurmaAtualizar_exe.php" method="post" onsubmit="return check(this.form)">
+											<input type="hidden" id="Id" name="Id" value="<?php echo $codTurma; ?>">
+											<p><label class="w3-text-deep-purple"><b>Tipo</b></label>
+												<select name="codProf" class="w3-input w3-border" required>
+													<option value=""></option>
+=======
 								while ($row = mysqli_fetch_assoc($result)) {
 									?>				
 									<div class="w3-container w3-theme">
@@ -126,13 +192,14 @@ Abril/2020
 										<p><label class="w3-text-deep-purple"><b>Professor</b></label>
 											<select name="codProf" class="w3-input w3-border" required>
 												<option value=""></option>
+>>>>>>> 29889aa96ebf57b28b0862ce46824d0a5c0dba7c
 												<?php
 												foreach($optionsProf as $key => $value){
 													echo $value;
 												}
 												?>
 											</select></p>
-											<p>	<label class="w3-text-deep-purple"><b>Disciplina</b></label>
+											<p>	<label class="w3-text-deep-purple"><b>Funcionário</b></label>
 												<select name="codDisc" class="w3-input w3-border" required>
 													<option value=""></option>
 													<?php
@@ -141,6 +208,23 @@ Abril/2020
 													}
 													?>
 												</select></p>
+<<<<<<< HEAD
+											<p>
+												<label class="w3-text-deep-purple"><b>Ano</b></label>
+												<input class="w3-input w3-border w3-light-grey" name="Ano" type="text" maxlength="4" size="4" pattern="(20)\d\d"
+													   title="Ano com 4 dígitos, a partir de 2000" value="<?php echo $row['ano']; ?>" required></p>
+											<p>
+												<label class="w3-text-deep-purple"><b>Valor</b></label></br>
+												<input class="w3-radio" type="radio" name="Semestre" value="1" required <?php echo $sem1Checked; ?> ><label class="w3-text-deep-purple"><b>15.00</b></label>
+												<input class="w3-radio" type="radio" name="Semestre" value="2" required <?php echo $sem2Checked; ?> ><label class="w3-text-deep-purple"><b>30.00</b></label></p>
+												<input class="w3-radio" type="radio" name="Semestre" value="3" required <?php echo $sem3Checked; ?> ><label class="w3-text-deep-purple"><b>20.00</b></label></p>
+											<p>
+											<input type="submit" value="Registrar" class="w3-btn w3-theme" >
+											<input type="button" value="Cancelar" class="w3-btn w3-theme" onclick="window.location.href='turmaListar.php'"></p>
+										</form>
+
+					<?php 
+=======
 												<p>
 													<label class="w3-text-deep-purple"><b>Ano</b></label>
 													<input class="w3-input w3-border w3-light-grey" name="Ano" type="text" maxlength="4" size="4" pattern="(20)\d\d"
@@ -162,6 +246,7 @@ Abril/2020
 									}
 									else {
 										echo "Erro executando UPDATE: " . mysqli_error($conn);
+>>>>>>> 29889aa96ebf57b28b0862ce46824d0a5c0dba7c
 									}
 				echo "</div>"; //Fim form
 				mysqli_close($conn);  //Encerra conexao com o BD

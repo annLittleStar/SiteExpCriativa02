@@ -8,18 +8,18 @@ Abril/2020
 <html>
 <head>
 
-    <title>IE - Instituição de Ensino</title>
+    <title>AP - AKIM PNEUS</title>
     <link rel="icon" type="image/png" href="imagens/IE_favicon.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
         .w3-theme {
             color: #ffff !important;
-            background-color: #380077 !important
+            background-color: #ADD8E6 !important
         }
 
         .w3-code {
-            border-left: 4px solid #380077
+            border-left: 4px solid #ADD8E6
         }
 
         .myMenu {
@@ -35,7 +35,7 @@ Abril/2020
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
     <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-        <h1 class="w3-xxlarge">Cadastro de Disciplina</h1>
+        <h1 class="w3-xxlarge">Demitir Funcionario</h1>
 
         <p class="w3-large">
             <div class="w3-code cssHigh notranslate">
@@ -52,7 +52,7 @@ Abril/2020
 
                 <div class="w3-responsive w3-card-4">
                     <div class="w3-container w3-theme">
-                        <h2>Informe os dados da nova Disciplina</h2>
+                        <h2>Informe os dados do Funcionario Demitido</h2>
                     </div>
                     <form class="w3-container" action="DiscContratar_exe.php" method="post" onsubmit="return check(this.form)">
 						<input type="hidden" id="acaoForm" name="acaoForm" value="Contratar">
@@ -61,7 +61,7 @@ Abril/2020
 						<input class="w3-input w3-border w3-light-grey" name="Nome" type="text" pattern="[a-zA-Z\u00C0-\u00FF ]{10,100}$"
 							   title="Nome da disciplina entre 10 e 100 letras." required></p>
 						<p>
-						<label class="w3-text-deep-purple"><b>Ementa</b></label>
+						<label class="w3-text-deep-purple"><b>Motivo</b></label>
 						<textarea class="w3-input w3-border w3-light-grey " name="Ementa"  rows="5" title="Texto Descritivo" required></textarea>
 						<p>
 						<input type="submit" value="Registrar" class="w3-btn w3-theme" >
