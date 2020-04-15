@@ -3,7 +3,7 @@
 <html>
 <head>
 
-    <title>IE - Instituição de Ensino</title>
+    <title>AKIM PNEUS</title>
     <link rel="icon" type="image/png" href="imagens/IE_favicon.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -20,7 +20,12 @@
         .myMenu {
             margin-bottom: 150px
         }
+
+        .myFont {
+            font-max-size: 8px
+        }
     </style>
+
 </head>
 <body  onload="w3_show_nav('menuProf')">
 <!-- Inclui MENU.PHP  -->
