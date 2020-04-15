@@ -8,7 +8,7 @@ Abril/2020
 <html>
 <head>
 
-	<title>AKIM PNEUS</title>
+	<title>IE - Instituição de Ensino</title>
 	<link rel="icon" type="image/png" href="imagens/IE_favicon.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -26,7 +26,7 @@ Abril/2020
 	<div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
 		<div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-			<h1 class="w3-xxlarge">Exclusão de Produtos</h1>
+			<h1 class="w3-xxlarge">Exclusão de Professores</h1>
 
 			<p class="w3-large">
 				<div class="w3-code cssHigh notranslate">

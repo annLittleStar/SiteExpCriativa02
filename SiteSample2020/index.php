@@ -59,8 +59,8 @@ Abril/2020
 
 			<!-- FIM PRINCIPAL -->
 		</div>
-	</div>
-	<!-- Inclui RODAPE.PHP  -->
-	<?php require 'rodape.php';?>
-</body>
-</html>
+
+		<!-- Inclui RODAPE.PHP  -->
+		<?php require 'rodape.php';?>
+	</body>
+	</html>
