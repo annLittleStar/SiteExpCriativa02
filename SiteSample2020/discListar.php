@@ -14,11 +14,11 @@
 <style>
     .w3-theme {
         color: #ffff !important;
-        background-color: #380077 !important
+        background-color: #ADD8E6 !important
     }
 
     .w3-code {
-        border-left: 4px solid #380077
+        border-left: 4px solid #ADD8E6
     }
 
     .myMenu {
@@ -87,6 +87,7 @@
 				echo "	  <th> </th>";
                 echo "	</tr>";
                 if (mysqli_num_rows($result) > 0) {
+                	
                     // Apresenta cada linha da tabela
                     while ($row = mysqli_fetch_assoc($result)) {
                         $cod = $row["CodDisciplina"];
