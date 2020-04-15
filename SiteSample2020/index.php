@@ -1,14 +1,5 @@
 <html lang="pt">
-<!-------------------------------------------------------------------------------
-Oficina Desenvolvimento Web
-PUCPR
 
-INDEX.PHP
-
-Profa. Cristina V. P. B. Souza
-Novembro/2018
-*** Para o correto funcionamento do CSS, o equipamento precisa de internet ***
----------------------------------------------------------------------------------->
 	<title>AKIM PNEUS</title>
 	<link rel="icon" type="image/png" href="imagens/IE_favicon.png"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">

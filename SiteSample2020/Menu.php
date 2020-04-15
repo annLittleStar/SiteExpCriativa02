@@ -1,13 +1,4 @@
-<!-------------------------------------------------------------------------------
-Oficina Desenvolvimento Web
-PUCPR
 
-MENU.PHP
-
-Profa. Cristina V. P. B. Souza
-Novembro/2018
----------------------------------------------------------------------------------->
-	<!-- Top -->
 	<div class="w3-top">
 		<div class="w3-row w3-white w3-padding">
 			<div class="w3-half" style="margin:4px 0 6px 0"><a href="."><img src='imagens/logotest.png' alt=' IE Exemplo '></a>
