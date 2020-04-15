@@ -55,7 +55,7 @@ Abril/2020
                         <?php
                         $servername = "localhost:3306";
                         $username   = "root";
-                        $password   = "YES";
+                        $password   = "";
                         $database   = "IE_Exemplo";
                         
 			// Verifica conexão
