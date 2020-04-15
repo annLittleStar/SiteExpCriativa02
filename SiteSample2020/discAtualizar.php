@@ -2,20 +2,20 @@
 <!--
 Desenvolvimento Web
 PUCPR
-Profa. Cristina V. P. B. Souza
+SEA+
 Abril/2020
 -->
 <html>
 <head>
 
-    <title>IE - Instituição de Ensino</title>
+    <title>AP - AKIM PNEUS</title>
     <link rel="icon" type="image/png" href="imagens/IE_favicon.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
         .w3-theme {
-            color: #ffff !important;
-            background-color: #380077 !important
+            color: #ADD8E6 !important;
+            background-color: #ADD8E6 !important
         }
 
         .w3-code {
@@ -35,7 +35,7 @@ Abril/2020
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
     <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-        <h1 class="w3-xxlarge">Atualização Disciplina</h1>
+        <h1 class="w3-xxlarge">Demissão de Funcionário</h1>
 
         <p class="w3-large">
             <div class="w3-code cssHigh notranslate">
@@ -54,9 +54,9 @@ Abril/2020
 				<?php
 				
 				$servername = "localhost:3306";
-				$username = "usu@IE_Exe";
-				$password = "php@PUCPR";
-				$database = "IE_Exemplo";
+				$username = "root";
+				$password = "";
+				$database = "AP_Exemplo";
 				$id=$_GET['id'];
 				
 				// Cria conexão
@@ -81,7 +81,7 @@ Abril/2020
 							while ($row = mysqli_fetch_assoc($result)) {
 				?>				
 								<div class="w3-container w3-theme">
-									<h2>Altere os dados da Disciplina Cód. = [<?php echo $row['CodDisciplina']; ?>]</h2>
+									<h2>Demissão de Funcionário Cód. = [<?php echo $row['CodDisciplina']; ?>]</h2>
 								</div>
 								<form class="w3-container" action="discAtualizar_exe.php" method="post" onsubmit="return check(this.form)">
 									<input type="hidden" id="Id" name="Id" value="<?php echo $row['CodDisciplina']; ?>">
@@ -90,7 +90,7 @@ Abril/2020
 									<input class="w3-input w3-border w3-light-grey" name="Nome" type="text" pattern="[a-zA-Z\u00C0-\u00FF ]{10,100}$"
 										   title="Nome da disciplina entre 10 e 100 letras." value="<?php echo $row['NomeDisc']; ?>" required></p>
 									<p>
-									<label class="w3-text-deep-purple"><b>Ementa</b></label>
+									<label class="w3-text-deep-purple"><b>Motivo</b></label>
 									<textarea class="w3-input w3-border w3-light-grey " name="Ementa"  rows="5" title="Texto Descritivo" required><?php echo $row['Ementa']; ?></textarea>
 									
 									<p>
