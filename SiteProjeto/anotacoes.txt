@@ -1,0 +1,16 @@
+<!-------------------------------------------------------------------------------
+PROJETO DE EXPERIÊNCIA CRIATIVA 02:
+SEA+
+PUCPR
+ENGENHARIA DE SOFTWARE
+
+Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
+---------------------------------------------------------------------------------->
+
+
+Controle Acadêmico == Controle de Estoque
+Cadastro de Professores e funcionários == Cadastro de Produtos
+
+Menu Professor == Funcionário
+Menu Disciplina == Estoque
+Menu Turma == Serviços

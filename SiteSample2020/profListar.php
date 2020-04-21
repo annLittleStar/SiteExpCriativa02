@@ -57,7 +57,7 @@ Abril/2020
 
                         <!-- Acesso ao BD-->
                         <?php
-                        $servername = "localhost:3306";
+                        $servername = "localhost:3307";
                         $username = "root";
                         $password = "";
                         $database = "IE_Exemplo";
