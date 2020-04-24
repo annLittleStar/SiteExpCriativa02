@@ -1,5 +1,5 @@
--- CREATE SCHEMA IF NOT EXISTS `seaP`;
--- USE `seaP` ;
+-- CREATE SCHEMA IF NOT EXISTS `SEA`;
+-- USE `SEA` ;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -17,119 +17,80 @@ SET @@global.time_zone = '+3:00';
 
 SET @@global.time_zone = '+3:00';
 
-create schema if not exists `ie_exemplo`;
-  USE `ie_exemplo`;
+create schema if not exists `SEA`;
+  USE `SEA`;
 --
--- Database: `ie_exemplo`
+-- Database: `SEA`
 --
 
 -- --------------------------------------------------------
-
+-- TABELAS
 --
--- Estrutura da tabela `disciplina`
+-- Estrutura da tabela `pneu`
 --
 
-CREATE TABLE `disciplina` (
-  `CodDisciplina` int NOT NULL,
-  `NomeDisc` varchar(100) NOT NULL,
-  `Ementa` text
+CREATE TABLE `pneu` (
+  `nome` varchar(30) NOT NULL,
+  `marca` varchar(30) NOT NULL,
+  `id` int,
+  `preco` double NOT NULL,
+  `estado` varchar(15) NOT NULL,
+  `quantidade` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `professor`
+-- Estrutura da tabela `produtoLimpeza`
 --
 
-CREATE TABLE `professor` (
-  `CodProfessor` int NOT NULL,
-  `Nome` varchar(100) NOT NULL,
-  `Celular` varchar(20) NOT NULL,
-  `DataNasc` date DEFAULT NULL,
-  `Login` varchar(50) DEFAULT NULL,
-  `Senha` varchar(40) DEFAULT NULL
+CREATE TABLE `produtoLimpeza` (
+  `nome` varchar(30) NOT NULL,
+  `marca` varchar(30) NOT NULL,
+  `id` int,
+  `preco` double,
+  `estado` varchar(15)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Incluindo dados da tabela `professor`
---
-
-INSERT INTO `professor` (`CodProfessor`, `Nome`, `Celular`, `DataNasc`, `Login`, `Senha`) VALUES
-(3, 'Jose da Silva', '(41)99777-1234', '1998-06-20', 'jose.silva', 'a542e148269b71d4b8be8538f09c2f9a'),
-(5, 'Eduarda Laranjeiras', '(41)82233-1111', '1999-12-28', 'eduarda.laran', '2fbb45fe0ec24b6900b9f2c4800351bf'),
-(6, 'Carlos Ataide', '(41)91234-1234', '1985-11-10', 'carlos.ata', 'e267cfcd18461ce938067eca67c59f41'),
-(7, 'Olivia Oliveira', '(41)98889-9999', '1988-12-14', 'oli.oli', '6c71dffdab29ca4d91d0cf293dc82c61'),
-(9, 'Lorival Percial Arial', '(41)87654-1234', '1987-11-28', 'lori.per', '6c71dffdab29ca4d91d0cf293dc82c61');
 
 -- --------------------------------------------------------
-
-
---
--- Estrutura da tabela `turma`
---
-
-CREATE TABLE `turma` (
-  `CodTurma` int NOT NULL,
-  `CodProfessor` int NOT NULL,
-  `CodDisc` int NOT NULL,
-  `Ano` int NOT NULL,
-  `Semestre` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Índices para tabelas
 --
 
 --
--- Índices para a tabela `disciplina`
+-- Índices para a tabela `pneu`
 --
-ALTER TABLE `disciplina`
-ADD PRIMARY KEY (`CodDisciplina`);
+ALTER TABLE `pneu`
+ADD PRIMARY KEY (`id`);
 
 --
--- Índices para a tabela `professor`
+-- Índices para a tabela `produtoLimpeza`
 --
-ALTER TABLE `professor`
-ADD PRIMARY KEY (`CodProfessor`);
+ALTER TABLE `produtoLimpeza`
+ADD PRIMARY KEY (`id`);
 
---
--- Índices para a tabela `turma`
---
-ALTER TABLE `turma`
-ADD PRIMARY KEY (`CodTurma`),
-ADD UNIQUE KEY `CodProfessor` (`CodProfessor`,`CodDisc`,`Ano`,`Semestre`),
-ADD KEY `FK_Disc` (`CodDisc`);
+-- ----------------------------------------------------------
 
---
 -- AUTO_INCREMENT para tabelas
 --
 
 --
--- AUTO_INCREMENT para a tabela  `disciplina`
+-- AUTO_INCREMENT para a tabela  `pneu`
 --
-ALTER TABLE `disciplina`
-MODIFY `CodDisciplina` int NOT NULL AUTO_INCREMENT;
+ALTER TABLE `pneu`
+MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `professor`
 --
-ALTER TABLE `professor`
-MODIFY `CodProfessor` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+ALTER TABLE `produtoLimpeza`
+MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
---
--- AUTO_INCREMENT for table `turma`
---
-ALTER TABLE `turma`
-MODIFY `CodTurma` int NOT NULL AUTO_INCREMENT;
-
+-- -----------------------------------------------------------
 --
 -- Restrições (constrains) para tabelas
 --
+--
+-- Restrições (constrains) para a tabela `pneu`
 
---
--- Restrições (constrains) para a tabela `turma`
---
-ALTER TABLE `turma`
-ADD CONSTRAINT `FK_Disc` FOREIGN KEY (`CodDisc`) REFERENCES `disciplina` (`CodDisciplina`),
-ADD CONSTRAINT `FK_Prof` FOREIGN KEY (`CodProfessor`) REFERENCES `professor` (`CodProfessor`);
-COMMIT;
