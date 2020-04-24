@@ -95,4 +95,3 @@ MODIFY `id` int NOT NULL AUTO_INCREMENT;*/
 --
 --
 -- Restrições (constrains) para a tabela `pneu`
-

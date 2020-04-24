@@ -9,24 +9,24 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 ---------------------------------------------------------------------------------->
 <html>
 <head>
-<title>SEA+</title>
-<link rel="icon" type="image/png" href="imagens/IE_favicon.png"/>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
-    .w3-theme {
-        color: #ffff !important;
-        background-color: #380077 !important
-    }
+   <title>SEA+</title>
+    <link rel="icon" type="image/png" href="../imagens/Logo.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        .w3-theme {
+            color: #ffff !important;
+            background-color: lightblue !important
+        }
 
-    .w3-code {
-        border-left: 4px solid #380077
-    }
+        .w3-code {
+            border-left: 4px solid lightblue
+        }
 
-    .myMenu {
-        margin-bottom: 150px
-    }
-</style>
+        .myMenu {
+            margin-bottom: 150px
+        }
+    </style>
 </head>
 <body onload="w3_show_nav('menuEstoque')">
 <!-- Inclui MENU.PHP  -->
@@ -36,7 +36,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
     <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-        <h1 class="w3-xxlarge">Relação de Produtos em Estoque</h1>
+        <h1 class="w3-xxlarge">Relação de Produtos em Estoque (por enquanto só lista pneu)</h1>
 
         <p class="w3-large">
         <p>
@@ -57,7 +57,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
             $servername = "localhost:3306";
             $username = "root";
             $password = "";
-            $database = "IE_Exemplo";
+            $database = "sea";
 			
 			// Verifica conexão
             $conn = mysqli_connect($servername, $username, $password, $database);
@@ -78,39 +78,42 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
             // Faz Select na Base de Dados
             //Adaptar para o projeto
-            $sql = "SELECT CodDisciplina, NomeDisc, Ementa FROM Disciplina";
+            $sql = "SELECT id, nome, marca, quantidade FROM pneu";
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
                 echo "<table class='w3-table-all'>";
                 echo "	<tr>";
-                echo "	  <th>Código</th>";
-                echo "	  <th width='10%'>Nome</th>";
-				echo "	  <th>Ementa</th>";
+                echo "	  <th width='5%'>Id</th>";
+                echo "	  <th width='20%'>Nome</th>";
+				echo "	  <th width='20%'>Marca</th>";
+                echo "    <th width='10%'>Quantidade</th>";
 				echo "	  <th> </th>";
 				echo "	  <th> </th>";
                 echo "	</tr>";
                 if (mysqli_num_rows($result) > 0) {
                     // Apresenta cada linha da tabela
                     while ($row = mysqli_fetch_assoc($result)) {
-                        $cod = $row["CodDisciplina"];
+                        $cod = $row["id"];
                         echo "<tr>";
                         echo "<td>";
                         echo $cod;
                         echo "</td><td>";
-                        echo $row["NomeDisc"];
+                        echo $row["nome"];
                         echo "</td><td>";
-                        echo $row["Ementa"];
+                        echo $row["marca"];
+                        echo "</td><td>";
+                        echo $row["quantidade"];
                         echo "</td><td>";
 
 						//Atualizar e Excluir registro de prof
 				?>
-                        <a href='estoqueSaida.php?id=<?php echo $cod; ?>'><img src='imagens/saida.png' title='Registrar Saida de Produto' width='32'></a>
+                        <a href='estoqueSaida.php?id=<?php echo $cod; ?>'><img src='../imagens/saida.png' title='Registrar Saida de Produto' width='32'></a>
                         </td>
                         <td>
-                        <a href='estoqueEntrada.php?id=<?php echo $cod; ?>'><img src='imagens/entrada.png' title='Registrar Entrada de Produto' width='32'></a>
+                        <a href='estoqueEntrada.php?id=<?php echo $cod; ?>'><img src='../imagens/entrada.png' title='Registrar Entrada de Produto' width='32'></a>
                         </td>
                         <td>
-                        <a href='estoqueExcluir.php?id=<?php echo $cod; ?>'><img src='imagens/Delete.png' title='Excluir Produto' width='32'></a>
+                        <a href='estoqueExcluir.php?id=<?php echo $cod; ?>'><img src='../imagens/Delete.png' title='Excluir Produto' width='32'></a>
                         </td>
                         </tr>
 				 <?php
