@@ -15,8 +15,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	  <style>
-		.w3-theme {color:#ffff !important;background-color:#380077 !important}
-		.w3-code{border-left:4px solid #380077}
+		.w3-theme {color:lightblue !important;background-color:lightblue !important}
+		.w3-code{border-left:4px solid lightblue}
 		.myMenu {margin-bottom:150px}
       </style>
 	</head>
@@ -50,15 +50,14 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		$servername = "localhost:3306";
 		$username = "root";
 		$password = "";
-		$database = "SEA";
+		$database = "sea";
 		
-		//O exemplo eh da criação de uma disciplina, 
-	
-		$nome    = $_POST['Nome'];
-		$marca    = $_POST['Marca'];
-		$id   = $_POST['ID'];
-		$preco    = $_POST['Preco'];
-		$estado    = $_POST['Estado'];
+		
+		$nome    = $_POST['nome'];
+		$marca    = $_POST['marca'];
+		$id   = $_POST['id'];
+		$preco    = $_POST['preco'];
+		$estado    = $_POST['estado'];
 		
 		// Cria conexão
 		$conn = mysqli_connect($servername, $username, $password, $database);
@@ -78,7 +77,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			mysqli_query($conn,'SET character_set_results=utf8');
 
 		// Faz Select na Base de Dados
-		//aqui deve-se colocar os campos que foram declarados acima
 		$sql = "INSERT INTO pneu (nome, marca, id, preco, estado) VALUES ('$nome','$marca', '$id', '$preco', '$estado')";
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = mysqli_query($conn, $sql)) {
