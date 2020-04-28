@@ -78,7 +78,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
             // Faz Select na Base de Dados
             //Adaptar para o projeto
-            $sql = "SELECT id, nome, marca, quantidade FROM pneu";
+            $sql = "SELECT id, nome, marca, quantidade, tipo FROM produto";
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
                 echo "<table class='w3-table-all'>";
@@ -87,6 +87,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 echo "	  <th width='20%'>Nome</th>";
 				echo "	  <th width='20%'>Marca</th>";
                 echo "    <th width='10%'>Quantidade</th>";
+                echo "    <th width='20%'>Tipo de produto</th>";
 				echo "	  <th> </th>";
 				echo "	  <th> </th>";
                 echo "	</tr>";
@@ -103,6 +104,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         echo $row["marca"];
                         echo "</td><td>";
                         echo $row["quantidade"];
+                        echo "</td><td>";
+                        echo $row["tipo"];
                         echo "</td><td>";
 
 						//Atualizar e Excluir registro de prof

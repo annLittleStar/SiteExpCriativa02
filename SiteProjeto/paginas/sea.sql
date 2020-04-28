@@ -25,73 +25,21 @@ create schema if not exists `SEA`;
 
 -- --------------------------------------------------------
 -- TABELAS
---
--- Estrutura da tabela `pneu`
---
-
-CREATE TABLE `pneu` (
-  `id` int not null auto_increment,
-  `nome` varchar(30) NOT NULL,
-  `marca` varchar(30) NOT NULL,
-  `preco` double NOT NULL,
-  `estado` varchar(15) NOT NULL,
-  `quantidade` int NOT NULL,
-  primary key(`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
+-- --------------------------------------------------------
+-- Tabela de produtos
 -- --------------------------------------------------------
 
---
--- Estrutura da tabela `produtoLimpeza`
---
-
-CREATE TABLE `produtoLimpeza` (
-  `id` int not null auto_increment,
-  `nome` varchar(30) NOT NULL,
-  `marca` varchar(30) NOT NULL,
-  `preco` double,
-  `estado` varchar(15),
-  primary key(`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+create table produto(
+	id int not null auto_increment,
+    nome varchar(30) not null,
+    marca varchar(30) not null,
+    preco double not null,
+    tipo enum('pneu', 'produto de limpeza') not null,
+    estado varchar(15),
+    quantidade int not null,
+    primary key(id)
+) engine=innoDB default charset=utf8;
 
 -- --------------------------------------------------------
-
---
--- Índices para tabelas
---
-
---
--- Índices para a tabela `pneu`
---
-/*ALTER TABLE `pneu`
-ADD PRIMARY KEY (`id`);*/
-
---
--- Índices para a tabela `produtoLimpeza`
---
-/*ALTER TABLE `produtoLimpeza`
-ADD PRIMARY KEY (`id`);*/
-
--- ----------------------------------------------------------
-
--- AUTO_INCREMENT para tabelas
---
-
---
--- AUTO_INCREMENT para a tabela  `pneu`
---
-/*ALTER TABLE `pneu`
-MODIFY `id` int NOT NULL AUTO_INCREMENT;*/
-
---
--- AUTO_INCREMENT for table `professor`
---
-/*ALTER TABLE `produtoLimpeza`
-MODIFY `id` int NOT NULL AUTO_INCREMENT;*/
-
--- -----------------------------------------------------------
---
--- Restrições (constrains) para tabelas
---
---
--- Restrições (constrains) para a tabela `pneu`
+-- Tabela de funcionarios
+-- --------------------------------------------------------
