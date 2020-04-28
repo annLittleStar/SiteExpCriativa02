@@ -1,6 +1,6 @@
 .confirma{
 	height: 50px;
-	width: 300px;
+	width: 368px;
 	background-color: #1E90FF;
 	font-family:Centaur; 
 	text-align: center;
@@ -11,6 +11,7 @@
 	border-color: #7B68EE;
 	cursor: pointer;
 	font-size: 150%;
+
 }
 
 .confirma:hover{
@@ -22,7 +23,7 @@
 
 .textoLogin{
 	height: 50px;
-	width: 300px;
+	width: 368px;
 	background-color: #87CEEB;
 	font-family:Centaur; 
 	text-align: center;
@@ -39,11 +40,12 @@
 }
 
 .aviso{
-	width: 300px;
+	width: 368px;
 	height: 28px;
 	font-family: Centaur;
 	font-size: 20px;
 	color: #B22222;
+
 }
 
 h3{
@@ -67,6 +69,10 @@ body{
 }
 
 .img{
-	width: 320px;
+	width: 368px;
 	height: 150px;
+}
+
+.teste {
+	padding-left: 34px;
 }
