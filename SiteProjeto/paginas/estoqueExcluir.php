@@ -11,17 +11,17 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 <head>
 
     <title>SEA+</title>
- 	<link rel="icon" type="image/png" href="imagens/LogoReduzida.png"/>
+ 	<link rel="icon" type="image/png" href="../imagens/Logo.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
         .w3-theme {
             color: #ffff !important;
-            background-color: #380077 !important
+            background-color: lightblue !important
         }
 
         .w3-code {
-            border-left: 4px solid #380077
+            border-left: 4px solid lightblue
         }
 
         .myMenu {
@@ -56,9 +56,9 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 				<?php
 				
 				$servername = "localhost:3306";
-				$username = "usu@IE_Exe";
-				$password = "php@PUCPR";
-				$database = "IE_Exemplo";
+				$username = "root";
+				$password = "";
+				$database = "sea";
 				$id=$_GET['id'];
 				
 				// Cria conexão
@@ -100,7 +100,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 									<label class="w3-text-deep-purple"><b>Ementa: </b><?php echo $row['Ementa']; ?></label></p>
 									<p>
 									<input type="submit" value="Confirma exclusão?" class="w3-btn w3-red" >
-									<input type="button" value="Cancelar" class="w3-btn w3-theme" onclick="window.location.href='discListar.php'"></p>
+									<input type="button" value="Cancelar" class="w3-btn w3-theme" onclick="window.location.href='estoqueListar.php'"></p>
 								</form>
 			<?php 
 							}

@@ -11,17 +11,17 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 <head>
 
     <title>SEA+</title>
-    <link rel="icon" type="image/png" href="imagens/LogoReduzida.png"/>
+    <link rel="icon" type="image/png" href="../imagens/Logo.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
         .w3-theme {
             color: #ffff !important;
-            background-color: #380077 !important
+            background-color: lightblue !important
         }
 
         .w3-code {
-            border-left: 4px solid #380077
+            border-left: 4px solid lightblue
         }
 
         .myMenu {
@@ -70,7 +70,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 						<textarea class="w3-input w3-border w3-light-grey " name="Ementa"  rows="5" title="Texto Descritivo" required></textarea>
 						<p>
 						<input type="submit" value="Registrar" class="w3-btn w3-theme" >
-						<input type="button" value="Cancelar" class="w3-btn w3-theme" onclick="window.location.href='.'"></p>
+						<input type="button" value="Cancelar" class="w3-btn w3-theme" onclick="window.location.href='estoqueListar.php'"></p>
 					</form>
 				</div>
 
