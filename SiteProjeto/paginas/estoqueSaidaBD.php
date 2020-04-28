@@ -49,14 +49,15 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		$servername = "localhost:3306";
 		$username = "root";
 		$password = "";
-		$database = "SEA";
+		$database = "sea";
 		
 		//O exemplo eh da alteração dos dados de uma disciplina, 
 		//mas para o projeto precisa ser o Formulário de Saída de Produtos.
 		//aqui deve-se colocar os campos q foram criados em estoqueSaida.php
 		$id      = $_POST['Id'];
 		$nome    = $_POST['Nome'];
-		$ementa  = $_POST['Ementa'];
+		$ementa  = $_POST['Tipo'];
+		$qtd	 = $_POST['Quantidade'];
 		
 		// Cria conexão
 		$conn = mysqli_connect($servername, $username, $password, $database);
@@ -74,11 +75,11 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
 		// Faz Select na Base de Dados
 		//aqui deve-se colocar os campos que foram declarados acima
-		$sql = "UPDATE disciplina SET NomeDisc = '$nome', Ementa = '$ementa' WHERE CodDisciplina = $id";
+		$sql = "UPDATE produto SET quantidade = '$qtd' WHERE id = $id";
 
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = mysqli_query($conn, $sql)) {
-				echo "Um registro alterado!";
+				echo "Produto removido!";
 		} else {
 			echo "Erro executando UPDATE: " . mysqli_error($conn);
 		}

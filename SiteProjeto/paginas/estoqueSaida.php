@@ -7,10 +7,13 @@ ENGENHARIA DE SOFTWARE
 
 Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 ---------------------------------------------------------------------------------->
+
+<!--Tem varias coisas a se arrumar aqui ainda-->
+
 <html>
 <head>
     <title>SEA+</title>
-    <link rel="icon" type="image/png" href="imagens/LogoReduzida.png"/>
+    <link rel="icon" type="image/png" href="../imagens/LogoReduzida.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
@@ -87,7 +90,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 				//Ajustar essa parte ao BD do projeto:
 
 				// Faz Select na Base de Dados
-				$sql = "SELECT CodDisciplina, NomeDisc, Ementa FROM disciplina WHERE codDisciplina = $id";
+				$sql = "SELECT id, nome, tipo, quantidade FROM produto WHERE id = $id";
 				echo "<div class='w3-responsive w3-card-4'>"; //Inicio form
 				 if ($result = mysqli_query($conn, $sql)) {
 						if (mysqli_num_rows($result) > 0) {
@@ -99,21 +102,28 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 								<!-- O exemplo eh da alteração dos dados de uma disciplina, 
 								mas para o projeto precisa ser o Formulário de Saída de Produtos-->
 								<div class="w3-container w3-theme">
-									<h2>Altere os dados da Disciplina Cód. = [<?php echo $row['CodDisciplina']; ?>]</h2>
+									<h2>Insira a quantidade a ser removida. = [<?php echo $row['id']; ?>]</h2>
 								</div>
-								<form class="w3-container" action="discAtualizar_exe.php" method="post" onsubmit="return check(this.form)">
-									<input type="hidden" id="Id" name="Id" value="<?php echo $row['CodDisciplina']; ?>">
+								<form class="w3-container" action="estoqueSaidaBD.php" method="post" onsubmit="return check(this.form)">
+									<input type="hidden" id="Id" name="Id" value="<?php echo $row['id']; ?>">
 									<p>
+										<!--Arrumar isso para evitar que sejam alteradas as informações-->
 									<label class="w3-text-deep-purple"><b>Nome</b></label>
-									<input class="w3-input w3-border w3-light-grey" name="Nome" type="text" pattern="[a-zA-Z\u00C0-\u00FF ]{10,100}$"
-										   title="Nome da disciplina entre 10 e 100 letras." value="<?php echo $row['NomeDisc']; ?>" required></p>
+									<input class="w3-input w3-border w3-light-grey" name="Nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$"
+										   title="Nome da disciplina entre 4 e 100 letras." value="<?php echo $row['nome']; ?>" required></p>
 									<p>
-									<label class="w3-text-deep-purple"><b>Ementa</b></label>
-									<textarea class="w3-input w3-border w3-light-grey " name="Ementa"  rows="5" title="Texto Descritivo" required><?php echo $row['Ementa']; ?></textarea>
-									
+									<label class="w3-text-deep-purple"><b>Tipo</b></label>
+									<input class="w3-input w3-border w3-light-grey" name="Tipo" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$"
+										   title="Nome da disciplina entre 4 e 100 letras." value="<?php echo $row['tipo']; ?>" required></p>
+<!--									<textarea class="w3-input w3-border w3-light-grey " name="tipo"  rows="5" title="Texto Descritivo" required><?php echo $row['tipo']; ?></textarea>
+-->									
+									<p>
+									<label class="w3-text-deep-purple"><b>Quantidade</b></label>
+									<input class="w3-input w3-border w3-light-grey" name="Quantidade" type="text" pattern="[0-9]{1,3}"
+										   title="Quantidade de itens." value="<?php echo $row['quantidade']; ?>" required></p>
 									<p>
 									<input type="submit" value="Alterar" class="w3-btn w3-red" >
-									<input type="button" value="Cancelar" class="w3-btn w3-theme" onclick="window.location.href='discListar.php'"></p>
+									<input type="button" value="Cancelar" class="w3-btn w3-theme" onclick="window.location.href='estoqueListar.php'"></p>
 								</form>
 			<?php 
 							}
