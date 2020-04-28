@@ -1,0 +1,72 @@
+.confirma{
+	height: 50px;
+	width: 300px;
+	background-color: #1E90FF;
+	font-family:Centaur; 
+	text-align: center;
+	text-transform: capitalize;
+	border-style: solid 2px #CCC;
+	border-radius: 5px;
+	border-width: thin;
+	border-color: #7B68EE;
+	cursor: pointer;
+	font-size: 150%;
+}
+
+.confirma:hover{
+	background-color: #7B68EE;
+	border-color: #1E90FF;
+	cursor: pointer;
+	color: white;
+}
+
+.textoLogin{
+	height: 50px;
+	width: 300px;
+	background-color: #87CEEB;
+	font-family:Centaur; 
+	text-align: center;
+	border-style: solid 2px #CCC;
+	border-radius: 5px;
+	border-width: thin;
+	border-color: #191970;
+	font-size: 150%;
+}
+
+.erro{
+	background-color: #FA8072;
+	border-color: #B22222;
+}
+
+.aviso{
+	width: 300px;
+	height: 28px;
+	font-family: Centaur;
+	font-size: 20px;
+	color: #B22222;
+}
+
+h3{
+	font-family:Centaur; 
+	text-align: center;
+	color: white;
+	font-size: 25px;
+}
+
+table{
+	border: 2px solid;
+	border-color: #191970;
+	border-radius: 10px;
+	padding: 40px;
+	background-color: black;
+	margin-top: 7%;
+}
+
+body{
+	background-color: #00BFFF;
+}
+
+.img{
+	width: 320px;
+	height: 150px;
+}
