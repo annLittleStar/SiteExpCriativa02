@@ -1,15 +1,15 @@
+<!DOCTYPE html>
 <html>
-<title>Login SEA+</title>
+<head>
 	<link rel="icon" type="image/x-icon" href="imagens/Logo.ico">
 	<link rel="stylesheet" type="text/css" href="css/estiloLogin.css">
-	<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
-	<script type="text/javascript" src="js/funcoes.js"></script>
-	<script type="text/javascript" src="js/funcoes1.js"></script>
-	<script type="text/javascript" src="js/funcaoLogin.js"></script>
+	<title></title>
 </head>
-<body> 
-	<div align="center">
-		<table align="center">
+<body>
+	<div>
+		<form action="login.php" method="POST">
+			<div >
+				<table align="center">
 			<tr>
 				<td><img src="imagens/Sea+.png" class="img"></td>
 			</tr>
@@ -17,18 +17,22 @@
 				<td><h3>Realize o Login para acessar o sistema</h3></td>
 			</tr>
 			<tr>
-				<td><input class="textoLogin" id="usuario" type="text" placeholder="Usuario"></td>
+				<td><input class="textoLogin" id="usuario" type="text"name="usuario" placeholder="Usuario"></td>
 			</tr>
 			<tr>
-				<td><input class="textoLogin" id="senha" type="password" placeholder="Senha"></td>
+				<td><input class="textoLogin" id="senha" type="password" name="senha" placeholder="Senha"></td>
 			</tr>
 			<tr>
-				<td><button class="confirma" id="confirma">Confirmar</button></td>
+				<td><button type="submit" class="confirma">Entrar</button></td>
 			</tr>
 			<tr>
 				<td><t class="aviso" id="aviso"></t></td>
 			</tr>
 		</table>
+				
+			</div>
+		</form>
 	</div>
+
 </body>
 </html>
