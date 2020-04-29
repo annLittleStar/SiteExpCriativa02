@@ -31,8 +31,8 @@ create schema if not exists `SEA`;
 
 create table produto(
 	id int not null auto_increment,
-    nome varchar(30) not null,
-    marca varchar(30) not null,
+    `nome` varchar(30) not null,
+    `marca` varchar(30) not null,
     preco double not null,
     tipo enum('pneu', 'produto de limpeza') not null,
     estado varchar(15),
