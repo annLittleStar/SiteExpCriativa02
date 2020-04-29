@@ -3,6 +3,6 @@
 <form method="POST" action="pesquisarAdapt.php">
 
 Pesquisar: <input type="text" name="pesquisar" placeholder="PESQUISAR">
-<input type="submit" value="ENVIAR">
+<input type="submit" name="buscar" value="ENVIAR">
 
 </form>

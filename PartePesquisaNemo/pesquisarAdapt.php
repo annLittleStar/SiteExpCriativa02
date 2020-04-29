@@ -7,7 +7,8 @@ $dbname = "sea";
 $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
 
 $pesquisar = $_POST['pesquisar'];
-$result_prod = "SELECT * FROM produto WHERE nome LIKE '%$pesquisar%' LIMIT 5";
+$result_prod = "SELECT * FROM produto WHERE nome LIKE '%$pesquisar%'
+OR marca LIKE '%$pesquisar%' LIMIT 5";
 $resultado_prod = mysqli_query($conn, $result_prod);
 
 while($rows_prod = mysqli_fetch_array($resultado_prod)) {
