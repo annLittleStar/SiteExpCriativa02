@@ -98,8 +98,45 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                     <input style="width:10%" type="submit" name="buscar" value="Buscar">
                 </form>';
 
+                //Deve ser o nome exato
+
+                $pesquisar = $_POST['pesquisar'];
+                $result_prod = "SELECT * FROM produto WHERE nome LIKE '$pesquisar'
+                OR marca LIKE '$pesquisar'";
+                $resultado_prod = mysqli_query($conn, $result_prod);
+
                 if (mysqli_num_rows($result) > 0) {
 
+                    if($pesquisar!=null){
+                        // Apresenta cada linha pesquisada da tabel
+                        while ($row = mysqli_fetch_array($resultado_prod)) {
+                            $cod = $row["id"];
+                            echo "<tr>";
+                            echo "<td>";
+                            echo $cod;
+                            echo "</td><td>";
+                            echo $row["nome"];
+                            echo "</td><td>";
+                            echo $row["marca"];
+                            echo "</td><td>";
+                            echo $row["quantidade"];
+                            echo "</td><td>";
+                            echo $row["tipo"];
+                            echo "</td><td>";
+
+                ?>
+                        <a href='estoqueSaida.php?id=<?php echo $cod; ?>'><img src='../imagens/saida.png' title='Registrar Saida de Produto' width='32'></a>
+                        </td>
+                        <td>
+                        <a href='estoqueEntrada.php?id=<?php echo $cod; ?>'><img src='../imagens/entrada.png' title='Registrar Entrada de Produto' width='32'></a>
+                        </td>
+                        <td>
+                        <a href='estoqueExcluir.php?id=<?php echo $cod; ?>'><img src='../imagens/Delete.png' title='Excluir Produto' width='32'></a>
+                        </td>
+                        </tr>
+                 <?php
+                        }
+                    } else{
                         // Apresenta cada linha da tabel
                         while ($row = mysqli_fetch_assoc($result)) {
                             $cod = $row["id"];
@@ -130,6 +167,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         </tr>
 				 <?php
                     }
+                }
                 }
                 echo "</table>";
                 echo "</div>";
