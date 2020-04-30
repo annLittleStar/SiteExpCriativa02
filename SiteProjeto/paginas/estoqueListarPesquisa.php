@@ -121,7 +121,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
                 $pesquisar = $_POST['pesquisar'];
                 $result_prod = "SELECT * FROM produto WHERE nome LIKE '$pesquisar'
-                OR marca LIKE '$pesquisar'";
+                OR marca LIKE '$pesquisar' OR tipo LIKE '$pesquisar'";
                 $resultado_prod = mysqli_query($conn, $result_prod);
 
                 if (mysqli_num_rows($result) > 0) {
