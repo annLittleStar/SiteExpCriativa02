@@ -16,11 +16,11 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
     <style>
         .w3-theme {
             color: #ffff !important;
-            background-color: lightblue !important
+            background-color: royalblue !important
         }
 
         .w3-code {
-            border-left: 4px solid lightblue
+            border-left: 4px solid royalblue
         }
 
         .myMenu {
