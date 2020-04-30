@@ -26,6 +26,25 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
         .myMenu {
             margin-bottom: 150px
         }
+        input[type=submit]{
+            background-color: royalblue;
+            border-style: 0.1px solid;
+            border-color: royalblue;
+            color: white;
+            padding-top: 2.7px;
+            padding-bottom: 2.7px;
+        }
+        input[type=submit]:hover{
+            background-color: lightblue;
+            border-color: lightblue;
+            cursor: pointer;
+        }
+        input[type=text]{
+            border-style: 0.1px solid;
+            border-color: royalblue;
+            padding: 3px;
+            padding-left: 2%;
+        }     
     </style>
 </head>
 <body onload="w3_show_nav('menuEstoque')">
