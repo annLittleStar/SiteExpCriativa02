@@ -79,7 +79,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 				// Faz Select na Base de Dados
 				//ajustar para excluir produtos do BD
 				//deve-se relacionar os atributos FROM table WHERE pk
-				$sql = "SELECT CodDisciplina, NomeDisc, Ementa FROM disciplina WHERE codDisciplina = $id";
+				$sql = "SELECT id, nome, tipo FROM produto WHERE id = $id";
 				echo "<div class='w3-responsive w3-card-4'>"; //Inicio form
 				 if ($result = mysqli_query($conn, $sql)) {
 						if (mysqli_num_rows($result) > 0) {
@@ -90,14 +90,14 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 							while ($row = mysqli_fetch_assoc($result)) {
 				?>
 								<div class="w3-container w3-theme">
-									<h2>Exclusão do Disciplina Cód. = [<?php echo $row['CodDisciplina']; ?>]</h2>
+									<h2>Exclusão de Produto Cód. = [<?php echo $row['id']; ?>]</h2>
 								</div>
 								<form class="w3-container" action="estoqueExcluirBD.php" method="post" onsubmit="return check(this.form)">
-									<input type="hidden" id="Id" name="Id" value="<?php echo $row['CodDisciplina']; ?>">
+									<input type="hidden" id="Id" name="Id" value="<?php echo $row['id']; ?>">
 									<p>
-									<label class="w3-text-deep-purple"><b>Nome: </b> <?php echo $row['NomeDisc']; ?> </label></p>
+									<label class="w3-text-deep-purple"><b>Nome: </b> <?php echo $row['nome']; ?> </label></p>
 									<p>
-									<label class="w3-text-deep-purple"><b>Ementa: </b><?php echo $row['Ementa']; ?></label></p>
+									<label class="w3-text-deep-purple"><b>Tipo: </b><?php echo $row['tipo']; ?></label></p>
 									<p>
 									<input type="submit" value="Confirma exclusão?" class="w3-btn w3-red" >
 									<input type="button" value="Cancelar" class="w3-btn w3-theme" onclick="window.location.href='estoqueListar.php'"></p>

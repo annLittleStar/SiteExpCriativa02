@@ -49,7 +49,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		$servername = "localhost:3306";
 		$username = "root";
 		$password = "";
-		$database = "IE_Exemplo";
+		$database = "sea";
 		
 		$id      = $_POST['Id'];
 		
@@ -71,7 +71,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			//ajustar para exclusão de produtos
 			//aqui deve-se relacionar a teble de produtos do BD 
 			//e a pk do item a ser excluido
-		$sql = "DELETE FROM Disciplina WHERE CodDisciplina = $id";
+		$sql = "DELETE FROM Produto WHERE id = $id";
 
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = mysqli_query($conn, $sql)) {
