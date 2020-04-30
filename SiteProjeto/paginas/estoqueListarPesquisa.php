@@ -113,7 +113,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 echo "	</tr>";
 
                 echo '<form method="POST" action="estoqueListarPesquisa.php">
-                <input type="text" name="pesquisar" style="width:90%" placeholder="Digite o Nome, Modelo do Produto ou Tipo que deseja encontrar">
+                <input type="text" name="pesquisar" style="width:90%" placeholder="Digite o Nome, Modelo ou Tipo do Produto que deseja encontrar">
                     <input style="width:10%" type="submit" name="buscar" value="Buscar">
                 </form>';
 
