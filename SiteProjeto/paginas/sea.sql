@@ -18,7 +18,7 @@ SET @@global.time_zone = '+3:00';
 SET @@global.time_zone = '+3:00';
 
 create schema if not exists `SEA`;
-  USE `SEA`;
+use `SEA`;
 --
 -- Database: `SEA`
 --
@@ -29,10 +29,10 @@ create schema if not exists `SEA`;
 -- Tabela de produtos
 -- --------------------------------------------------------
 
-create table produto(
+create table if not exists produto(
 	id int not null auto_increment,
-    `nome` varchar(30) not null,
-    `marca` varchar(30) not null,
+    nome varchar(30) not null,
+    marca varchar(30) not null,
     preco double not null,
     tipo enum('pneu', 'produto de limpeza') not null,
     estado varchar(15),
@@ -43,3 +43,12 @@ create table produto(
 -- --------------------------------------------------------
 -- Tabela de funcionarios
 -- --------------------------------------------------------
+
+create table if not exists funcionario(
+	id int not null auto_increment,
+    nome varchar(30) not null,
+    login varchar(30) not null,
+    senha varchar(30) not null,  
+    tipo enum('dono', 'funcionario') not null, 
+    primary key(id)
+) engine=innoDB default charset=utf8;
