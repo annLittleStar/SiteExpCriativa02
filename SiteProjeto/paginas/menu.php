@@ -12,7 +12,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		<div class="w3-row w3-white w3-padding">
 
 			<div class="w3-half" style="margin:4px 0 6px 0">
-				<a href="."><img src='..\imagens/logotest.png' alt='SEA+' width="87px" height="32px"></a>
+				<a href="."><img src='..\imagens/logotest.png' alt='SEA+' width="89px" height="32px"></a>
 			</div>
 
 			<div class="w3-half w3-margin-top w3-wide w3-hide-medium w3-hide-small">

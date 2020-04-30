@@ -115,15 +115,17 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 									<label class="w3-text-deep-purple"><b>Tipo</b></label>
 									<input class="w3-input w3-border w3-light-grey" name="Tipo" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$"
 										   title="Nome da disciplina entre 4 e 100 letras." value="<?php echo $row['tipo']; ?>" required></p>
-<!--									<textarea class="w3-input w3-border w3-light-grey " name="tipo"  rows="5" title="Texto Descritivo" required><?php echo $row['tipo']; ?></textarea>
--->									
+
+									<!--<textarea class="w3-input w3-border w3-light-grey " name="tipo"  rows="5" title="Texto Descritivo" required><?php echo $row['tipo']; ?></textarea>
+									-->	
+
 									<p>
 									<label class="w3-text-deep-purple"><b>Quantidade</b></label>
 									<input class="w3-input w3-border w3-light-grey" name="Quantidade" type="text" pattern="[0-9]{1,3}"
 										   title="Quantidade de itens." value="<?php echo $row['quantidade']; ?>" required></p>
 									<p>
-									<input type="submit" value="Alterar" class="w3-btn w3-red" >
-									<input type="button" value="Cancelar" class="w3-btn w3-theme" onclick="window.location.href='estoqueListar.php'"></p>
+									<input type="submit" value="Remover" class="w3-btn w3-theme" >
+									<input type="button" value="Cancelar" class="w3-btn w3-red" onclick="window.location.href='estoqueListar.php'"></p>
 								</form>
 			<?php 
 							}
@@ -145,7 +147,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 	<footer class="w3-panel w3-padding-32 w3-card-4 w3-light-grey w3-center w3-opacity">
     <p>
         <nav>
-            <a class="w3-button w3-theme w3-hover-white"
+            <a class="w3-button w3-theme w3-hover-blue"
                onclick="document.getElementById('id01').style.display='block'">Sobre</a>
         </nav>
     </p>

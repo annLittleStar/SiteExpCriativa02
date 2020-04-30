@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <!-------------------------------------------------------------------------------
 PROJETO DE EXPERIÊNCIA CRIATIVA 02:
 SEA+
@@ -42,6 +41,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
         <p class="w3-large">
             <div class="w3-code cssHigh notranslate">
+
+
                 <!-- Acesso em:-->
                 <?php
 
@@ -53,26 +54,84 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 echo "</p> "
                 ?>
 
-                <div class="w3-responsive w3-card-4">
-                    <div class="w3-container w3-theme">
-                        <!-- O exemplo eh da criação de uma disciplina, 
-                            mas para o projeto precisa ser o Formulário de Entrada de Produtos-->
-                        <h2>Informe os dados da nova Disciplina</h2>
-                    </div>
-                    <form class="w3-container" action="DiscContratar_exe.php" method="post" onsubmit="return check(this.form)">
-						<input type="hidden" id="acaoForm" name="acaoForm" value="Contratar">
-						<p>
-						<label class="w3-text-deep-purple"><b>Nome</b></label>
-						<input class="w3-input w3-border w3-light-grey" name="Nome" type="text" pattern="[a-zA-Z\u00C0-\u00FF ]{10,100}$"
-							   title="Nome da disciplina entre 10 e 100 letras." required></p>
-						<p>
-						<label class="w3-text-deep-purple"><b>Ementa</b></label>
-						<textarea class="w3-input w3-border w3-light-grey " name="Ementa"  rows="5" title="Texto Descritivo" required></textarea>
-						<p>
-						<input type="submit" value="Registrar" class="w3-btn w3-theme" >
-						<input type="button" value="Cancelar" class="w3-btn w3-theme" onclick="window.location.href='estoqueListar.php'"></p>
-					</form>
-				</div>
+
+                <!-- Acesso ao BD-->
+                <?php
+                
+                $servername = "localhost:3306";
+                $username = "root";
+                $password = "";
+                $database = "SEA";
+                $id=$_GET['id'];
+                
+                // Cria conexão
+                $conn = mysqli_connect($servername, $username, $password, $database);
+
+                // Verifica conexão
+                if (!$conn) {
+                    die("Connection failed: " . mysqli_connect_error());
+                }
+
+                // Configura para trabalhar com caracteres acentuados do português
+                mysqli_query($conn,"SET NAMES 'utf8'");
+                mysqli_query($conn,"SET NAMES 'utf8'");
+                mysqli_query($conn,'SET character_set_connection=utf8');
+                mysqli_query($conn,'SET character_set_client=utf8');
+                mysqli_query($conn,'SET character_set_results=utf8');
+
+
+
+                //Ajustar essa parte ao BD do projeto:
+
+                // Faz Select na Base de Dados
+                $sql = "SELECT id, nome, tipo, quantidade FROM produto WHERE id = $id";
+                echo "<div class='w3-responsive w3-card-4'>"; //Inicio form
+                 if ($result = mysqli_query($conn, $sql)) {
+                        if (mysqli_num_rows($result) > 0) {
+
+
+                        // Apresenta cada linha da tabela:
+                            while ($row = mysqli_fetch_assoc($result)) {
+                ?>              
+                                <!-- O exemplo eh da alteração dos dados de uma disciplina, 
+                                mas para o projeto precisa ser o Formulário de Saída de Produtos-->
+                                <div class="w3-container w3-theme">
+                                    <h2>Insira a quantidade de produto a entrar no estoque. = [<?php echo $row['id']; ?>]</h2>
+                                </div>
+                                <form class="w3-container" action="estoqueEntradaBD.php" method="post" onsubmit="return check(this.form)">
+                                    <input type="hidden" id="Id" name="Id" value="<?php echo $row['id']; ?>">
+                                    <p>
+                                        <!--Arrumar isso para evitar que sejam alteradas as informações-->
+                                    <label class="w3-text-deep-purple"><b>Nome</b></label>
+                                    <input class="w3-input w3-border w3-light-grey" name="Nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$"
+                                           title="Nome do produto entre 4 e 100 letras." value="<?php echo $row['nome']; ?>" required></p>
+                                    <p>
+                                    <label class="w3-text-deep-purple"><b>Tipo</b></label>
+                                    <input class="w3-input w3-border w3-light-grey" name="Tipo" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$"
+                                           title="Tipo do produto entre 4 e 100 letras." value="<?php echo $row['tipo']; ?>" required></p>
+
+                                    <!--<textarea class="w3-input w3-border w3-light-grey " name="tipo"  rows="5" title="Texto Descritivo" required><?php echo $row['tipo']; ?></textarea>
+                                    --> 
+                                                                    
+                                    <p>
+                                    <label class="w3-text-deep-purple"><b>Quantidade</b></label>
+                                    <input class="w3-input w3-border w3-light-grey" name="Quantidade" type="text" pattern="[0-9]{1,3}"
+                                           title="Quantidade de itens." value="<?php echo $row['quantidade']; ?>" required></p>
+                                    <p>
+                                    <input type="submit" value="Adicionar" class="w3-btn w3-theme" >
+                                    <input type="button" value="Cancelar" class="w3-btn w3-red" onclick="window.location.href='estoqueListar.php'"></p>
+                                </form>
+            <?php 
+            }
+                        }
+                }
+                else {
+                    echo "Erro executando UPDATE: " . mysqli_error($conn);
+                }
+                echo "</div>"; //Fim form
+                mysqli_close($conn);  //Encerra conexao com o BD
+
+            ?>
 
 			</div>
 		</p>
@@ -82,7 +141,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 	<footer class="w3-panel w3-padding-32 w3-card-4 w3-light-grey w3-center w3-opacity">
     <p>
         <nav>
-            <a class="w3-button w3-theme w3-hover-white"
+            <a class="w3-button w3-theme w3-hover-blue"
                onclick="document.getElementById('id01').style.display='block'">Sobre</a>
         </nav>
     </p>

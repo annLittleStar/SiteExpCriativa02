@@ -59,7 +59,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		$preco    = $_POST['preco'];
 		$tipo    = $_POST['tipo'];
 		$estado    = $_POST['estado'];
-		$quantidade    = $_POST['quantidade'];
 		
 		// Cria conexão
 		$conn = mysqli_connect($servername, $username, $password, $database);
@@ -79,7 +78,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			mysqli_query($conn,'SET character_set_results=utf8');
 
 		// Faz Select na Base de Dados
-		$sql = "INSERT INTO produto VALUES ('$id', '$nome','$marca', '$preco', '$tipo', '$estado', '$quantidade')";
+		$sql = "INSERT INTO produto VALUES ('$id', '$nome','$marca', '$preco', '$tipo', '$estado')";
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = mysqli_query($conn, $sql)) {
 			echo "Produto Cadastrado!";
@@ -96,7 +95,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
 <footer class="w3-panel w3-padding-32 w3-card-4 w3-light-grey w3-center w3-opacity">
   <p><nav>
-      <a class="w3-button w3-theme w3-hover-white" onclick="document.getElementById('id01').style.display='block'" >Sobre</a>
+      <a class="w3-button w3-theme w3-hover-blue" onclick="document.getElementById('id01').style.display='block'" >Sobre</a>
   </nav></p>
 </footer>
 

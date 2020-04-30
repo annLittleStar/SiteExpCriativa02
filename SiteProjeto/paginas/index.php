@@ -50,7 +50,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 				<img src="../imagens/grafico.png" class="w3-square"  width="12%" height="19%">
 
 
-				<footer class="w3-panel w3-padding-32 w3-card-4 w3-light-blue w3-center w3-opacity">
+				<footer class="w3-panel w3-padding-32 w3-card-4 w3-light-grey w3-center w3-opacity">
 					<p>
 						<nav>
 							<a class="w3-button w3-theme w3-hover-blue"
