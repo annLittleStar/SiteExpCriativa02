@@ -11,7 +11,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 	<head>
 
 	  <title>SEA+</title>
-	  <link rel="icon" type="image/png" href="imagens/Logo.ico"/>
+	  <link rel="icon" type="image/png" href="../imagens/Logo.ico"/>
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	  <style>
@@ -52,9 +52,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		$password = "";
 		$database = "sea";
 		
-		//O exemplo eh da alteração dos dados de uma disciplina, 
-		//mas para o projeto precisa ser o Formulário de Saída de Produtos.
-		//aqui deve-se colocar os campos q foram criados em estoqueSaida.php
 		$id      = $_POST['Id'];
 		$nome    = $_POST['Nome'];
 		$ementa  = $_POST['Tipo'];
@@ -75,7 +72,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		mysqli_query($conn,'SET character_set_results=utf8');
 
 		// Faz Select na Base de Dados
-		//aqui deve-se colocar os campos que foram declarados acima
 		$sql = "UPDATE produto SET quantidade = '$qtd' WHERE id = $id";
 
 		echo "<div class='w3-responsive w3-card-4'>";
