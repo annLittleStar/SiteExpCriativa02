@@ -110,11 +110,11 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 										<!--Arrumar isso para evitar que sejam alteradas as informações-->
 									<label class="w3-text-deep-purple"><b>Nome</b></label>
 									<input class="w3-input w3-border w3-light-grey" name="Nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$"
-										   title="Nome da disciplina entre 4 e 100 letras." value="<?php echo $row['nome']; ?>" required></p>
+										   title="Nome da disciplina entre 4 e 100 letras." value="<?php echo $row['nome']; ?>" required readonly></p>
 									<p>
 									<label class="w3-text-deep-purple"><b>Tipo</b></label>
 									<input class="w3-input w3-border w3-light-grey" name="Tipo" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$"
-										   title="Nome da disciplina entre 4 e 100 letras." value="<?php echo $row['tipo']; ?>" required></p>
+										   title="Nome da disciplina entre 4 e 100 letras." value="<?php echo $row['tipo']; ?>" required readonly></p>
 
 									<!--<textarea class="w3-input w3-border w3-light-grey " name="tipo"  rows="5" title="Texto Descritivo" required><?php echo $row['tipo']; ?></textarea>
 									-->	
@@ -122,7 +122,13 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 									<p>
 									<label class="w3-text-deep-purple"><b>Quantidade</b></label>
 									<input class="w3-input w3-border w3-light-grey" name="Quantidade" type="text" pattern="[0-9]{1,3}"
-										   title="Quantidade de itens." value="<?php echo $row['quantidade']; ?>" required></p>
+										   title="Quantidade de itens." value="<?php echo $row['quantidade']; ?>" required readonly></p>
+
+									<p>
+									<label class="w3-text-deep-purple"><b>Quantidade a ser retirada</b></label>
+									<input class="w3-input w3-border w3-light-grey" name="Remover" type="text" pattern="[0-9]{1,3}"
+										   title="Quantidade a ser removida." value="" required></p>
+
 									<p>
 									<input type="submit" value="Remover" class="w3-btn w3-theme" >
 									<input type="button" value="Cancelar" class="w3-btn w3-red" onclick="window.location.href='estoqueListar.php'"></p>
