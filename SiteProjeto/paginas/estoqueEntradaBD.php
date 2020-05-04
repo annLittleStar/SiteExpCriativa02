@@ -56,6 +56,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		$nome    = $_POST['Nome'];
 		$ementa  = $_POST['Tipo'];
 		$qtd	 = $_POST['Quantidade'];
+		$entrar	 = $_POST['Entrar'];
 		
 		// Cria conexão
 		$conn = mysqli_connect($servername, $username, $password, $database);
@@ -72,11 +73,17 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		mysqli_query($conn,'SET character_set_results=utf8');
 
 		// Faz Select na Base de Dados
-		
+
+		if($entrar > 0){
 		$sql = "UPDATE produto SET quantidade = quantidade + '$qtd' WHERE id = $id";
 		echo "<div class='w3-responsive w3-card-4'>";
-		if ($result = mysqli_query($conn, $sql)) {
-				echo "Produto adicionado ao estoque!";
+		}
+
+		if ($result = mysqli_query($conn, $sql) && $entrar <= 0) {
+			echo "Insira uma quantidade válida a entrar no estoque!";
+		}
+		else if ($result = mysqli_query($conn, $sql)) {
+			echo "Produto adicionado ao estoque!";
 		} else {
 			echo "Erro executando UPDATE: " . mysqli_error($conn);
 		}
