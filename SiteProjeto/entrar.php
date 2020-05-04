@@ -1,15 +1,11 @@
-<!-------------------------------------------------------------------------------
-PROJETO DE EXPERIÊNCIA CRIATIVA 02:
-SEA+
-PUCPR
-ENGENHARIA DE SOFTWARE
-
-Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
----------------------------------------------------------------------------------->
+<?php
+session_start()
+?>
 <html>
 <head>
 	<link rel="icon" type="image/x-icon" href="imagens/Logo.ico">
 	<link rel="stylesheet" type="text/css" href="css/estiloLogin.css">
+
 	<title></title>
 </head>
 <body>
@@ -23,6 +19,16 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			<tr>
 				<td><h3>Realize o Login para acessar o sistema</h3></td>
 			</tr>
+			<?php
+			if(isset($_SESSION['naoaut'])):
+				?>
+			<tr>
+				<td><h3 class="erro">Erro: Login e/ou Senha incorretos.</h3></td>
+			</tr>
+			<?php
+			unset($_SESSION['naoaut']);
+			endif;
+			?>
 			<tr>
 				<td><input class="textoLogin" id="usuario" type="text"name="usuario" placeholder="Usuario"></td>
 			</tr>
