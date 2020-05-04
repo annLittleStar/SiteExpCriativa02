@@ -103,13 +103,15 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 echo "<table class='w3-table-all'>";
                 echo "	<tr>";
                 echo "	  <th width='5%'>Id</th>";
-                echo "	  <th width='20%'>Nome</th>";
-				echo "	  <th width='20%'>Marca</th>";
+                echo "	  <th width='15%'>Nome</th>";
+				echo "	  <th width='15%'>Marca</th>";
                 echo "    <th width='10%'>Quantidade</th>";
                 echo "    <th width='10%'>Tipo de produto</th>";
-				echo "	  <th> Preco </th>";
-				echo "	  <th> </th>";
-                echo "    <th> </th>";
+				echo "	  <th width='10%'>Preco </th>";
+				echo "	  <th width='5%'> </th>";
+                echo "    <th width='5%'> </th>";
+                echo "    <th width='5%'> </th>";
+                echo "    <th width='5%'> </th>";
                 echo "	</tr>";
 
                 echo '<form method="POST" action="estoqueListarPesquisa.php">
@@ -146,7 +148,10 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         <a href='estoqueEntrada.php?id=<?php echo $cod; ?>'><img src='../imagens/entrada.png' title='Registrar Entrada de Produto' width='32'></a>
                         </td>
                         <td>
-                        <a href='estoqueExcluir.php?id=<?php echo $cod; ?>'><img src='../imagens/Delete.png' title='Excluir Produto' width='32'></a>
+                        <a href='estoqueEditar.php?id=<?php echo $cod; ?>'><img src='../imagens/editar.png' title='Editar Produto' width='25'></a>
+                        </td>
+                        <td>
+                        <a href='estoqueExcluir.php?id=<?php echo $cod; ?>'><img src='../imagens/deletar.png' title='Excluir Produto' width='30'></a>
                         </td>
                         </tr>
 				 <?php

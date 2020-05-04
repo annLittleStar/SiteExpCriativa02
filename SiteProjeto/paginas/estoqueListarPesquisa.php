@@ -97,20 +97,23 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
             // Faz Select na Base de Dados
             //Adaptar para o projeto
-            $sql = "SELECT id, nome, marca, quantidade, tipo FROM produto";
+            $sql = "SELECT id, nome, marca, quantidade, tipo, preco  FROM produto";
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
                 echo "<table class='w3-table-all'>";
-                echo "	<tr>";
-                echo "	  <th width='5%'>Id</th>";
-                echo "	  <th width='20%'>Nome</th>";
-				echo "	  <th width='20%'>Marca</th>";
+                echo "  <tr>";
+                echo "    <th width='5%'>Id</th>";
+                echo "    <th width='15%'>Nome</th>";
+                echo "    <th width='15%'>Marca</th>";
                 echo "    <th width='10%'>Quantidade</th>";
-                echo "    <th width='20%'>Tipo de produto</th>";
-				echo "	  <th> </th>";
-				echo "	  <th> </th>";
-                echo "    <th> </th>";
-                echo "	</tr>";
+                echo "    <th width='10%'>Tipo de produto</th>";
+                echo "    <th width='10%'>Preco </th>";
+                echo "    <th width='5%'> </th>";
+                echo "    <th width='5%'> </th>";
+                echo "    <th width='5%'> </th>";
+                echo "    <th width='5%'> </th>";
+                echo "  </tr>";
+
 
                 echo '<form method="POST" action="estoqueListarPesquisa.php">
                 <input type="text" name="pesquisar" style="width:90%" placeholder="Digite o Nome, Modelo ou Tipo do Produto que deseja encontrar">
@@ -142,6 +145,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo "</td><td>";
                             echo $row["tipo"];
                             echo "</td><td>";
+                            echo $row["preco"];
+                            echo "</td><td>";
 
                 ?>
                         <a href='estoqueSaida.php?id=<?php echo $cod; ?>'><img src='../imagens/saida.png' title='Registrar Saida de Produto' width='32'></a>
@@ -150,7 +155,10 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         <a href='estoqueEntrada.php?id=<?php echo $cod; ?>'><img src='../imagens/entrada.png' title='Registrar Entrada de Produto' width='32'></a>
                         </td>
                         <td>
-                        <a href='estoqueExcluir.php?id=<?php echo $cod; ?>'><img src='../imagens/Delete.png' title='Excluir Produto' width='32'></a>
+                        <a href='estoqueEditar.php?id=<?php echo $cod; ?>'><img src='../imagens/editar.png' title='Editar Produto' width='32'></a>
+                        </td>
+                        <td>
+                        <a href='estoqueExcluir.php?id=<?php echo $cod; ?>'><img src='../imagens/deletar.png' title='Excluir Produto' width='32'></a>
                         </td>
                         </tr>
                  <?php
@@ -171,6 +179,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo "</td><td>";
                             echo $row["tipo"];
                             echo "</td><td>";
+                            echo $row["preco"];
+                            echo "</td><td>";
                         
 
 						//Adicionar, retirar ou excluir registro do produto
@@ -181,7 +191,10 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         <a href='estoqueEntrada.php?id=<?php echo $cod; ?>'><img src='../imagens/entrada.png' title='Registrar Entrada de Produto' width='32'></a>
                         </td>
                         <td>
-                        <a href='estoqueExcluir.php?id=<?php echo $cod; ?>'><img src='../imagens/Delete.png' title='Excluir Produto' width='32'></a>
+                        <a href='estoqueEditar.php?id=<?php echo $cod; ?>'><img src='../imagens/editar.png' title='Editar Produto' width='25'></a>
+                        </td>
+                        <td>
+                        <a href='estoqueExcluir.php?id=<?php echo $cod; ?>'><img src='../imagens/deletar.png' title='Excluir Produto' width='30'></a>
                         </td>
                         </tr>
 				 <?php

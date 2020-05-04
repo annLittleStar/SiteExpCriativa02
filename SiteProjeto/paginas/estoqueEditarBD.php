@@ -54,8 +54,9 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		
 		$id      = $_POST['Id'];
 		$nome    = $_POST['Nome'];
-		$tipo  = $_POST['Tipo'];
-        $valor	 = $_POST['Valor'];
+    $marca   = $_POST['Marca'];
+		$tipo    = $_POST['Tipo'];
+    $valor	 = $_POST['Venda'];
 		
 		// Cria conexão
 		$conn = mysqli_connect($servername, $username, $password, $database);
@@ -73,47 +74,85 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
 		// Faz Select na Base de Dados
 
-		
-        if($valor > 0 && $nome != null && $tipo != null){
-            $sql = "UPDATE produto SET nome = '$nome', tipo = '$tipo', valor='$valor' WHERE id = $id";
-        } else if($valor < 0 && $nome != null && $tipo != null){
-            $sql = "UPDATE produto SET nome = '$nome', tipo = '$tipo' WHERE id = $id";
-        } else if($valor > 0 && $nome == null && $tipo != null){
-            $sql = "UPDATE produto SET tipo = '$tipo', valor='$valor' WHERE id = $id";
-        } else if($valor < 0 && $nome == null && $tipo != null){
-            $sql = "UPDATE produto SET tipo = '$tipo' WHERE id = $id";
-        } elseif($valor > 0 && $nome != null && $tipo == null){
-            $sql = "UPDATE produto SET nome = '$nome' valor='$valor' WHERE id = $id";
-        } else if($valor < 0 && $nome != null && $tipo == null){
-            $sql = "UPDATE produto SET nome = '$nome' WHERE id = $id";
-        } else{
-            $sql = "UPDATE produto SET id = '$id' WHERE id = $id";
-        }
+    //parece certo
+    if($valor > 0 && $nome != null && $tipo != null && $marca != null){
+      $sql = "UPDATE produto SET preco='$valor', nome='$nome', tipo='$tipo', marca='$marca' WHERE id=$id";
+    } else if($valor <= 0 && $nome != null && $tipo != null && $marca != null){
+      $sql = "UPDATE produto SET nome='$nome', tipo='$tipo', marca='$marca' WHERE id=$id";
+    } else if($valor > 0 && $nome == null && $tipo != null && $marca != null){
+      $sql = "UPDATE produto SET preco='$valor', tipo='$tipo', marca='$marca' WHERE id=$id";
+    } else if($valor <= 0 && $nome == null && $tipo != null && $marca != null){
+      $sql = "UPDATE produto SET tipo='$tipo', marca='$marca' WHERE id=$id";
+    } else if($valor > 0 && $nome != null && $tipo == null && $marca != null){
+      $sql = "UPDATE produto SET preco='$valor', nome='$nome', marca='$marca' WHERE id=$id";
+    } else if($valor <= 0 && $nome != null && $tipo == null && $marca != null){
+      $sql = "UPDATE produto SET nome='$nome', marca='$marca' WHERE id=$id";
+    } else if($valor > 0 && $nome == null && $tipo == null && $marca != null){
+      $sql = "UPDATE produto SET preco='$valor', marca='$marca' WHERE id=$id";
+    } else if($valor <= 0 && $nome == null && $tipo == null && $marca != null){
+      $sql = "UPDATE produto SET marca='$marca' WHERE id=$id";
+    } else if($valor > 0 && $nome != null && $tipo != null && $marca == null){
+      $sql = "UPDATE produto SET preco='$valor', nome='$nome', tipo='$tipo' WHERE id=$id";
+    } else if($valor <= 0 && $nome != null && $tipo != null && $marca == null){
+      $sql = "UPDATE produto SET nome='$nome', tipo='$tipo' WHERE id=$id";
+    } else if($valor > 0 && $nome == null && $tipo != null && $marca == null){
+      $sql = "UPDATE produto SET preco='$valor', tipo='$tipo' WHERE id=$id";
+    } else if($valor <= 0 && $nome == null && $tipo != null && $marca == null){
+      $sql = "UPDATE produto SET tipo='$tipo' WHERE id=$id";
+    } else if($valor > 0 && $nome != null && $tipo == null && $marca == null){
+      $sql = "UPDATE produto SET preco='$valor', nome='$nome' WHERE id=$id";
+    } else if($valor <= 0 && $nome != null && $tipo == null && $marca == null){
+      $sql = "UPDATE produto SET nome='$nome' WHERE id=$id";
+    } else if($valor > 0 && $nome == null && $tipo == null && $marca == null){
+      $sql = "UPDATE produto SET preco='$valor' WHERE id=$id";
+    }else{
+      $sql = "UPDATE produto SET id='$id' WHERE id=$id";
+    }
 
         echo "<div class='w3-responsive w3-card-4'>";
 
 
-        if ($result = mysqli_query($conn, $sql) && $valor > 0 && $nome != null && tipo != null) {
-            echo "Informações do produto atualizados com sucesso!";
-        }else if ($result = mysqli_query($conn, $sql) && $valor < 0 && $nome == null && tipo == null) {
+        if ($result = mysqli_query($conn, $sql) && $valor > 0 || $nome != null || $tipo != null || $marca != null) {
+            echo "Informações do produto atualizados!";
+        }else if ($result = mysqli_query($conn, $sql) && $valor < 0 && $nome == null && $tipo == null && $marca == null) {
                 echo "Não foi possível atualizar as informações dos produtos";
                 echo "<br>";
-                echo "Insira dados válidos";
-        }else if ($result = mysqli_query($conn, $sql) && $valor < 0) {
-                echo "Informações do produto atualizados com sucesso!";
-                echo "<br>";
-                echo "Porém, insira um valor de venda válido";
-        } else if ($result = mysqli_query($conn, $sql) && $nome == null) {
-                echo "Informações do produto atualizados com sucesso!";
-                echo "<br>";
-                echo "Porém, insira um nome válido";
-        } else if ($result = mysqli_query($conn, $sql) && $tipo == null) {
-                echo "Informações do produto atualizados com sucesso!";
-                echo "<br>";
-                echo "Porém, insira um tipo válido";
-        } else {
+        }else {
             echo "Erro executando UPDATE: " . mysqli_error($conn);
         }
+
+        if ($result = mysqli_query($conn, $sql) && $nome == null) {
+                echo "<br>";
+                echo "Insira um nome válido";
+        } else{
+                echo "<br>";
+                echo "Nome atualizado com sucesso!";          
+        }
+
+        if ($result = mysqli_query($conn, $sql) && $marca == null) {
+                echo "<br>";
+                echo "Insira um tipo válido";
+        }  else{
+                echo "<br>";
+                echo "Marca atualizada com sucesso!";          
+        }
+
+        if ($result = mysqli_query($conn, $sql) && $tipo == null) {
+                echo "<br>";
+                echo "Insira um tipo válido";
+        }  else{
+                echo "<br>";
+                echo "Tipo atualizado com sucesso!";          
+        }
+
+        if ($result = mysqli_query($conn, $sql) && $valor < 0) {
+                echo "<br>";
+                echo "Insira um valor de venda válido";
+        }  else{
+                echo "<br>";
+                echo "Preço atualizado com sucesso!";          
+        }
+
         echo "</div>";
 		mysqli_close($conn);  //Encerra conexao com o BD
 
