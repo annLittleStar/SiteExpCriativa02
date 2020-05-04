@@ -3,7 +3,7 @@ session_start();
 include('conexao.php'); 
 
 if(empty($_POST['usuario']) || empty($_POST['senha'])){
-	header('Location: login.html');
+	header('Location: entrar.php');
 }
 
 $usuario = mysqli_real_escape_string($conexao, $_POST['usuario']);
@@ -20,7 +20,7 @@ if ($row == 1) {
 	header('Location: paginas/index.php');
 	exit;
 }else{
-	header('Location: login.html');
+	header('Location: entrar.php');
 }
 
  ?>
