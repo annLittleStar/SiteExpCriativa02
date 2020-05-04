@@ -93,8 +93,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         // Apresenta cada linha da tabela:
                             while ($row = mysqli_fetch_assoc($result)) {
                 ?>              
-                                <!-- O exemplo eh da alteração dos dados de uma disciplina, 
-                                mas para o projeto precisa ser o Formulário de Saída de Produtos-->
                                 <div class="w3-container w3-theme">
                                     <h2>Insira a quantidade de produto a entrar no estoque. = [<?php echo $row['id']; ?>]</h2>
                                 </div>
@@ -109,9 +107,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                                     <label class="w3-text-deep-purple"><b>Tipo</b></label>
                                     <input class="w3-input w3-border w3-light-grey" name="Tipo" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$"
                                            title="Tipo do produto entre 4 e 100 letras." value="<?php echo $row['tipo']; ?>" required></p>
-
-                                    <!--<textarea class="w3-input w3-border w3-light-grey " name="tipo"  rows="5" title="Texto Descritivo" required><?php echo $row['tipo']; ?></textarea>
-                                    --> 
                                                                     
                                     <p>
                                     <label class="w3-text-deep-purple"><b>Quantidade</b></label>

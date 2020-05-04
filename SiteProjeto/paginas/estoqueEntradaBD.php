@@ -52,9 +52,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		$password = "";
 		$database = "sea";
 		
-		//O exemplo eh da criação de uma disciplina, 
-		//mas para o projeto precisa ser o Formulário de Entrada de Produtos.
-		//aqui deve-se colocar os campos q foram criados em estoqueEntrada.php
 		$id      = $_POST['Id'];
 		$nome    = $_POST['Nome'];
 		$ementa  = $_POST['Tipo'];
@@ -75,7 +72,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		mysqli_query($conn,'SET character_set_results=utf8');
 
 		// Faz Select na Base de Dados
-		//aqui deve-se colocar os campos que foram declarados acima
 		$sql = "UPDATE produto SET quantidade = '$qtd' WHERE id = $id";
 
 		echo "<div class='w3-responsive w3-card-4'>";
