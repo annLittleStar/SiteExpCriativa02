@@ -16,7 +16,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			</div>
 
 			<div class="w3-half w3-margin-top w3-wide w3-hide-medium w3-hide-small">
-				<div class="w3-right">SEA+</div>
+				<div class="w3-right"><a href="../entrar.php"><img src="../imagens/sair.png" width="25" height="25" href="../entrar.php"></div>
 			</div>
 		</div>
 		<div class="w3-bar w3-theme w3-large" style="z-index:4;">
