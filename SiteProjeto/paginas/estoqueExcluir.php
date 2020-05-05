@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <!-------------------------------------------------------------------------------
 PROJETO DE EXPERIÊNCIA CRIATIVA 02:
 SEA+
@@ -77,8 +76,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
 
 				// Faz Select na Base de Dados
-				//ajustar para excluir produtos do BD
-				//deve-se relacionar os atributos FROM table WHERE pk
 				$sql = "SELECT id, nome, tipo FROM produto WHERE id = $id";
 				echo "<div class='w3-responsive w3-card-4'>"; //Inicio form
 				 if ($result = mysqli_query($conn, $sql)) {
@@ -86,7 +83,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
 
 						// Apresenta cada linha da tabela
-							//ajustar para excluir produto do BD
 							while ($row = mysqli_fetch_assoc($result)) {
 				?>
 								<div class="w3-container w3-theme">
@@ -99,7 +95,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 									<p>
 									<label class="w3-text-deep-purple"><b>Tipo: </b><?php echo $row['tipo']; ?></label></p>
 									<p>
-									<input type="submit" value="Confirma exclusão?" class="w3-btn w3-red" >
+									<input type="submit" value="Excluir" class="w3-btn w3-red" >
 									<input type="button" value="Cancelar" class="w3-btn w3-theme" onclick="window.location.href='estoqueListar.php'"></p>
 								</form>
 			<?php 

@@ -96,7 +96,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			mysqli_query($conn,'SET character_set_results=utf8');
 
             // Faz Select na Base de Dados
-            //Adaptar para o projeto
             $sql = "SELECT id, nome, marca, quantidade, tipo, preco  FROM produto";
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
@@ -130,6 +129,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 if (mysqli_num_rows($result) > 0) {
 
                     if($pesquisar!=null){
+
                         // Apresenta cada linha pesquisada da tabel
                         while ($row = mysqli_fetch_array($resultado_prod)) {
                             $cod = $row["id"];
@@ -182,7 +182,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo $row["preco"];
                             echo "</td><td>";
                         
-
 						//Adicionar, retirar ou excluir registro do produto
 				?>
                         <a href='estoqueSaida.php?id=<?php echo $cod; ?>'><img src='../imagens/saida.png' title='Registrar Saida de Produto' width='32'></a>

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <!-------------------------------------------------------------------------------
 PROJETO DE EXPERIÊNCIA CRIATIVA 02:
 SEA+
@@ -42,7 +41,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
     <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-        <h1 class="w3-xxlarge">Registrar Saída de Produto</h1>
+        <h1 class="w3-xxlarge">Editar Produto</h1>
 
         <p class="w3-large">
             <div class="w3-code cssHigh notranslate">
@@ -86,7 +85,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 				mysqli_query($conn,'SET character_set_results=utf8');
 
 
-
 				//Ajustar essa parte ao BD do projeto:
 
 				// Faz Select na Base de Dados
@@ -99,10 +97,9 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 						// Apresenta cada linha da tabela:
 							while ($row = mysqli_fetch_assoc($result)) {
 				?>				
-								<!-- O exemplo eh da alteração dos dados de uma disciplina, 
-								mas para o projeto precisa ser o Formulário de Saída de Produtos-->
+
 								<div class="w3-container w3-theme">
-									<h2>Insira a quantidade a ser removida. = [<?php echo $row['id']; ?>]</h2>
+									<h2>Edite as informações necessárias. = [<?php echo $row['id']; ?>]</h2>
 								</div>
 								<form class="w3-container" action="estoqueEditarBD.php" method="post" onsubmit="return check(this.form)">
 									<input type="hidden" id="Id" name="Id" value="<?php echo $row['id']; ?>">
@@ -118,12 +115,9 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 									<input class="w3-input w3-border w3-light-grey" name="Tipo" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$"
 										   title="Tipo do Produto: Pneu ou Produto de Limpeza." value="<?php echo $row['tipo']; ?>" required></p>
 
-									<!--<textarea class="w3-input w3-border w3-light-grey " name="tipo"  rows="5" title="Texto Descritivo" required><?php echo $row['tipo']; ?></textarea>
-									-->	
-
 									<p>
 									<label class="w3-text-deep-purple"><b>Valor de Venda</b></label>
-									<input class="w3-input w3-border w3-light-grey" name="Venda" type="text" pattern="[0-9]{1,3}"
+									<input class="w3-input w3-border w3-light-grey" name="Venda" type="text" pattern="[0-9]{4,2}"
 										   title="Valor de venda do itens." value="<?php echo $row['preco']; ?>" required></p>
 
 									<p>

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <!-------------------------------------------------------------------------------
 PROJETO DE EXPERIÊNCIA CRIATIVA 02:
 SEA+
@@ -96,7 +95,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			mysqli_query($conn,'SET character_set_results=utf8');
 
             // Faz Select na Base de Dados
-            //Adaptar para o projeto
             $sql = "SELECT id, nome, marca, quantidade, tipo, preco FROM produto";
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
