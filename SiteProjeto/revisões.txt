@@ -4,7 +4,7 @@
 
 - revisar chave estrangeira 
 
-- notificação de erro de login
+- notificação de erro de login  OK
 
 - revisar cadastrar novo produto (TUDO)
 
