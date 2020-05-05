@@ -19,6 +19,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
             <div class="w3-container">
                 <p>SEA+: <b>Sistema de Estoque Automático Plus</b></p>
                 <p class="w3-small">Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli</p>
+                <p class="w3-small">Professores: Cristina e Paludo</p>
             </div>
             <footer class="w3-container w3-theme ">
                 <p>CURITIBA 2020 (PUCPR) </p>
