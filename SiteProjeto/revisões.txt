@@ -1,6 +1,6 @@
 - na barra de pesquisa mudar "modelo" para "marca"
 
-- não colocamos um sair
+- não colocamos um sair  OK
 
 - revisar chave estrangeira 
 
