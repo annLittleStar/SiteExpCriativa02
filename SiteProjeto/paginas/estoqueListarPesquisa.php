@@ -114,7 +114,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
 
                 echo '<form method="POST" action="estoqueListarPesquisa.php">
-                <input type="text" name="pesquisar" style="width:90%" placeholder="Digite o Nome, Modelo ou Tipo do Produto que deseja encontrar">
+                <input type="text" name="pesquisar" style="width:90%" placeholder="Digite o Nome, Marca ou Tipo do Produto que deseja encontrar">
                     <input style="width:10%" type="submit" name="buscar" value="Buscar">
                 </form>';
 
@@ -157,7 +157,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         <a href='estoqueEditar.php?id=<?php echo $cod; ?>'><img src='../imagens/editar.png' title='Editar Produto' width='32'></a>
                         </td>
                         <td>
-                        <a href='estoqueExcluir.php?id=<?php echo $cod; ?>'><img src='../imagens/deletar.png' title='Excluir Produto' width='30'></a>
+                        <a href='estoqueExcluir.php?id=<?php echo $cod; ?>'><img src='../imagens/deletar.png' title='Excluir Produto' width='34'></a>
                         </td>
                         </tr>
                  <?php
@@ -192,7 +192,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         <a href='estoqueEditar.php?id=<?php echo $cod; ?>'><img src='../imagens/editar.png' title='Editar Produto' width='32'></a>
                         </td>
                         <td>
-                        <a href='estoqueExcluir.php?id=<?php echo $cod; ?>'><img src='../imagens/deletar.png' title='Excluir Produto' width='30'></a>
+                        <a href='estoqueExcluir.php?id=<?php echo $cod; ?>'><img src='../imagens/deletar.png' title='Excluir Produto' width='34'></a>
                         </td>
                         </tr>
 				 <?php
