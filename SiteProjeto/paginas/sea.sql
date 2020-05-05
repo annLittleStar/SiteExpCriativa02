@@ -37,8 +37,9 @@ create table if not exists funcionario(
     tipo enum('Dono', 'Funcionario') not null, 
     cpf varchar(15) not null unique,
     telefone varchar(20) not null unique,
-    hrEntrada datetime not null,
-    hrSaida datetime,
+    # CRIAR TABELA PARA HORÁRIO
+    # hrEntrada datetime not null,
+    # hrSaida datetime,
     primary key(id)
 ) engine=innoDB default charset=utf8;
 
