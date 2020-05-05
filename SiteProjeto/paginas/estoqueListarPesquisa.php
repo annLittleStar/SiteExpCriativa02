@@ -148,16 +148,16 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo "</td><td>";
 
                 ?>
-                        <a href='estoqueSaida.php?id=<?php echo $cod; ?>'><img src='../imagens/saida.png' title='Registrar Saida de Produto' width='32'></a>
+                        <a href='estoqueSaida.php?id=<?php echo $cod; ?>'><img src='../imagens/caixinhaSaida.png' title='Registrar Saida de Produto' width='32'></a>
                         </td>
                         <td>
-                        <a href='estoqueEntrada.php?id=<?php echo $cod; ?>'><img src='../imagens/entrada.png' title='Registrar Entrada de Produto' width='32'></a>
+                        <a href='estoqueEntrada.php?id=<?php echo $cod; ?>'><img src='../imagens/caixinhaEntrada.png' title='Registrar Entrada de Produto' width='32'></a>
                         </td>
                         <td>
                         <a href='estoqueEditar.php?id=<?php echo $cod; ?>'><img src='../imagens/editar.png' title='Editar Produto' width='32'></a>
                         </td>
                         <td>
-                        <a href='estoqueExcluir.php?id=<?php echo $cod; ?>'><img src='../imagens/deletar.png' title='Excluir Produto' width='32'></a>
+                        <a href='estoqueExcluir.php?id=<?php echo $cod; ?>'><img src='../imagens/deletar.png' title='Excluir Produto' width='30'></a>
                         </td>
                         </tr>
                  <?php
@@ -183,13 +183,13 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         
 						//Adicionar, retirar ou excluir registro do produto
 				?>
-                        <a href='estoqueSaida.php?id=<?php echo $cod; ?>'><img src='../imagens/saida.png' title='Registrar Saida de Produto' width='32'></a>
+                        <a href='estoqueSaida.php?id=<?php echo $cod; ?>'><img src='../imagens/caixinhaSaida.png' title='Registrar Saida de Produto' width='32'></a>
                         </td>
                         <td>
-                        <a href='estoqueEntrada.php?id=<?php echo $cod; ?>'><img src='../imagens/entrada.png' title='Registrar Entrada de Produto' width='32'></a>
+                        <a href='estoqueEntrada.php?id=<?php echo $cod; ?>'><img src='../imagens/caixinhaEntrada.png' title='Registrar Entrada de Produto' width='32'></a>
                         </td>
                         <td>
-                        <a href='estoqueEditar.php?id=<?php echo $cod; ?>'><img src='../imagens/editar.png' title='Editar Produto' width='25'></a>
+                        <a href='estoqueEditar.php?id=<?php echo $cod; ?>'><img src='../imagens/editar.png' title='Editar Produto' width='32'></a>
                         </td>
                         <td>
                         <a href='estoqueExcluir.php?id=<?php echo $cod; ?>'><img src='../imagens/deletar.png' title='Excluir Produto' width='30'></a>
