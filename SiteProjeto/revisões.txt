@@ -1,0 +1,11 @@
+- na barra de pesquisa mudar "modelo" para "marca"
+
+- não colocamos um sair
+
+- revisar chave estrangeira 
+
+- notificação de erro de login
+
+- revisar cadastrar novo produto (TUDO)
+
+- ícones de entrada e saída de estoque (as caixas)
