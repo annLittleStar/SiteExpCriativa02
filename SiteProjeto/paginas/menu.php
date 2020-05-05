@@ -39,7 +39,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		</div>
 		<a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-right w3-xlarge w3-hide-large"
 		   title="Close Menu">×</a>
-		<div id="menuProf" class="myMenu">
+		<div id="menuFuncionario" class="myMenu">
 			<div class="w3-container">
 				<h3>Funcionários</h3>
 			</div>
@@ -49,14 +49,14 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
 
 		</div>
-		<div id="menuDisc" class="myMenu" >
+		<div id="menuEstoque" class="myMenu" >
 			<div class="w3-container">
 				<h3>Controle de Estoque</h3>
 			</div>
 			<a class="w3-bar-item w3-button" href='estoqueListar.php'>Relação de Produtos em Estoque</a>
 			<a class="w3-bar-item w3-button" href='cadastrarprod.php'>Cadastrar Novo Produto</a>
 		</div>
-		<div id="menuTurma" class="myMenu" >
+		<div id="menuServicos" class="myMenu" >
 			<div class="w3-container">
 				<h3>Serviços</h3>
 			</div>
