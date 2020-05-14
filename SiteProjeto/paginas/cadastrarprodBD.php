@@ -57,7 +57,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		$marca    = $_POST['marca'];
 		$preco    = $_POST['preco'];
 		$tipo    = $_POST['tipo'];
-		$estado    = $_POST['estado'];
 		
 		// Cria conexão
 		$conn = mysqli_connect($servername, $username, $password, $database);
@@ -77,8 +76,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			mysqli_query($conn,'SET character_set_results=utf8');
 
 		// Faz Select na Base de Dados
-		$sql = "INSERT INTO produto (id, nome, marca, preco, tipo, estado) 
-		VALUES ('$id', '$nome','$marca', '$preco', '$tipo', '$estado')";
+		$sql = "INSERT INTO produto (id, nome, marca, preco, tipo) 
+		VALUES ('$id', '$nome','$marca', '$preco', '$tipo')";
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = mysqli_query($conn, $sql)) {
 			echo "Produto Cadastrado!";

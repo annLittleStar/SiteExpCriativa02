@@ -75,9 +75,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         <input class="w3-input w3-border w3-light-grey" name="tipo" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,19}$" title="Tipo do Produto: Pneu ou Produto de Limpeza." 
                         required></p>                            
                         </p>
-                        <p>
-                        <label class="w3-text-deep-purple"><b>Estado</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="estado" type="text" tpattern="[a-zA-Z0-9\u00C0-\u00FF ]{3,4}$" title="Estado do Produto: bom ou ruim." required></p>
                         
 						<input type="submit" value="Cadastrar" class="w3-btn w3-green" >
 						<input type="button" value="Cancelar" class="w3-btn w3-red" onclick="window.location.href='.'"></p>

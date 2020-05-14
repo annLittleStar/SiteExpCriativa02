@@ -37,10 +37,18 @@ create table if not exists funcionario(
     tipo enum('Dono', 'Funcionario') not null, 
     cpf varchar(15) not null unique,
     telefone varchar(20) not null unique,
-    # CRIAR TABELA PARA HORÁRIO
-    # hrEntrada datetime not null,
-    # hrSaida datetime,
-    primary key(id)
+	primary key(id)
+) engine=innoDB default charset=utf8;
+
+-- --------------------------------------------------------
+-- Tabela de folha ponto
+-- --------------------------------------------------------
+
+create table if not exists folhaPonto(
+	idFuncionario int not null,
+    hrEntrada datetime not null,
+    hrSaida datetime
+    -- foreign key(idFuncionario) references funcionario(id)
 ) engine=innoDB default charset=utf8;
 
 -- --------------------------------------------------------
@@ -53,11 +61,21 @@ create table if not exists produto(
     marca varchar(30) not null,
     preco double not null,
     tipo enum('Pneu', 'Produto de limpeza') not null,
-    estado varchar(15),
     quantidade int not null,
     idFunc int not null,
     primary key(id)
---    foreign key(idFunc) references funcionario(id)
+    -- foreign key(idFunc) references funcionario(id)
+) engine=innoDB default charset=utf8;
+
+-- --------------------------------------------------------
+-- Tabela de Estado de produto
+-- --------------------------------------------------------
+
+create table if not exists estado(
+	idProduto int not null,
+    estado enum('Bom', 'Defeituoso') not null,
+    quantidade int not null, -- Isso é para a contagem de quantos defeituosos tem
+    foreign key(idProduto) references produto(id)
 ) engine=innoDB default charset=utf8;
 
 -- --------------------------------------------------------
@@ -68,9 +86,10 @@ create table if not exists oServico(
 	idServico int not null auto_increment,
     vTotal float not null,
     dataServico datetime,
-    idFunc int not null,
-    primary key(idServico),
-    foreign key(idFunc) references funcionario(id)
+    idFunc int not null, -- Tem q rever isso
+    primary key(idServico)
+    -- Por enquanto isso vai ficar em comentario por ainda não há registro de funcionario
+    -- foreign key(idFunc) references funcionario(id)
 ) engine=innoDB default charset=utf8;
 
 -- --------------------------------------------------------
@@ -80,8 +99,10 @@ create table if not exists oServico(
 create table if not exists vendaPneu(
 	idServico int not null,
     valor float not null,
+    idProduto int not null,
     quantidade int not null,
-    foreign key(idServico) references oServico(idServico)
+    foreign key(idServico) references oServico(idServico),
+    foreign key(idProduto) references produto(id)
 ) engine=innoDB default charset=utf8;
 
 -- --------------------------------------------------------
@@ -96,13 +117,15 @@ create table if not exists lavagem(
 ) engine=innoDB default charset=utf8;
 
 -- --------------------------------------------------------
--- Tabela de Atualiza
+-- Tabela de produtos usados em lavagens
 -- --------------------------------------------------------
 
-create table if not exists atualiza(
-	idServico int not null,
-    idProduto int not null,
-    quantidade int not null,
-    foreign key(idServico) references oServico(idServico),
+-- Talvez isso tenho q ser atualizado
+
+create table if not exists lavagemProd(
+    contador int not null, -- Isso para usar a marcação de vezes que o produto pode ser usado
+    idLavagem int not null,
+    idProduto int not null, -- Isso sera usado para encontrar o produto
+    foreign key(idLavagem) references lavagem(idServico),
     foreign key(idProduto) references produto(id)
 ) engine=innoDB default charset=utf8;

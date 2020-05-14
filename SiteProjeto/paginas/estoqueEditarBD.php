@@ -120,38 +120,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
             echo "Erro executando UPDATE: " . mysqli_error($conn);
         }
 
-        if ($result = mysqli_query($conn, $sql) && $nome == null) {
-                echo "<br>";
-                echo "Insira um nome válido";
-        } else{
-                echo "<br>";
-                echo "Nome atualizado com sucesso!";          
-        }
-
-        if ($result = mysqli_query($conn, $sql) && $marca == null) {
-                echo "<br>";
-                echo "Insira um tipo válido";
-        }  else{
-                echo "<br>";
-                echo "Marca atualizada com sucesso!";          
-        }
-
-        if ($result = mysqli_query($conn, $sql) && $tipo == null) {
-                echo "<br>";
-                echo "Insira um tipo válido";
-        }  else{
-                echo "<br>";
-                echo "Tipo atualizado com sucesso!";          
-        }
-
-        if ($result = mysqli_query($conn, $sql) && $valor < 0) {
-                echo "<br>";
-                echo "Insira um valor de venda válido";
-        }  else{
-                echo "<br>";
-                echo "Preço atualizado com sucesso!";          
-        }
-
         echo "</div>";
 		mysqli_close($conn);  //Encerra conexao com o BD
 
