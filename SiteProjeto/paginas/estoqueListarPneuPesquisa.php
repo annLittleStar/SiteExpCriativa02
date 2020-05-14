@@ -54,7 +54,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
     <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-        <h1 class="w3-xxlarge">Produtos em Estoque</h1>
+        <h1 class="w3-xxlarge">Lista de Pneus Específicos</h1>
 
         <p class="w3-large">
         <p>
@@ -95,71 +95,49 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			mysqli_query($conn,'SET character_set_results=utf8');
 
             // Faz Select na Base de Dados
-            $sql = "SELECT id, nome, marca, quantidade, tipo, preco  FROM produto";
+            $sql = "SELECT id, nome, marca FROM carro";
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
                 echo "<table class='w3-table-all'>";
                 echo "  <tr>";
-                echo "    <th width='5%'>Id</th>";
-                echo "    <th width='15%'>Nome</th>";
-                echo "    <th width='15%'>Marca</th>";
-                echo "    <th width='10%'>Quantidade</th>";
-                echo "    <th width='15%'>Tipo de produto</th>";
-                echo "    <th width='10%'>Preco </th>";
-                echo "    <th width='5%'> </th>";
-                echo "    <th width='5%'> </th>";
-                echo "    <th width='5%'> </th>";
-                echo "    <th width='5%'> </th>";
+                echo "    <th width='20%'>Id</th>";
+                echo "    <th width='35%'>Marca</th>";
+                echo "    <th width='35%'>Nome</th>";
+                echo "    <th width='10%'> </th>";
                 echo "  </tr>";
 
 
-                echo '<form method="POST" action="estoqueListarPesquisa.php">
-                <input type="text" name="pesquisar" style="width:90%" placeholder="Digite o Nome, Marca ou Tipo do Produto que deseja encontrar">
+                echo '<form method="POST" action="estoqueListarPneuPesquisa.php">
+                <input type="text" name="pesquisar" style="width:90%" placeholder="Digite o Nome ou Marca do carro que deseja pesquisar">
                     <input style="width:10%" type="submit" name="buscar" value="Buscar">
                 </form>';
 
-                //Deve ser o nome exato
+
+               //Deve ser o nome exato
 
                 $pesquisar = $_POST['pesquisar'];
-                $result_prod = "SELECT * FROM produto WHERE nome LIKE '$pesquisar'
-                OR marca LIKE '$pesquisar' OR tipo LIKE '$pesquisar'";
-                $resultado_prod = mysqli_query($conn, $result_prod);
+                $result_carro = "SELECT * FROM carro WHERE marca LIKE '$pesquisar'
+                OR nome LIKE '$pesquisar'";
+                $result_carro = mysqli_query($conn, $result_carro);
 
                 if (mysqli_num_rows($result) > 0) {
 
                     if($pesquisar!=null){
 
                         // Apresenta cada linha pesquisada da tabel
-                        while ($row = mysqli_fetch_array($resultado_prod)) {
+                        while ($row = mysqli_fetch_array($result_carro)) {
                             $cod = $row["id"];
                             echo "<tr>";
                             echo "<td>";
                             echo $cod;
                             echo "</td><td>";
-                            echo $row["nome"];
-                            echo "</td><td>";
                             echo $row["marca"];
                             echo "</td><td>";
-                            echo $row["quantidade"];
-                            echo "</td><td>";
-                            echo $row["tipo"];
-                            echo "</td><td>";
-                            echo $row["preco"];
-                            echo "</td><td>";
+                            echo $row["nome"];
+                            echo "</td><td>";   
 
-                ?>
-                        <a href='estoqueSaida.php?id=<?php echo $cod; ?>'><img src='../imagens/caixinhaSaida.png' title='Registrar Saida de Produto' width='32'></a>
-                        </td>
-                        <td>
-                        <a href='estoqueEntrada.php?id=<?php echo $cod; ?>'><img src='../imagens/caixinhaEntrada.png' title='Registrar Entrada de Produto' width='32'></a>
-                        </td>
-                        <td>
-                        <a href='estoqueEditar.php?id=<?php echo $cod; ?>'><img src='../imagens/editar.png' title='Editar Produto' width='32'></a>
-                        </td>
-                        <td>
-                        <a href='estoqueExcluir.php?id=<?php echo $cod; ?>'><img src='../imagens/deletar.png' title='Excluir Produto' width='34'></a>
-                        </td>
-                        </tr>
+                            ?>
+                        <a href='exibePneu.php?id=<?php echo $cod; ?>'><img src='../imagens/seta.png' title='Exibir Pneus Indicados' width='30'></a>
                  <?php
                         }
                     } else{
@@ -170,31 +148,14 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo "<td>";
                             echo $cod;
                             echo "</td><td>";
-                            echo $row["nome"];
-                            echo "</td><td>";
                             echo $row["marca"];
                             echo "</td><td>";
-                            echo $row["quantidade"];
-                            echo "</td><td>";
-                            echo $row["tipo"];
-                            echo "</td><td>";
-                            echo $row["preco"];
+                            echo $row["nome"];
                             echo "</td><td>";
                         
-						//Adicionar, retirar ou excluir registro do produto
+						//Exibir pneus específicos para este carro
 				?>
-                        <a href='estoqueSaida.php?id=<?php echo $cod; ?>'><img src='../imagens/caixinhaSaida.png' title='Registrar Saida de Produto' width='32'></a>
-                        </td>
-                        <td>
-                        <a href='estoqueEntrada.php?id=<?php echo $cod; ?>'><img src='../imagens/caixinhaEntrada.png' title='Registrar Entrada de Produto' width='32'></a>
-                        </td>
-                        <td>
-                        <a href='estoqueEditar.php?id=<?php echo $cod; ?>'><img src='../imagens/editar.png' title='Editar Produto' width='32'></a>
-                        </td>
-                        <td>
-                        <a href='estoqueExcluir.php?id=<?php echo $cod; ?>'><img src='../imagens/deletar.png' title='Excluir Produto' width='34'></a>
-                        </td>
-                        </tr>
+                        <a href='exibePneu.php?id=<?php echo $cod; ?>'><img src='../imagens/seta.png' title='Exibir Pneus Indicados' width='32'></a>
 				 <?php
                     }
                 }

@@ -129,3 +129,14 @@ create table if not exists lavagemProd(
     foreign key(idLavagem) references lavagem(idServico),
     foreign key(idProduto) references produto(id)
 ) engine=innoDB default charset=utf8;
+
+-- --------------------------------------------------------
+-- Tabela de carros 
+-- --------------------------------------------------------
+create table if not exists carro(
+	id int not null,
+    marca varchar(30) not null,
+    nome varchar(30) not null,
+    primary key(id)
+) engine=innoDB default charset=utf8;
+

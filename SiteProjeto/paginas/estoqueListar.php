@@ -54,7 +54,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
     <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-        <h1 class="w3-xxlarge">Relação de Produtos em Estoque</h1>
+        <h1 class="w3-xxlarge">Produtos em Estoque</h1>
 
         <p class="w3-large">
         <p>
@@ -104,7 +104,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 echo "	  <th width='15%'>Nome</th>";
 				echo "	  <th width='15%'>Marca</th>";
                 echo "    <th width='10%'>Quantidade</th>";
-                echo "    <th width='10%'>Tipo de produto</th>";
+                echo "    <th width='15%'>Tipo de produto</th>";
 				echo "	  <th width='10%'>Preco </th>";
 				echo "	  <th width='5%'> </th>";
                 echo "    <th width='5%'> </th>";
