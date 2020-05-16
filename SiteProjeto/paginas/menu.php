@@ -55,6 +55,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			</div>
 			<a class="w3-bar-item w3-button" href='estoqueListar.php'>Produtos em Estoque</a>
 			<a class="w3-bar-item w3-button" href='estoqueListarPneu.php'>Lista de Pneus Específicos</a>
+			<a class="w3-bar-item w3-button" href='registroPneuDef.php'>Registro de Pneus Defeituosos</a>
 			<a class="w3-bar-item w3-button" href='cadastrarprod.php'>Cadastrar Novo Produto</a>
 		</div>
 		<div id="menuServicos" class="myMenu" >
