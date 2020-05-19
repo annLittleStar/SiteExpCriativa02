@@ -52,11 +52,10 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		$database = "sea";
 		
 		
-		$id   = $_POST['id'];
-		$nome    = $_POST['nome'];
-		$marca    = $_POST['marca'];
-		$preco    = $_POST['preco'];
-		$tipo    = $_POST['tipo'];
+		$idv   = $_POST['idV'];
+		$idp   = $_POST['idP'];
+		$vender = $_POST['Vender'];
+
 		
 		// Cria conexão
 		$conn = mysqli_connect($servername, $username, $password, $database);
@@ -76,8 +75,34 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			mysqli_query($conn,'SET character_set_results=utf8');
 
 		// Faz Select na Base de Dados
-		$sql = "INSERT INTO produto (id, nome, marca, preco, tipo) 
-		VALUES ('$id', '$nome','$marca', '$preco', '$tipo')";
+
+
+		// Registrar venda não está funcionando (can't convert to int/to string)!!
+
+
+		$preco = mysqli_query($conn, "SELECT COUNT(preco) FROM produto WHERE id = '$idp'"); 
+		//$preco = mysqli_fetch_row($rPreco);
+
+		$precoT = $preco * $vender;
+
+		$quantidade = mysqli_query($conn, "SELECT COUNT(quantidade) FROM produto WHERE id = '$idp'");
+		//$quantidade = mysqli_fetch_row($rQuantidade);
+
+		$resto = $quantidade - $vender;
+
+
+		$sql = "INSERT INTO oServico (idServico, vTotal) VALUES ('$idv', '$precoT')";
+
+		echo "<div class='w3-responsive w3-card-4'>";
+		if ($result = mysqli_query($conn, $sql)) {
+			echo "Produto Cadastrado!";
+		} else {
+			echo "Erro executando INSERT: " . mysqli_error($conn);
+		}
+		echo "</div>";
+		
+		$sql = "INSERT INTO vendaPneu VALUES ('$idv', '$preco', '$idp', '$vender')";
+		
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = mysqli_query($conn, $sql)) {
 			echo "Produto Cadastrado!";

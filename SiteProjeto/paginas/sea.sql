@@ -152,17 +152,3 @@ create table if not exists carro(
     primary key(id)
 ) engine=innoDB default charset=utf8;
 
--- --------------------------------------------------------
--- Tabela de pneus indicados 
--- --------------------------------------------------------
-
-CREATE TABLE if not exists pneu (
-id int not null,
-nome varchar(45) not null,
-carro int not null,
-disponibilidade int,
-primary key(id),
- foreign key(disponibilidade) references produto(id), -- arrumar para a quantidade aqui
- foreign key(carro) references carro(id)
-)engine=innoDB default charset=utf8;
-
