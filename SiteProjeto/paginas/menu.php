@@ -24,6 +24,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			<a class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-hover-blue w3-padding-16" href="javascript:void(0)" onclick="w3_show_nav('menuFuncionario')">FUNCIONARIOS</a>
 			<a class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-hover-blue w3-padding-16" href="javascript:void(0)" onclick="w3_show_nav('menuEstoque')">ESTOQUE</a>
 			<a class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-hover-blue w3-padding-16" href="javascript:void(0)" onclick="w3_show_nav('menuServicos')">SERVIÇOS</a>
+			<a class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-hover-blue w3-padding-16" href="javascript:void(0)" onclick="w3_show_nav('menuVendas')">VENDAS</a>
 		</div>
 	</div>
 
@@ -36,6 +37,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			   class="w3-bar-item w3-button w3-theme w3-hover-blue w3-padding-16" style="width:50%">Estoque</a>
 			<a href="javascript:void(0)" onclick="w3_show_nav('menuServicos')"
 			   class="w3-bar-item w3-button w3-theme w3-hover-blue w3-padding-16" style="width:50%">Serviços</a>
+			<a href="javascript:void(0)" onclick="w3_show_nav('menuVendas')"
+				class="w3-bar-item w3-button w3-theme w3-hover-blue w3-padding-16" style="width:50%">Vendas</a>
 		</div>
 		<a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-right w3-xlarge w3-hide-large"
 		   title="Close Menu">×</a>
@@ -46,8 +49,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			<a class="w3-bar-item w3-button" href="funcListar.php">Relação de Funcionários</a>
 			<a class="w3-bar-item w3-button" href="funcContratar.php">Contratação</a>
 			<a class="w3-bar-item w3-button" href="funcDemitir.php">Demissao</a>
-
-
 		</div>
 		<div id="menuEstoque" class="myMenu" >
 			<div class="w3-container">
@@ -64,10 +65,13 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			</div>
 			<a class="w3-bar-item w3-button" href='turmaListar.php'>Relação de Serviços</a>
 			<a class="w3-bar-item w3-button" href='turmaContratar.php'>Cadastrar Serviço Realizado</a>
-
+		</div>
+		<div id="menuVendas" class="myMenu">
+			<div class="w3-container">
+				<h3>Vendas</h3>
+			</div>
+			<a class="w3-bar-item w3-button" href="vendasRegistrar.php">Registrar Vendas</a>
+			<a class="w3-bar-item w3-button" href="vendasListar.php">Registro de Vendas</a>
+			<!-- Perguntar em relação a repetição do "menuVendas" -->
 		</div>
 	</div>
-
-
-
-
