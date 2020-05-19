@@ -128,7 +128,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         
 						//Exibir pneus específicos para este carro
 				?>
-                        <a href='exibePneu.php?id=<?php echo $cod; ?>'><img src='../imagens/seta.png' title='Exibir Pneus Indicados' width='30'></a>
+                        <a href='estoqueListarPneuIndica.php?id=<?php echo $cod; ?>'><img src='../imagens/pneu.png' title='Exibir Pneus Indicados' width='30'></a>
 				 <?php
                     }
                 }

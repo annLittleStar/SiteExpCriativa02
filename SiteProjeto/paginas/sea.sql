@@ -87,7 +87,7 @@ create table if not exists pneuDef(
     qtdA int not null default(0), -- Isso é para a contagem de quantos defeituosos aguardam recolhimento
     qtdR int not null default(0), -- Isso é para a contagem de quantos defeituosos foram recolhidos
     qtdT int not null default(0), -- Isso é para a contagem de quantos defeituosos já passaram pela loja
-    foreign key(idPneu) references produto(id) on delete cascade on update no action
+    foreign key(idPneu) references produto(id) on delete no action on update no action
 ) engine=innoDB default charset=utf8;
 
 -- --------------------------------------------------------
@@ -151,4 +151,18 @@ create table if not exists carro(
     nome varchar(30) not null,
     primary key(id)
 ) engine=innoDB default charset=utf8;
+
+-- --------------------------------------------------------
+-- Tabela de pneus indicados 
+-- --------------------------------------------------------
+
+CREATE TABLE if not exists pneu (
+id int not null,
+nome varchar(45) not null,
+carro int not null,
+disponibilidade int,
+primary key(id),
+ foreign key(disponibilidade) references produto(id), -- arrumar para a quantidade aqui
+ foreign key(carro) references carro(id)
+)engine=innoDB default charset=utf8;
 
