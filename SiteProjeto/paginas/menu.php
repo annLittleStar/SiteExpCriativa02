@@ -31,11 +31,11 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 	<div class="w3-sidebar w3-bar-block w3-collapse w3-animate-left" style="z-index:3;width:270px" id="mySidebar">
 		<div class="w3-bar w3-hide-large w3-large">
 			<a href="javascript:void(0)" onclick="w3_show_nav('menuFuncionario')"
-			   class="w3-bar-item w3-button w3-theme w3-hover-blue w3-padding-16" style="width:50%">Funcionarios</a>
+			class="w3-bar-item w3-button w3-theme w3-hover-blue w3-padding-16" style="width:50%">Funcionarios</a>
 			<a href="javascript:void(0)" onclick="w3_show_nav('menuEstoque')"
-			   class="w3-bar-item w3-button w3-theme w3-hover-blue w3-padding-16" style="width:50%">Estoque</a>
+			class="w3-bar-item w3-button w3-theme w3-hover-blue w3-padding-16" style="width:50%">Estoque</a>
 			<a href="javascript:void(0)" onclick="w3_show_nav('menuServicos')"
-			   class="w3-bar-item w3-button w3-theme w3-hover-blue w3-padding-16" style="width:50%">Serviços</a>
+			class="w3-bar-item w3-button w3-theme w3-hover-blue w3-padding-16" style="width:50%">Serviços</a>
 		</div>
 		<a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-right w3-xlarge w3-hide-large"
 		   title="Close Menu">×</a>
@@ -46,8 +46,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			<a class="w3-bar-item w3-button" href="funcListar.php">Relação de Funcionários</a>
 			<a class="w3-bar-item w3-button" href="funcContratar.php">Contratação</a>
 			<a class="w3-bar-item w3-button" href="funcDemitir.php">Demissao</a>
-
-
 		</div>
 		<div id="menuEstoque" class="myMenu" >
 			<div class="w3-container">
@@ -55,6 +53,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			</div>
 			<a class="w3-bar-item w3-button" href='estoqueListar.php'>Produtos em Estoque</a>
 			<a class="w3-bar-item w3-button" href='estoqueListarPneu.php'>Lista de Pneus Específicos</a>
+			<a class="w3-bar-item w3-button" href='registroPneuDef.php'>Registro de Pneus Defeituosos</a>
 			<a class="w3-bar-item w3-button" href='cadastrarprod.php'>Cadastrar Novo Produto</a>
 		</div>
 		<div id="menuServicos" class="myMenu" >
@@ -63,10 +62,9 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			</div>
 			<a class="w3-bar-item w3-button" href='turmaListar.php'>Relação de Serviços</a>
 			<a class="w3-bar-item w3-button" href='turmaContratar.php'>Cadastrar Serviço Realizado</a>
-
+			<!--Deixar aqui por enquanto - Ate fazer a escolha dentro do serviço - por que venda é um dos serviços-->
+			<a class="w3-bar-item w3-button" href="vendasRegistrar.php">Registrar Vendas</a>
+			<a class="w3-bar-item w3-button" href="vendasListar.php">Registro de Vendas</a>
 		</div>
+		<!--Perqunta por que não dá para adicionar mais um menu-->
 	</div>
-
-
-
-

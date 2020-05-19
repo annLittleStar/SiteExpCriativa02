@@ -54,7 +54,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
     <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-        <h1 class="w3-xxlarge">Lista de Pneus Específicos</h1>
+        <h1 class="w3-xxlarge">Registro de Pneus defeituosos</h1>
 
         <p class="w3-large">
         <p>
@@ -95,20 +95,24 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			mysqli_query($conn,'SET character_set_results=utf8');
 
             // Faz Select na Base de Dados
-            $sql = "SELECT id, nome, marca FROM carro";
+            $sql = "SELECT id, nome, marca, qtdA, qtdR FROM produto AS p JOIN pneuDef AS pn ON id = idPneu";
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
                 echo "<table class='w3-table-all'>";
-                echo "  <tr>";
-                echo "    <th width='20%'>Id</th>";
-                echo "    <th width='35%'>Marca</th>";
-                echo "    <th width='35%'>Nome</th>";
-                echo "    <th width='10%'> </th>";
-                echo "  </tr>";
+                echo "	<tr>";
+                echo "	  <th width='5%'>Id</th>";
+                echo "	  <th width='15%'>Nome</th>";
+				echo "	  <th width='15%'>Marca</th>";
+                echo "    <th width='15%'>Qtd Aguardando</th>";
+                echo "    <th width='15%'>Qtd Recolhida</th>";
+				echo "	  <th width='5%'> </th>";
+                echo "    <th width='5%'> </th>";
+                echo "    <th width='5%'> </th>";
+                echo "    <th width='5%'> </th>";
+                echo "	</tr>";
 
-
-                echo '<form method="POST" action="estoqueListarPneuPesquisa.php">
-                <input type="text" name="pesquisar" style="width:90%" placeholder="Digite o Nome ou Marca do carro que deseja pesquisar">
+                echo '<form method="POST" action="registroPneuDefPesquisa.php">
+                <input type="text" name="pesquisar" style="width:90%" placeholder="Digite o Nome, Marca do Registro que deseja encontrar">
                     <input style="width:10%" type="submit" name="buscar" value="Buscar">
                 </form>';
 
@@ -121,14 +125,30 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo "<td>";
                             echo $cod;
                             echo "</td><td>";
-                            echo $row["marca"];
-                            echo "</td><td>";
                             echo $row["nome"];
                             echo "</td><td>";
+                            echo $row["marca"];
+                            echo "</td><td>";
+                            echo $row["qtdA"];
+                            echo "</td><td>";
+                            echo $row["qtdR"];
+                            echo "</td><td>";
                         
-						//Exibir pneus específicos para este carro
+
+						//Adicionar, retirar ou excluir registro do produto
 				?>
-                        <a href='exibePneu.php?id=<?php echo $cod; ?>'><img src='../imagens/seta.png' title='Exibir Pneus Indicados' width='30'></a>
+                        <a href='estoqueSaida.php?id=<?php echo $cod; ?>'><img src='../imagens/caixinhaSaida.png' title='Registrar Saida de Produto' width='32'></a>
+                        </td>
+                        <td>
+                        <a href='estoqueEntrada.php?id=<?php echo $cod; ?>'><img src='../imagens/caixinhaEntrada.png' title='Registrar Entrada de Produto' width='32'></a>
+                        </td>
+                        <td>
+                        <a href='estoqueEditar.php?id=<?php echo $cod; ?>'><img src='../imagens/editar.png' title='Editar Produto' width='32'></a>
+                        </td>
+                        <td>
+                        <a href='estoqueExcluir.php?id=<?php echo $cod; ?>'><img src='../imagens/deletar.png' title='Excluir Produto' width='34'></a>
+                        </td>
+                        </tr>
 				 <?php
                     }
                 }
