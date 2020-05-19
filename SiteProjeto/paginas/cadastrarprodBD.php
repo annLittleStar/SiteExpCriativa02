@@ -90,7 +90,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			$sql = "INSERT INTO pneuDef	VALUES ('$id', DEFAULT, DEFAULT, DEFAULT)";
 			echo "<div class='w3-responsive w3-card-4'>";
 			if ($result = mysqli_query($conn, $sql)) {
-				echo "Produto Cadastrado!";
 			} else {
 				echo "Erro executando INSERT: " . mysqli_error($conn);
 			}

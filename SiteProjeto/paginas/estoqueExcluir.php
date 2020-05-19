@@ -94,6 +94,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 									<label class="w3-text-deep-purple"><b>Nome: </b> <?php echo $row['nome']; ?> </label></p>
 									<p>
 									<label class="w3-text-deep-purple"><b>Tipo: </b><?php echo $row['tipo']; ?></label></p>
+									<input type="hidden" id="Tipo" name="Tipo" value="<?php 'tipo'; ?>">
 									<p>
 									<input type="submit" value="Excluir" class="w3-btn w3-red" >
 									<input type="button" value="Cancelar" class="w3-btn w3-theme" onclick="window.location.href='estoqueListar.php'"></p>

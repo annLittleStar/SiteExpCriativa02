@@ -51,6 +51,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		$database = "sea";
 		
 		$id      = $_POST['Id'];
+		$tipo	 = $_POST['Tipo'];
 		
 		// Cria conexão
 		$conn = mysqli_connect($servername, $username, $password, $database);
@@ -71,7 +72,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = mysqli_query($conn, $sql)) {
-				echo "Produto removido da base de dados!";
+			echo "Produto removido da base de dados!";
 		} else {
 			echo "Erro executando DELETE: " . mysqli_error($conn);
 		}
