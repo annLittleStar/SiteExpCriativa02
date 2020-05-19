@@ -59,11 +59,14 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                     <form class="w3-container" action="vendasRegistrarBD.php" method="post" onsubmit="return check(this.form)">
 						<input type="hidden" id="acaoForm" name="acaoForm" value="Cada">
                         <p>
-                        <label class="w3-text-deep-purple"><b>ID</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="id" type="text" attern="{4,100}$" title="ID do Produto." required></p>
-						<p>
-						<label class="w3-text-deep-purple"><b>Nome do Vendedor</b></label>
-						<input class="w3-input w3-border w3-light-grey" name="nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$" title="Nome do Vendedor entre 4 e 100 letras." required></p>
+                        <label class="w3-text-deep-purple"><b>Id Venda</b></label>
+                        <input class="w3-input w3-border w3-light-grey" name="idV" type="text" pattern="{4,100}$" title="ID do Produto." required></p>
+						<!-- <p>
+                        <label class="w3-text-deep-purple"><b>Nome do Vendedor</b></label>
+						<input class="w3-input w3-border w3-light-grey" name="nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$" title="Nome do Vendedor entre 4 e 100 letras." required></p> -->
+                        <p>
+                        <label class="w3-text-deep-purple"><b>Id do Pneu</b></label>
+                        <input class="w3-input w3-border w3-light-grey" name="idP" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$" title="Nome do Vendedor entre 4 e 100 letras."></p>
                         <p>
 						<input type="submit" value="Cadastrar" class="w3-btn w3-green" >
 						<input type="button" value="Cancelar" class="w3-btn w3-red" onclick="window.location.href='.'"></p>
