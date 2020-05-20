@@ -112,32 +112,24 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
             echo "<div class='w3-responsive w3-card-4'>";
             if ($resulta = mysqli_query($conn, $sql)) {
-                        if (mysqli_num_rows($resulta) > 0) {
-
+                if (mysqli_num_rows($resulta) > 0) {
 
 
                         // Apresenta cada linha da tabela:
-                            while ($row = mysqli_fetch_assoc($resulta)) {
-                                ?>
-
+                    while ($row = mysqli_fetch_assoc($resulta)) {
+                ?>
                                 
-                                <form class="w3-container" action="estoqueListarPneuBD.php" method="post" onsubmit="return check(this.form)">
-                                    <p>
-                                    <label class="w3-text-deep-purple"><b>Nome</b></label>
-                                    <input class="w3-input w3-border w3-light-grey" name="Nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$"
-                                           title="Nome do pneu entre 4 e 100 letras." value="<?php echo $row['nome']; ?>" required readonly></p>
-
-                                    <p>
+                        <form class="w3-container" action="estoqueListarPneuBD.php" method="post" onsubmit="return check(this.form)">
+                        <p>
+                        <label class="w3-text-deep-purple"><b>Nome</b></label>
+                        <input class="w3-input w3-border w3-light-grey" name="Nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$"
+                        title="Nome do pneu entre 4 e 100 letras." value="<?php echo $row['nome']; ?>" required readonly></p>
+                        <p>
 
                                          <?php 
-                                    }
-                                }
-                            }
-
-
-        	
-				
-				else {
+                        }
+                    }
+                } else {
 					echo "Erro executando UPDATE: " . mysqli_error($conn);
 				}
 				echo "</div>"; //Fim form
@@ -146,11 +138,16 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			?>
 
 			</div>
-		</p>
 	</div>
 
-
-	
+    <footer class="w3-panel w3-padding-32 w3-card-4 w3-light-grey w3-center w3-opacity">
+        <p>
+            <nav>
+                <a class="w3-button w3-theme w3-hover-blue"
+                   onclick="document.getElementById('id01').style.display='block'">Sobre</a>
+            </nav>
+        </p>
+    </footer>
 
 <!-- FIM PRINCIPAL -->
 </div>
