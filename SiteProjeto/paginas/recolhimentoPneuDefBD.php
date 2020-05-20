@@ -53,9 +53,9 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		
 		$id      = $_POST['Id'];
 		$nome    = $_POST['Nome'];
-		$tipo  = $_POST['Tipo'];
 		$qtd	 = $_POST['Quantidade'];
-		$remover	 = $_POST['Remover'];
+		$qtdR	 = $_POST['Recolhido'];
+		$qtdTr   = $_POST['TotalRecolhido'];
 		
 		// Cria conexão
 		$conn = mysqli_connect($servername, $username, $password, $database);
@@ -73,25 +73,26 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
 		// Faz Select na Base de Dados
 
-		$resultado = $qtd - $remover;
+		$removeRegistro = $qtd - $qtdR;
+		$novoTotal = $qtdTr + $qtdR;
 
-		if($resultado >= 0 && $remover > 0){
-			$sql = "UPDATE produto SET quantidade = '$resultado' WHERE id = $id";
+		if($removeRegistro >= 0 && $qtdR > 0){
+			$sql = "UPDATE pneuDef SET qtdA = '$removeRegistro', qtdR = '$novoTotal' WHERE idPneu = $id";
 		} else{
-			$sql = "UPDATE produto SET quantidade = '$qtd' WHERE id = $id";
+			$sql = "UPDATE pneuDef SET qtdA = '$qtd' WHERE idPneu = $id";
 		}
 
 
 		echo "<div class='w3-responsive w3-card-4'>";
 
-		if ($result = mysqli_query($conn, $sql) && $resultado >= 0 && $remover <= 0) {
-			echo "Insira uma quantidade válida a ser removida!";
-		}else if ($result = mysqli_query($conn, $sql) && $resultado >= 0) {
-				echo "Produto removido!";
-		}else if ($result = mysqli_query($conn, $sql) && $resultado < 0) {
-			echo "Não foi possível remover o produto";
+		if ($result = mysqli_query($conn, $sql) && $removeRegistro >= 0 && $qtdR <= 0) {
+			echo "Insira um valor válido!";
+		}else if ($result = mysqli_query($conn, $sql) && $removeRegistro >= 0) {
+				echo "Produto recolhido registrado!";
+		}else if ($result = mysqli_query($conn, $sql) && $removeRegistro < 0) {
+			echo "Não foi possível registrar o recolhimento";
 			echo "<br>";
-			echo "Quantidade a remover excede a quantidade atual";
+			echo "Quantidade indicada excede a quantidade a ser recolhida";
 		} else {
 			echo "Erro executando UPDATE: " . mysqli_error($conn);
 		}
