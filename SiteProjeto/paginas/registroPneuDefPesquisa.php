@@ -143,10 +143,10 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo "</td><td>";
 
                 ?>
-                        <a href='entradaPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/caixinhaEntrada.png' title='Registrar Entrada de Pneu Defeituoso' width='32'></a>
+                        <a href='entradaPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/aguardando.png' title='Registrar Entrada de Pneu Defeituoso' width='32'></a>
                         </td>
                         <td>
-                        <a href='recolhimentoPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/caixinhaSaida.png' title='Registrar Recolhimento de Pneu Defeituoso' width='32'></a>
+                        <a href='recolhimentoPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/vrum.png' title='Registrar Recolhimento de Pneu Defeituoso' width='32'></a>
                         </td>
                         </tr>
                  <?php
@@ -169,10 +169,10 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo "</td><td>";                        
                         //Adicionar, retirar ou excluir registro do produto
                 ?>
-                        <a href='entradaPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/caixinhaEntrada.png' title='Registrar Entrada de Pneu Defeituoso' width='32'></a>
+                        <a href='entradaPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/aguardando.png' title='Registrar Entrada de Pneu Defeituoso' width='32'></a>
                         </td>
                         <td>
-                        <a href='recolhimentoPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/caixinhaSaida.png' title='Registrar Recolhimento de Pneu Defeituoso' width='32'></a>
+                        <a href='recolhimentoPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/vrum.png' title='Registrar Recolhimento de Pneu Defeituoso' width='32'></a>
                         </td>
                         </tr>
                  <?php
