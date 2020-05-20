@@ -79,6 +79,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
 		// Registrar venda não está funcionando (can't convert to int/to string)!!
 
+			// Esqueci de perguntar disso, mas acho q sei como corrigir -- Usar hidden
 
 		$preco = mysqli_query($conn, "SELECT COUNT(preco) FROM produto WHERE id = '$idp'"); 
 		//$preco = mysqli_fetch_row($rPreco);

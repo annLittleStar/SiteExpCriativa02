@@ -74,7 +74,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
 		$resultado = $qtd + $qtdE;
 
-		$sql = "UPDATE pneuDef SET qtdA = '$qtdE' WHERE idPneu = $id";
+		$sql = "UPDATE pneuDef SET qtdA = '$qtdE' WHERE idPneuDef = $id";
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = mysqli_query($conn, $sql) && $qtdE <= 0) {
 			echo "Insira uma quantidade válida a ser removida!";

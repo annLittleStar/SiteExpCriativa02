@@ -95,8 +95,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			mysqli_query($conn,'SET character_set_results=utf8');
 
             // Faz Select na Base de Dados
-            $sql = "SELECT oServico.idServico, vTotal, dataServico, idProduto, quantidade 
-            FROM oServico INNER JOIN vendaPneu ON oServico.idServico = vendaPneu.idServico";
+            $sql = "SELECT idServico, vTotal, dataServico, idVenda, qtdVenda 
+            FROM oServico INNER JOIN vendaPneu ON idServico = idVenda";
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
                 echo "<table class='w3-table-all'>";
@@ -120,16 +120,16 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
                         // Apresenta cada linha da tabel
                         while ($row = mysqli_fetch_assoc($result)) {
-                            $cod = $row["oServico.idServico"];
+                            $cod = $row["idServico"];
                             echo "<tr>";
                             echo "<td>";
                             echo $cod;
                             echo "</td><td>";
                             echo $row["dataServico"];
                             echo "</td><td>";
-                            echo $row["idProduto"];
+                            echo $row["idVenda"];
                             echo "</td><td>";
-                            echo $row["quantidade"];
+                            echo $row["qtdVenda"];
                             echo "</td><td>";
                             echo $row["vTotal"];
                             echo "</td><td>";                        

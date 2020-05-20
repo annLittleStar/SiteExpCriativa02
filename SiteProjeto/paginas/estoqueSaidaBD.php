@@ -76,9 +76,9 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		$resultado = $qtd - $remover;
 
 		if($resultado >= 0 && $remover > 0){
-			$sql = "UPDATE produto SET quantidade = '$resultado' WHERE id = $id";
+			$sql = "UPDATE produto SET quantidadeProd = '$resultado' WHERE idProd = $id";
 		} else{
-			$sql = "UPDATE produto SET quantidade = '$qtd' WHERE id = $id";
+			$sql = "UPDATE produto SET quantidadeProd = '$qtd' WHERE idProd = $id";
 		}
 
 

@@ -95,7 +95,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			mysqli_query($conn,'SET character_set_results=utf8');
 
             // Faz Select na Base de Dados
-            $sql = "SELECT id, nome, marca, quantidade, tipo, preco  FROM produto";
+            $sql = "SELECT idProd, nomeProd, marcaProd, quantidadeProd, tipoProd, precoProd FROM produto";
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
                 echo "<table class='w3-table-all'>";
@@ -121,8 +121,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 //Deve ser o nome exato
 
                 $pesquisar = $_POST['pesquisar'];
-                $result_prod = "SELECT * FROM produto WHERE nome LIKE '$pesquisar'
-                OR marca LIKE '$pesquisar' OR tipo LIKE '$pesquisar'";
+                $result_prod = "SELECT * FROM produto WHERE nomeProd LIKE '$pesquisar'
+                OR marcaProd LIKE '$pesquisar' OR tipoProd LIKE '$pesquisar'";
                 $resultado_prod = mysqli_query($conn, $result_prod);
 
                 if (mysqli_num_rows($result) > 0) {
@@ -131,20 +131,20 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
                         // Apresenta cada linha pesquisada da tabel
                         while ($row = mysqli_fetch_array($resultado_prod)) {
-                            $cod = $row["id"];
+                            $cod = $row["idProd"];
                             echo "<tr>";
                             echo "<td>";
                             echo $cod;
                             echo "</td><td>";
-                            echo $row["nome"];
+                            echo $row["nomeProd"];
                             echo "</td><td>";
-                            echo $row["marca"];
+                            echo $row["marcaProd"];
                             echo "</td><td>";
-                            echo $row["quantidade"];
+                            echo $row["quantidadeProd"];
                             echo "</td><td>";
-                            echo $row["tipo"];
+                            echo $row["tipoProd"];
                             echo "</td><td>";
-                            echo $row["preco"];
+                            echo $row["precoProd"];
                             echo "</td><td>";
 
                 ?>
@@ -165,20 +165,20 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                     } else{
                         // Apresenta cada linha da tabel
                         while ($row = mysqli_fetch_assoc($result)) {
-                            $cod = $row["id"];
+                            $cod = $row["idProd"];
                             echo "<tr>";
                             echo "<td>";
                             echo $cod;
                             echo "</td><td>";
-                            echo $row["nome"];
+                            echo $row["nomeProd"];
                             echo "</td><td>";
-                            echo $row["marca"];
+                            echo $row["marcaProd"];
                             echo "</td><td>";
-                            echo $row["quantidade"];
+                            echo $row["quantidadeProd"];
                             echo "</td><td>";
-                            echo $row["tipo"];
+                            echo $row["tipoProd"];
                             echo "</td><td>";
-                            echo $row["preco"];
+                            echo $row["precoProd"];
                             echo "</td><td>";
                         
 						//Adicionar, retirar ou excluir registro do produto

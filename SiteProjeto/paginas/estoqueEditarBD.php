@@ -75,37 +75,10 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
     //parece certo
     if($valor > 0 && $nome != null && $tipo != null && $marca != null){
-      $sql = "UPDATE produto SET preco='$valor', nome='$nome', tipo='$tipo', marca='$marca' WHERE id=$id";
-    } else if($valor <= 0 && $nome != null && $tipo != null && $marca != null){
-      $sql = "UPDATE produto SET nome='$nome', tipo='$tipo', marca='$marca' WHERE id=$id";
-    } else if($valor > 0 && $nome == null && $tipo != null && $marca != null){
-      $sql = "UPDATE produto SET preco='$valor', tipo='$tipo', marca='$marca' WHERE id=$id";
-    } else if($valor <= 0 && $nome == null && $tipo != null && $marca != null){
-      $sql = "UPDATE produto SET tipo='$tipo', marca='$marca' WHERE id=$id";
-    } else if($valor > 0 && $nome != null && $tipo == null && $marca != null){
-      $sql = "UPDATE produto SET preco='$valor', nome='$nome', marca='$marca' WHERE id=$id";
-    } else if($valor <= 0 && $nome != null && $tipo == null && $marca != null){
-      $sql = "UPDATE produto SET nome='$nome', marca='$marca' WHERE id=$id";
-    } else if($valor > 0 && $nome == null && $tipo == null && $marca != null){
-      $sql = "UPDATE produto SET preco='$valor', marca='$marca' WHERE id=$id";
-    } else if($valor <= 0 && $nome == null && $tipo == null && $marca != null){
-      $sql = "UPDATE produto SET marca='$marca' WHERE id=$id";
-    } else if($valor > 0 && $nome != null && $tipo != null && $marca == null){
-      $sql = "UPDATE produto SET preco='$valor', nome='$nome', tipo='$tipo' WHERE id=$id";
-    } else if($valor <= 0 && $nome != null && $tipo != null && $marca == null){
-      $sql = "UPDATE produto SET nome='$nome', tipo='$tipo' WHERE id=$id";
-    } else if($valor > 0 && $nome == null && $tipo != null && $marca == null){
-      $sql = "UPDATE produto SET preco='$valor', tipo='$tipo' WHERE id=$id";
-    } else if($valor <= 0 && $nome == null && $tipo != null && $marca == null){
-      $sql = "UPDATE produto SET tipo='$tipo' WHERE id=$id";
-    } else if($valor > 0 && $nome != null && $tipo == null && $marca == null){
-      $sql = "UPDATE produto SET preco='$valor', nome='$nome' WHERE id=$id";
-    } else if($valor <= 0 && $nome != null && $tipo == null && $marca == null){
-      $sql = "UPDATE produto SET nome='$nome' WHERE id=$id";
-    } else if($valor > 0 && $nome == null && $tipo == null && $marca == null){
-      $sql = "UPDATE produto SET preco='$valor' WHERE id=$id";
+      $sql = "UPDATE produto SET precoProd='$valor', nomeProd='$nome', tipoProd='$tipo', marcaProd='$marca'
+      WHERE idProd=$id";
     }else{
-      $sql = "UPDATE produto SET id='$id' WHERE id=$id";
+      $sql = "UPDATE produto SET idProd='$id' WHERE idProd=$id";
     }
 
         echo "<div class='w3-responsive w3-card-4'>";

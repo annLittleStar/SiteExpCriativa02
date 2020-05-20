@@ -84,31 +84,26 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 				mysqli_query($conn,'SET character_set_results=utf8');
 
 				// Faz Select na Base de Dados
-            $sql = "SELECT nome, marca FROM carro WHERE id = $id";
-            
+            $sql = "SELECT nomeCarro, marcaCarro, modelo, quantidadeProd FROM carro JOIN pneu JOIN produto 
+            ON carro = idCarro AND disponibilidade = idProd";
 
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
-                        if (mysqli_num_rows($result) > 0) {
-
-
+                if (mysqli_num_rows($result) > 0) {
 
                         // Apresenta cada linha da tabela:
-                            while ($row = mysqli_fetch_assoc($result)) {
+                    while ($row = mysqli_fetch_assoc($result)) {
                 ?>              
 
-                                <div class="w3-container w3-theme">
-                                    <h2>Melhores Pneus para  [<?php echo $row['marca']; ?> <?php echo $row['nome']; ?>]</h2>
-                                </div>
+                        <div class="w3-container w3-theme">
+                            <h2>Melhores Pneus para  [<?php echo $row['marcaCarro']; ?> 
+                            <?php echo $row['nomeCarro']; ?>]</h2>
+                        </div>
 
             <?php 
-                                    }
-                                }
-                            }
-
-
-            $sql = "SELECT nome FROM pneu WHERE carro = $id";
-            
+                    }
+                }
+            }            
 
             echo "<div class='w3-responsive w3-card-4'>";
             if ($resulta = mysqli_query($conn, $sql)) {
@@ -122,8 +117,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         <form class="w3-container" action="estoqueListarPneuBD.php" method="post" onsubmit="return check(this.form)">
                         <p>
                         <label class="w3-text-deep-purple"><b>Nome</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="Nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$"
-                        title="Nome do pneu entre 4 e 100 letras." value="<?php echo $row['nome']; ?>" required readonly></p>
+                        <input class="w3-input w3-border w3-light-grey" name="Nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$" value="<?php echo $row['Modelo']; ?>" required readonly></p>
 
                                          <?php 
                         }

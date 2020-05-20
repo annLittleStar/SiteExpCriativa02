@@ -52,6 +52,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 echo "</p> "
                 ?>
 
+                <!-- Rever isso aqui -->
                 <div class="w3-responsive w3-card-4">
                     <div class="w3-container w3-theme">
                         <h2>Informe os dados da Venda</h2>

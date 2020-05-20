@@ -77,10 +77,10 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		$soma = $qtd + $entrar;
 
 		if($entrar > 0){
-		$sql = "UPDATE produto SET quantidade = '$soma' WHERE id = $id";
+		$sql = "UPDATE produto SET quantidadeProd = '$soma' WHERE idProd = $id";
 		echo "<div class='w3-responsive w3-card-4'>";
 		}else{
-		$sql = "UPDATE produto SET quantidade = '$qtd' WHERE id = $id";
+		$sql = "UPDATE produto SET quantidadeProd = '$qtd' WHERE idProd = $id";
 		echo "<div class='w3-responsive w3-card-4'>";			
 		}
 

@@ -77,9 +77,9 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		$novoTotal = $qtdTr + $qtdR;
 
 		if($removeRegistro >= 0 && $qtdR > 0){
-			$sql = "UPDATE pneuDef SET qtdA = '$removeRegistro', qtdR = '$novoTotal' WHERE idPneu = $id";
+			$sql = "UPDATE pneuDef SET qtdA = '$removeRegistro', qtdR = '$novoTotal' WHERE idPneuDef = $id";
 		} else{
-			$sql = "UPDATE pneuDef SET qtdA = '$qtd' WHERE idPneu = $id";
+			$sql = "UPDATE pneuDef SET qtdA = '$qtd' WHERE idPneuDef = $id";
 		}
 
 

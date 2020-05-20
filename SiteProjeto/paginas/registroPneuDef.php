@@ -95,7 +95,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			mysqli_query($conn,'SET character_set_results=utf8');
 
             // Faz Select na Base de Dados
-            $sql = "SELECT id, nome, marca, qtdA, qtdR FROM produto JOIN pneuDef ON id = idPneu";
+            $sql = "SELECT idProd, nomeProd, marcaProd, qtdA, qtdR FROM produto JOIN pneuDef 
+            ON idProd = idPneuDef";
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
                 echo "<table class='w3-table-all'>";
@@ -118,14 +119,14 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
                         // Apresenta cada linha da tabel
                         while ($row = mysqli_fetch_assoc($result)) {
-                            $cod = $row["id"];
+                            $cod = $row["idProd"];
                             echo "<tr>";
                             echo "<td>";
                             echo $cod;
                             echo "</td><td>";
-                            echo $row["nome"];
+                            echo $row["nomeProd"];
                             echo "</td><td>";
-                            echo $row["marca"];
+                            echo $row["marcaProd"];
                             echo "</td><td>";
                             echo $row["qtdA"];
                             echo "</td><td>";
