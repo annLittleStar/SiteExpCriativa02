@@ -95,18 +95,17 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			mysqli_query($conn,'SET character_set_results=utf8');
 
             // Faz Select na Base de Dados
-            $sql = "SELECT idvenda, nome, marca, quantidade, tipo, preco, vendedor FROM venda";
+            $sql = "SELECT oServico.idServico, vTotal, dataServico, idProduto, quantidade 
+            FROM oServico INNER JOIN vendaPneu ON oServico.idServico = vendaPneu.idServico";
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
                 echo "<table class='w3-table-all'>";
                 echo "	<tr>";
-                echo "	  <th width='5%'>Id</th>";
-                echo "	  <th width='15%'>Nome</th>";
-				echo "	  <th width='15%'>Marca</th>";
+                echo "	  <th width='15%'>Id Servico</th>";
+                echo "	  <th width='15%'>Data</th>";
+				echo "	  <th width='15%'>Produto</th>";
                 echo "    <th width='10%'>Quantidade</th>";
-                echo "    <th width='15%'>Tipo de produto</th>";
-                echo "	  <th width='10%'>Preco</th>";
-                echo "	  <th width='10%'>Nome Vendedor</th>";
+                echo "    <th width='15%'>Total</th>";
 				echo "	  <th width='5%'> </th>";
                 echo "    <th width='5%'> </th>";
                 echo "    <th width='5%'> </th>";
@@ -121,24 +120,19 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
                         // Apresenta cada linha da tabel
                         while ($row = mysqli_fetch_assoc($result)) {
-                            $cod = $row["idvenda"];
+                            $cod = $row["oServico.idServico"];
                             echo "<tr>";
                             echo "<td>";
                             echo $cod;
                             echo "</td><td>";
-                            echo $row["nome"];
+                            echo $row["dataServico"];
                             echo "</td><td>";
-                            echo $row["marca"];
+                            echo $row["idProduto"];
                             echo "</td><td>";
                             echo $row["quantidade"];
                             echo "</td><td>";
-                            echo $row["tipo"];
-                            echo "</td><td>";
-                            echo $row["preco"];
-                            echo "</td><td>";
-                            echo $row["vendedor"];
-                            echo "</td><td>";
-                        
+                            echo $row["vTotal"];
+                            echo "</td><td>";                        
 
 						//Adicionar, retirar ou excluir registro do produto
 				?>
