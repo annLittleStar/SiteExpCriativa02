@@ -178,7 +178,8 @@ nome varchar(45) not null,
 carro int not null,
 disponibilidade int,
 primary key(id),
- foreign key(disponibilidade) references produto(id), -- arrumar para a quantidade aqui
+foreign key(disponibilidade) references produto(id), -- arrumar para a quantidade aqui
  foreign key(carro) references carro(id)
 )engine=innoDB default charset=utf8;
+
 

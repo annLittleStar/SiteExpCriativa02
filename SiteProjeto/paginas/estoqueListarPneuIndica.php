@@ -59,21 +59,22 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
                 <!-- Acesso ao BD-->
 				<?php
-				
+							
 				$servername = "localhost:3306";
 				$username = "root";
 				$password = "";
 				$database = "SEA";
 				$id=$_GET['id'];
-				$disp=$_GET['disponibilidade'];
 				
 				// Cria conexão
 				$conn = mysqli_connect($servername, $username, $password, $database);
 
 				// Verifica conexão
 				if (!$conn) {
-					die("Connection failed: " . mysqli_connect_error());
-				}
+                echo "</table>";
+                echo "</div>";
+                die("Falha na conexão com o Banco de Dados: " . mysqli_connect_error());
+            }
 
 				// Configura para trabalhar com caracteres acentuados do português
 				mysqli_query($conn,"SET NAMES 'utf8'");
@@ -82,64 +83,29 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 				mysqli_query($conn,'SET character_set_client=utf8');
 				mysqli_query($conn,'SET character_set_results=utf8');
 
-
-				//Ajustar essa parte ao BD do projeto:
-
 				// Faz Select na Base de Dados
-				$sql = "SELECT nome FROM carro WHERE id = $id";
-				echo "<div class='w3-responsive w3-card-4'>"; //Inicio form
-				 if ($result = mysqli_query($conn, $sql)) {
-						if (mysqli_num_rows($result) > 0) {
+            $sql = "SELECT nome, carro, disponibilidade FROM produto";
+            $sql = "SELECT id FROM carro";
 
-						
-
-						// Apresenta cada linha da tabela:
-							while ($row = mysqli_fetch_assoc($result)) {
-				?>				
-
-								<div class="w3-container w3-theme">
-									<h2>Melhores Pneus para  [<?php echo $row['nome']; ?>]</h2>
-								</div>
-
-
-
-								<form class="w3-container" action="estoqueListarPneuBD.php" method="post" onsubmit="return check(this.form)">
-									<input type="hidden" id="Id" name="Id" value="<?php echo $row['id']; ?>">
-									<p>
-									<label class="w3-text-deep-purple"><b>Nome</b></label>
-                                    <input class="w3-input w3-border w3-light-grey" name="Nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$"
-                                           title="Nome do pneu entre 4 e 100 letras." value="<?php echo $row['nome']; ?>" required readonly></p>
-
-                                    <p>
-                                    	<?php 
-                                    }
-                                }
-                            }
-                $sql2 = "SELECT quantidade FROM produto WHERE id = $disp";
-				echo "<div class='w3-responsive w3-card-4'>"; //Inicio form
-				 if ($result2 = mysqli_query($conn, $sql2)) {
-						if (mysqli_num_rows($result2) > 0) {
-
-						
-
-						// Apresenta cada linha da tabela:
-							while ($row2 = mysqli_fetch_assoc($result2)) {
-				?>
-								
-
-									<label class="w3-text-deep-purple"><b>Disponivel no estoque</b></label>
-                                    <input class="w3-input w3-border w3-light-grey" name="Disponibilidade" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$"
-                                           title="Disponibilidade do pneu entre 4 e 100 letras." value="<?php echo $row['quantidade']; ?>" required readonly></p>
-
-									<p>
+            echo "<div class='w3-responsive w3-card-4'>";
+            if ($result = mysqli_query($conn, $sql)) {
+                echo "<table class='w3-table-all'>";
+                echo "	<tr>";
+                echo "	  <th width='25%'>id</th>";
+  //              echo "	  <th width='25%'>carro</th>";
+                echo "	  <th width='25%'>Nome</th>";
+                echo "    <th width='25%'>Disponibilidade</th>";
+                echo "	</tr>";
+                        ?>
+								<!--	<p>
 									<input type="submit" value="Acessar Estoque" class="w3-btn w3-green" 
 									onclick= "window.location.href='estoqueListar.php'">
 									<input type="button" value="Voltar" class="w3-btn w3-theme" onclick="window.location.href='estoqueListarPneu.php'"></p>
-								</form>
+								</form> -->
 			<?php 
 							}
-						}
-				}
+						
+				
 				else {
 					echo "Erro executando UPDATE: " . mysqli_error($conn);
 				}
