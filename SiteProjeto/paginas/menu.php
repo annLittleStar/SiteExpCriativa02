@@ -64,7 +64,9 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			<a class="w3-bar-item w3-button" href='turmaContratar.php'>Cadastrar Serviço Realizado</a>
 			<!--Deixar aqui por enquanto - Ate fazer a escolha dentro do serviço - por que venda é um dos serviços-->
 			<a class="w3-bar-item w3-button" href="vendasRegistrar.php">Registrar Vendas</a>
-			<a class="w3-bar-item w3-button" href="vendasListar.php">Registro de Vendas</a>
+			<a class="w3-bar-item w3-button" href="vendasListar.php">Histórico de Vendas</a>
+			<a class="w3-bar-item w3-button" href="lavagensRegistrar.php">Registrar de Lavagens</a>
+			<a class="w3-bar-item w3-button" href="lavagensListar.php">Histórico de Lavagens</a>
 		</div>
 		<!--Perqunta por que não dá para adicionar mais um menu-->
 	</div>
