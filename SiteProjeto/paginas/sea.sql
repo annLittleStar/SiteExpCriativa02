@@ -67,6 +67,16 @@ create table if not exists produto(
     -- foreign key(idFunc) references funcionario(id)
 ) engine=innoDB default charset=utf8;
 
+INSERT INTO `sea`.`produto` (`id`, `nome`, `marca`, `preco`, `tipo`, `quantidade`, `idFunc`) VALUES ('2', 'Tornado Beta 4 Lonas', 'Pirelli', '150.45', 'Pneu', '8', '1');
+INSERT INTO `sea`.`produto` (`id`, `nome`, `marca`, `preco`, `tipo`, `quantidade`, `idFunc`) VALUES ('3', 'Scorpion STR', 'Pirelli', '123.44', 'Pneu', '15', '1');
+INSERT INTO `sea`.`produto` (`id`, `nome`, `marca`, `preco`, `tipo`, `quantidade`, `idFunc`) VALUES ('4', 'Scorpion ATR', 'Pirelli', '177.83', 'Pneu', '7', '1');
+INSERT INTO `sea`.`produto` (`id`, `nome`, `marca`, `preco`, `tipo`, `quantidade`, `idFunc`) VALUES ('5', 'Scorpion MUD', 'Pirelli', '183.73', 'Pneu', '6', '1');
+INSERT INTO `sea`.`produto` (`id`, `nome`, `marca`, `preco`, `tipo`, `quantidade`, `idFunc`) VALUES ('6', 'Laufen S FIT', 'Hankook', '205.47', 'Pneu', '3', '1');
+INSERT INTO `sea`.`produto` (`id`, `nome`, `marca`, `preco`, `tipo`, `quantidade`, `idFunc`) VALUES ('7', 'Direzza DZ102', 'Dunlop', '203.82', 'Pneu', '10', '1');
+INSERT INTO `sea`.`produto` (`id`, `nome`, `marca`, `preco`, `tipo`, `quantidade`, `idFunc`) VALUES ('8', 'Touring R1', 'Dunlop', '165', 'Pneu', '1', '1');
+INSERT INTO `sea`.`produto` (`id`, `nome`, `marca`, `preco`, `tipo`, `quantidade`, `idFunc`) VALUES ('9', 'Cinturato P1', 'Pirelli', '162.63', 'Pneu', '21', '1');
+INSERT INTO `sea`.`produto` (`id`, `nome`, `marca`, `preco`, `tipo`, `quantidade`, `idFunc`) VALUES ('10', 'SP Sport LM704', 'Dunlop', '148.90', 'Pneu', '18', '1');
+
 -- --------------------------------------------------------
 -- Tabela de Estado de produto
 -- --------------------------------------------------------
@@ -151,6 +161,12 @@ create table if not exists carro(
     nome varchar(30) not null,
     primary key(id)
 ) engine=innoDB default charset=utf8;
+
+INSERT INTO `sea`.`carro` (`id`, `marca`, `nome`) VALUES ('1', 'Chevrolet', 'Opala Comodoro');
+INSERT INTO `sea`.`carro` (`id`, `marca`, `nome`) VALUES ('2', 'Mitsubishi', 'Pajero TR4');
+INSERT INTO `sea`.`carro` (`id`, `marca`, `nome`) VALUES ('3', 'Huyndai', 'Veloster');
+INSERT INTO `sea`.`carro` (`id`, `marca`, `nome`) VALUES ('4', 'Peugeot', '2007');
+INSERT INTO `sea`.`carro` (`id`, `marca`, `nome`) VALUES ('5', 'Honda', 'HRV');
 
 -- --------------------------------------------------------
 -- Tabela de pneus indicados 
