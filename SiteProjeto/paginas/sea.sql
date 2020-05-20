@@ -56,26 +56,15 @@ create table if not exists folhaPonto(
 -- --------------------------------------------------------
 
 create table if not exists produto(
-	id int not null auto_increment,
-    nome varchar(30) not null,
-    marca varchar(30) not null,
-    preco double not null,
-    tipo enum('Pneu', 'Produto de limpeza') not null,
-    quantidade int not null,
-    idFunc int not null,
-    primary key(id)
+	idProd int not null auto_increment,
+    nomeProd varchar(30) not null,
+    marcaProd varchar(30) not null,
+    precoProd double not null,
+    tipoProd enum('Pneu', 'Produto de limpeza') not null,
+    quantidadeProd int not null,
+    idFuncProd int not null,
+    primary key(idProd)
     -- foreign key(idFunc) references funcionario(id)
-) engine=innoDB default charset=utf8;
-
--- --------------------------------------------------------
--- Tabela de Estado de produto
--- --------------------------------------------------------
-
-create table if not exists estado(
-	idProduto int not null,
-    estado enum('Bom', 'Defeituoso') not null,
-    quantidade int not null, -- Isso é para a contagem de quantos defeituosos tem
-    foreign key(idProduto) references produto(id)
 ) engine=innoDB default charset=utf8;
 
 -- --------------------------------------------------------
@@ -83,11 +72,11 @@ create table if not exists estado(
 -- --------------------------------------------------------
 
 create table if not exists pneuDef(
-	idPneu int not null,
+	idPneuDef int not null,
     qtdA int not null default(0), -- Isso é para a contagem de quantos defeituosos aguardam recolhimento
     qtdR int not null default(0), -- Isso é para a contagem de quantos defeituosos foram recolhidos
     qtdT int not null default(0), -- Isso é para a contagem de quantos defeituosos já passaram pela loja
-    foreign key(idPneu) references produto(id) on delete no action on update no action
+    foreign key(idPneuDef) references produto(idProd) on delete no action on update no action
 ) engine=innoDB default charset=utf8;
 
 -- --------------------------------------------------------
@@ -109,12 +98,12 @@ create table if not exists oServico(
 -- --------------------------------------------------------
 
 create table if not exists vendaPneu(
-	idServico int not null,
-    valor float not null,
-    idProduto int not null,
-    quantidade int not null,
-    foreign key(idServico) references oServico(idServico),
-    foreign key(idProduto) references produto(id)
+	idVenda int not null,
+    totalVenda float not null,
+    idProdutoVenda int not null,
+    qtdVenda int not null,
+    foreign key(idVenda) references oServico(idServico),
+    foreign key(idProdutoVenda) references produto(idProd)
 ) engine=innoDB default charset=utf8;
 
 -- --------------------------------------------------------
@@ -122,10 +111,10 @@ create table if not exists vendaPneu(
 -- --------------------------------------------------------
 
 create table if not exists lavagem(
-	idServico int not null,
-    vTotal float not null,
-    tipo enum('Simples', 'Completa') not null,
-    foreign key(idServico) references oServico(idServico)
+	idLavagem int not null,
+    totalLavagem float not null,
+    tipoLavagem enum('Simples', 'Completa') not null,
+    foreign key(idLavagem) references oServico(idServico)
 ) engine=innoDB default charset=utf8;
 
 -- --------------------------------------------------------
@@ -136,20 +125,20 @@ create table if not exists lavagem(
 
 create table if not exists lavagemProd(
     contador int not null, -- Isso para usar a marcação de vezes que o produto pode ser usado
-    idLavagem int not null,
-    idProduto int not null, -- Isso sera usado para encontrar o produto
-    foreign key(idLavagem) references lavagem(idServico),
-    foreign key(idProduto) references produto(id)
+    lavagemId int not null,
+    produtoId int not null, -- Isso sera usado para encontrar o produto
+    foreign key(lavagemId) references lavagem(idLavagem),
+    foreign key(produtoId) references produto(idProd)
 ) engine=innoDB default charset=utf8;
 
 -- --------------------------------------------------------
 -- Tabela de carros 
 -- --------------------------------------------------------
 create table if not exists carro(
-	id int not null,
-    marca varchar(30) not null,
-    nome varchar(30) not null,
-    primary key(id)
+	idCarro int not null,
+    marcaCarro varchar(30) not null,
+    nomeCarro varchar(30) not null,
+    primary key(idCarro)
 ) engine=innoDB default charset=utf8;
 
 -- --------------------------------------------------------
@@ -157,11 +146,11 @@ create table if not exists carro(
 -- --------------------------------------------------------
 
 CREATE TABLE if not exists pneu (
-id int not null,
-nome varchar(45) not null,
-carro int not null,
-disponibilidade int,
-primary key(id),
-foreign key(disponibilidade) references produto(id), -- arrumar para a quantidade aqui
- foreign key(carro) references carro(id)
+	idPneu int not null,
+	modelo varchar(45) not null,
+	carro int not null,
+	disponibilidade int,
+	primary key(idPneu),
+	foreign key(disponibilidade) references produto(idProd), -- arrumar para a quantidade aqui
+	foreign key(carro) references carro(idCarro)
 )engine=innoDB default charset=utf8;

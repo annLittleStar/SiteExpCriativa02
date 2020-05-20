@@ -12,7 +12,7 @@ INSERT INTO `funcionario` (`id`, `nome`, `login`, `senha`, `tipo`, `cpf`, `telef
 -- Produtos
 -- --------------------------------------------------------
 
-INSERT INTO `produto` (`id`, `nome`, `marca`, `preco`, `tipo`, `quantidade`, `idFunc`) VALUES 
+INSERT INTO `produto` (`idProd`, `nomeProd`, `marcaProd`, `precoProd`, `tipoProd`, `quantidadeProd`, `idFuncProd`) VALUES 
 ('2', 'Tornado Beta 4 Lonas', 'Pirelli', '150.45', 'Pneu', '8', '1'),
 ('3', 'Scorpion STR', 'Pirelli', '123.44', 'Pneu', '15', '1'),
 ('4', 'Scorpion ATR', 'Pirelli', '177.83', 'Pneu', '7', '1'),
