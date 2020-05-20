@@ -84,15 +84,14 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 				mysqli_query($conn,'SET character_set_results=utf8');
 
 				// Faz Select na Base de Dados
-            $sql = "SELECT nomeCarro, marcaCarro, modelo, quantidadeProd FROM carro JOIN pneu JOIN produto 
-            ON carro = idCarro AND disponibilidade = idProd";
+            $sql = "SELECT nomeCarro, marcaCarro, modelo, quantidadeProd FROM ((carro JOIN pneu ON carro = idCarro)  JOIN produto ON disponibilidade = idProd) WHERE carro = $id" ;
 
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
                 if (mysqli_num_rows($result) > 0) {
 
                         // Apresenta cada linha da tabela:
-                    while ($row = mysqli_fetch_assoc($result)) {
+                    if ($row = mysqli_fetch_assoc($result)) {
                 ?>              
 
                         <div class="w3-container w3-theme">
@@ -109,15 +108,22 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
             if ($resulta = mysqli_query($conn, $sql)) {
                 if (mysqli_num_rows($resulta) > 0) {
 
-
                         // Apresenta cada linha da tabela:
                     while ($row = mysqli_fetch_assoc($resulta)) {
                 ?>
                                 
                         <form class="w3-container" action="estoqueListarPneuBD.php" method="post" onsubmit="return check(this.form)">
-                        <p>
-                        <label class="w3-text-deep-purple"><b>Nome</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="Nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$" value="<?php echo $row['Modelo']; ?>" required readonly></p>
+                        <table>
+                        <tr>
+                            <td style="width:92%"><p>
+                        
+                            
+                                <label class="w3-text-deep-purple"><b>Nome</b></label>
+                                <input width="50%" class="w3-input w3-border w3-light-grey" name="Nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$" value="<?php echo $row['modelo']; ?>" required readonly></p></td>
+                        <td style="width:8%" align="center"><p>
+                        <label class="w3-text-deep-purple"><b>Quantidade</b></label>
+                        <input class="w3-input w3-border w3-light-grey" name="Nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$" value="<?php echo $row['quantidadeProd']; ?>" required readonly></p></td>
+                        </table>
 
                                          <?php 
                         }
