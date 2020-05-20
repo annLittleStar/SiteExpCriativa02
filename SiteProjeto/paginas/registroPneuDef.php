@@ -107,6 +107,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 echo "    <th width='15%'>Qtd Recolhida</th>";
 				echo "	  <th width='5%'> </th>";
                 echo "    <th width='5%'> </th>";
+                echo "    <th width='5%'> </th>";
+                echo "    <th width='5%'> </th>";
                 echo "	</tr>";
 
                 echo '<form method="POST" action="registroPneuDefPesquisa.php">
@@ -135,10 +137,16 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
 						//Adicionar, retirar ou excluir registro do produto
 				?>
-                        <a href='entradaPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/caixinhaEntrada.png' title='Registrar Entrada de Pneu Defeituoso' width='32'></a>
+                        <a href='estoqueSaida.php?id=<?php echo $cod; ?>'><img src='../imagens/caixinhaSaida.png' title='Registrar Saida de Produto' width='32'></a>
                         </td>
                         <td>
-                        <a href='recolhimentoPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/caixinhaSaida.png' title='Registrar Recolhimento de Pneu Defeituoso' width='32'></a>
+                        <a href='estoqueEntrada.php?id=<?php echo $cod; ?>'><img src='../imagens/caixinhaEntrada.png' title='Registrar Entrada de Produto' width='32'></a>
+                        </td>
+                        <td>
+                        <a href='estoqueEditar.php?id=<?php echo $cod; ?>'><img src='../imagens/editar.png' title='Editar Produto' width='32'></a>
+                        </td>
+                        <td>
+                        <a href='estoqueExcluir.php?id=<?php echo $cod; ?>'><img src='../imagens/deletar.png' title='Excluir Produto' width='34'></a>
                         </td>
                         </tr>
 				 <?php
