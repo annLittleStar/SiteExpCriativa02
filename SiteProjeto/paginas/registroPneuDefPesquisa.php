@@ -76,55 +76,81 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
             $username = "root";
             $password = "";
             $database = "sea";
-			
-			// Verifica conexão
+            
+            // Verifica conexão
             $conn = mysqli_connect($servername, $username, $password, $database);
-			
-			// Verifica conexão 
-			if (!$conn) {
+            
+            // Verifica conexão 
+            if (!$conn) {
                 echo "</table>";
                 echo "</div>";
                 die("Falha na conexão com o Banco de Dados: " . mysqli_connect_error());
             }
-			
-			// Configura para trabalhar com caracteres acentuados do português
-			mysqli_query($conn,"SET NAMES 'utf8'");
-			mysqli_query($conn,"SET NAMES 'utf8'");
-			mysqli_query($conn,'SET character_set_connection=utf8');
-			mysqli_query($conn,'SET character_set_client=utf8');
-			mysqli_query($conn,'SET character_set_results=utf8');
+            
+            // Configura para trabalhar com caracteres acentuados do português
+            mysqli_query($conn,"SET NAMES 'utf8'");
+            mysqli_query($conn,"SET NAMES 'utf8'");
+            mysqli_query($conn,'SET character_set_connection=utf8');
+            mysqli_query($conn,'SET character_set_client=utf8');
+            mysqli_query($conn,'SET character_set_results=utf8');
 
             // Faz Select na Base de Dados
             $sql = "SELECT id, nome, marca, qtdA, qtdR FROM produto JOIN pneuDef ON id = idPneu";
-            // ############
-            // Pesquisa não está funcionando!!
-            // ############
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
                 echo "<table class='w3-table-all'>";
-                echo "	<tr>";
-                echo "	  <th width='5%'>Id</th>";
-                echo "	  <th width='15%'>Nome</th>";
-				echo "	  <th width='15%'>Marca</th>";
+                echo "  <tr>";
+                echo "    <th width='5%'>Id</th>";
+                echo "    <th width='15%'>Nome</th>";
+                echo "    <th width='15%'>Marca</th>";
                 echo "    <th width='15%'>Qtd Aguardando</th>";
                 echo "    <th width='15%'>Qtd Recolhida</th>";
-				echo "	  <th width='5%'> </th>";
                 echo "    <th width='5%'> </th>";
-                echo "	</tr>";
+                echo "    <th width='5%'> </th>";
+                echo "  </tr>";
 
                 echo '<form method="POST" action="registroPneuDefPesquisa.php">
                 <input type="text" name="pesquisar" style="width:90%" placeholder="Digite o Nome, Marca do Registro que deseja encontrar">
                     <input style="width:10%" type="submit" name="buscar" value="Buscar">
                 </form>';
 
+                //Deve ser o nome exato
+
                 $pesquisar = $_POST['pesquisar'];
-                $resultado = "SELECT * FROM produto JOIN pneuDef WHERE nome LIKE '$pesquisar' OR marca LIKE '$pesquisar' ON id = idPneu";
-                $resultado_pesquisa = mysqli_query($conn, $resultado);
+                $result_pesq = "SELECT * FROM produto JOIN pneuDef ON id = idPneu WHERE nome LIKE '$pesquisar'
+                OR marca LIKE '$pesquisar'";
+                $resultado_pesq = mysqli_query($conn, $result_pesq);
 
                 if (mysqli_num_rows($result) > 0) {
 
-                    if ($pesquisar != null) {
+                    if($pesquisar!=null){
 
+                        // Apresenta cada linha pesquisada da tabel
+                        while ($row = mysqli_fetch_array($resultado_pesq)) {
+                            $cod = $row["id"];
+                            echo "<tr>";
+                            echo "<td>";
+                            echo $cod;
+                            echo "</td><td>";
+                            echo $row["nome"];
+                            echo "</td><td>";
+                            echo $row["marca"];
+                            echo "</td><td>";
+                            echo $row["qtdA"];
+                            echo "</td><td>";
+                            echo $row["qtdR"];
+                            echo "</td><td>";
+
+                ?>
+                        <a href='entradaPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/caixinhaEntrada.png' title='Registrar Entrada de Pneu Defeituoso' width='32'></a>
+                        </td>
+                        <td>
+                        <a href='recolhimentoPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/caixinhaSaida.png' title='Registrar Recolhimento de Pneu Defeituoso' width='32'></a>
+                        </td>
+                        </tr>
+                 <?php
+                        }
+                    } else{
                         // Apresenta cada linha da tabel
                         while ($row = mysqli_fetch_assoc($result)) {
                             $cod = $row["id"];
@@ -139,50 +165,18 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo $row["qtdA"];
                             echo "</td><td>";
                             echo $row["qtdR"];
-                            echo "</td><td>";
-                        
-
-						//Adicionar, retirar ou excluir registro do produto
-				?>
+                            echo "</td><td>";                        
+                        //Adicionar, retirar ou excluir registro do produto
+                ?>
                         <a href='entradaPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/caixinhaEntrada.png' title='Registrar Entrada de Pneu Defeituoso' width='32'></a>
                         </td>
                         <td>
                         <a href='recolhimentoPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/caixinhaSaida.png' title='Registrar Recolhimento de Pneu Defeituoso' width='32'></a>
                         </td>
                         </tr>
-				 <?php
+                 <?php
                     }
                 }
-
-
-                else{                       
-                    while ($row = mysqli_fetch_assoc($result)) {
-                    $cod = $row["id"];
-                    echo "<tr>";
-                    echo "<td>";
-                    echo $cod;
-                    echo "</td><td>";
-                    echo $row["nome"];
-                    echo "</td><td>";
-                    echo $row["marca"];
-                    echo "</td><td>";
-                    echo $row["qtdA"];
-                    echo "</td><td>";
-                    echo $row["qtdR"];
-                    echo "</td><td>";
-                
-
-                            //Adicionar, retirar ou excluir registro do produto
-                    ?>
-                            <a href='entradaPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/caixinhaEntrada.png' title='Registrar Entrada de Pneu Defeituoso' width='32'></a>
-                            </td>
-                            <td>
-                            <a href='recolhimentoPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/caixinhaSaida.png' title='Registrar Recolhimento de Pneu Defeituoso' width='32'></a>
-                            </td>
-                            </tr>
-                    <?php
-                        }
-                    }
                 }
                 echo "</table>";
                 echo "</div>";
