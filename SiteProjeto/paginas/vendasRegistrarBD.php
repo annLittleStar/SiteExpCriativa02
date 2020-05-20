@@ -19,7 +19,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		.myMenu {margin-bottom:150px}
       </style>
 	</head>
-<body onload="w3_show_nav('menuSeaPlus')">
+<body onload="w3_show_nav('menuServicos')">
 
 <!-- Inclui MENU.PHP  -->
 <?php require 'menu.php';?>
