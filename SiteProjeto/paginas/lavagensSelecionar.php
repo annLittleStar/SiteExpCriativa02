@@ -54,7 +54,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
     <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-        <h1 class="w3-xxlarge">Seleção de Pneus Recomendados</h1>
+        <h1 class="w3-xxlarge">Registrar Lavagens</h1>
 
         <p class="w3-large">
         <p>
@@ -76,62 +76,58 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
             $username = "root";
             $password = "";
             $database = "sea";
-			
-			// Verifica conexão
+            
+            // Verifica conexão
             $conn = mysqli_connect($servername, $username, $password, $database);
-			
-			// Verifica conexão 
-			if (!$conn) {
+            
+            // Verifica conexão 
+            if (!$conn) {
                 echo "</table>";
                 echo "</div>";
                 die("Falha na conexão com o Banco de Dados: " . mysqli_connect_error());
             }
-			
-			// Configura para trabalhar com caracteres acentuados do português
-			mysqli_query($conn,"SET NAMES 'utf8'");
-			mysqli_query($conn,"SET NAMES 'utf8'");
-			mysqli_query($conn,'SET character_set_connection=utf8');
-			mysqli_query($conn,'SET character_set_client=utf8');
-			mysqli_query($conn,'SET character_set_results=utf8');
+            
+            // Configura para trabalhar com caracteres acentuados do português
+            mysqli_query($conn,"SET NAMES 'utf8'");
+            mysqli_query($conn,"SET NAMES 'utf8'");
+            mysqli_query($conn,'SET character_set_connection=utf8');
+            mysqli_query($conn,'SET character_set_client=utf8');
+            mysqli_query($conn,'SET character_set_results=utf8');
 
             // Faz Select na Base de Dados
-            $sql = "SELECT idCarro, nomeCarro, marcaCarro FROM carro";
+            $sql = "SELECT idTipo, tipo FROM lavagem";
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
                 echo "<table class='w3-table-all'>";
                 echo "  <tr>";
-                echo "    <th width='20%'>Id</th>";
-                echo "    <th width='35%'>Marca</th>";
-                echo "    <th width='35%'>Nome</th>";
-                echo "    <th width='10%'> </th>";
+                echo "    <th width='20%'>   </th>";
+                echo "    <th width='30%'>Tipo de Lavagem</th>";
+                echo "    <th width='30%'>   </th>";
+                echo "    <th width='20%'>   </th>";
                 echo "  </tr>";
 
 
-                echo '<form method="POST" action="estoqueListarPneuPesquisa.php">
-                <input type="text" name="pesquisar" style="width:90%" placeholder="Digite o Nome ou Marca do carro que deseja pesquisar">
-                    <input style="width:10%" type="submit" name="buscar" value="Buscar">
-                </form>';
-
-                if (mysqli_num_rows($result) > 0) {
-
-                        // Apresenta cada linha da tabel
+                // Apresenta cada linha da tabel
                         while ($row = mysqli_fetch_assoc($result)) {
-                            $cod = $row["idCarro"];
+                            $cod = $row["idTipo"];
                             echo "<tr>";
                             echo "<td>";
                             echo $cod;
                             echo "</td><td>";
-                            echo $row["marcaCarro"];
+                            echo $row["tipo"];
                             echo "</td><td>";
-                            echo $row["nomeCarro"];
                             echo "</td><td>";
+
+                        //botões
+                ?>
                         
-						//Exibir pneus específicos para este carro
-				?>
-                        <a href='estoqueListarPneuIndica.php?id=<?php echo $cod; ?>'><img src='../imagens/pneu.png' title='Exibir Pneus Indicados' width='30'></a>
-				 <?php
-                    }
-                }
+                        <a href='lavagemCompletaRegistrar.php?id=<?php echo $cod; ?>'><img src='../imagens/lavaCompleta.png' title='Registrar Lavagem Completa' width='32'></a>
+                        </td>
+                        <td>
+               <!--         <a href='lavagemDuchaRegistrar.php?id=<?php echo $cod; ?>'><img src='../imagens/lavaDucha.png' title='Registrar Lavagem Ducha' width='32'></a>
+                        </td> -->
+                 <?php
+             }
                 echo "</table>";
                 echo "</div>";
             } else {

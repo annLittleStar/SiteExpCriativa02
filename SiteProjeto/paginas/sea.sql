@@ -82,13 +82,15 @@ create table if not exists pneuDef(
 -- --------------------------------------------------------
 -- Tabela de Ordem de Serviço
 -- --------------------------------------------------------
-
+-- tem q revisar isso aqui
 create table if not exists oServico(
 	idServico int not null auto_increment,
     vTotal float not null,
     dataServico datetime,
     idFunc int not null, -- Tem q rever isso
-    primary key(idServico)
+    primary key(idServico),
+    foreign key(idServico) references lavagem(idLavagem),
+    foreign key(idServico) references vendaPneu(idVenda)
     -- Por enquanto isso vai ficar em comentario por ainda não há registro de funcionario
     -- foreign key(idFunc) references funcionario(id)
 ) engine=innoDB default charset=utf8;
@@ -102,7 +104,6 @@ create table if not exists vendaPneu(
     totalVenda float not null,
     idProdutoVenda int not null,
     qtdVenda int not null,
-    foreign key(idVenda) references oServico(idServico),
     foreign key(idProdutoVenda) references produto(idProd)
 ) engine=innoDB default charset=utf8;
 
@@ -112,9 +113,35 @@ create table if not exists vendaPneu(
 
 create table if not exists lavagem(
 	idLavagem int not null,
-    totalLavagem float not null,
-    tipoLavagem enum('Simples', 'Completa') not null,
-    foreign key(idLavagem) references oServico(idServico)
+    idTipo int not null,
+    lavagemCompleta boolean not null,
+    lavagemDucha boolean not null,
+    primary key(idTipo)
+) engine=innoDB default charset=utf8;
+
+
+-- --------------------------------------------------------
+-- Tabela de Lavagens Completas
+-- --------------------------------------------------------
+
+create table if not exists lavagemCompleta(
+	idLavagemC int not null,
+    valorLavagem float not null,
+    tipoLavagem int not null,
+	primary key(idLavagemC),
+    foreign key(tipoLavagem) references lavagem(idTipo)
+) engine=innoDB default charset=utf8;
+
+-- --------------------------------------------------------
+-- Tabela de Lavagens Duchas
+-- --------------------------------------------------------
+
+create table if not exists lavagemDucha(
+	idLavagemD int not null,
+    valorLavagem float not null,
+    tipoLavagem int not null,
+	primary key(idLavagemD),
+    foreign key(tipoLavagem) references lavagem(idTipo)
 ) engine=innoDB default charset=utf8;
 
 -- --------------------------------------------------------

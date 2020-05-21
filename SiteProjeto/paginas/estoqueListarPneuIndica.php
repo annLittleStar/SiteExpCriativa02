@@ -39,7 +39,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
     <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-        <h1 class="w3-xxlarge">Pneus Indicados</h1>
+        <h1 class="w3-xxlarge">Pneus Recomendados</h1>
 
         <p class="w3-large">
             <div class="w3-code cssHigh notranslate">
@@ -115,25 +115,30 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         <form class="w3-container" action="estoqueListarPneuBD.php" method="post" onsubmit="return check(this.form)">
                         <table>
                         <tr>
-                            <td style="width:92%"><p>
+                            <td style="width:82%"><p>
                         
                             
-                                <label class="w3-text-deep-purple"><b>Nome</b></label>
-                                <input width="50%" class="w3-input w3-border w3-light-grey" name="Nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$" value="<?php echo $row['modelo']; ?>" required readonly></p></td>
-                        <td style="width:8%" align="center"><p>
-                        <label class="w3-text-deep-purple"><b>Quantidade</b></label>
+                                <label class="w3-text-deep-purple"><b>Modelo</b></label>
+                                <input width="60%" class="w3-input w3-border w3-light-grey" name="Nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$" value="<?php echo $row['modelo']; ?>" required readonly></p></td>
+                        <td style="width:18%" align="center"><p>
+                        <label class="w3-text-deep-purple"><b>Quantidade em estoque</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="Nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$" value="<?php echo $row['quantidadeProd']; ?>" required readonly></p></td>
                         </table>
-
                                          <?php 
                         }
                     }
                 } else {
 					echo "Erro executando UPDATE: " . mysqli_error($conn);
 				}
+				?>
+												<p>
+								<!--	<input type="submit" value="Acessar Estoque" class="w3-btn w3-green" onclick= "window.location.href='estoqueListar.php'"> -->
+
+									<input type="button" value="Voltar" class="w3-btn w3-theme" onclick="window.location.href='estoqueListarPneu.php'"></p>
+								</form>
+			<?php 
 				echo "</div>"; //Fim form
 				mysqli_close($conn);  //Encerra conexao com o BD
-
 			?>
 
 			</div>

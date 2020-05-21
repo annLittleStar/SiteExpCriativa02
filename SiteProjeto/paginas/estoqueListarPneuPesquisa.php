@@ -54,7 +54,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
     <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-        <h1 class="w3-xxlarge">Lista de Pneus Específicos</h1>
+        <h1 class="w3-xxlarge">Seleção de Pneus Recomendados</h1>
 
         <p class="w3-large">
         <p>
@@ -155,7 +155,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         
 						//Exibir pneus específicos para este carro
 				?>
-                        <a href='estoqueListarPneuIndica.php?id=<?php echo $cod; ?>'><img src='../imagens/pneu.png' title='Exibir Pneus Indicados' width='32'></a>
+                        <a href='estoqueListarPneuIndica.php?id=<?php echo $cod; ?>'><img src='../imagens/pneu.png' title='Exibir Pneus Recomendados' width='32'></a>
 				 <?php
                     }
                 }
