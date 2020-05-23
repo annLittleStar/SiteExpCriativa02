@@ -72,8 +72,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         <label class="w3-text-deep-purple"><b>Quantidade Vendida</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="Vender" type="text" pattern="[0-9]{1,3}" title="Quantidade Vendida." value="" required></p>
                         <p>
-						<input type="submit" value="Cadastrar" class="w3-btn w3-green" >
-						<input type="button" value="Cancelar" class="w3-btn w3-red" onclick="window.location.href='.'"></p>
+						<input type="submit" value="Registrar" class="w3-btn w3-green" >
+						<input type="button" value="Cancelar" class="w3-btn w3-red" onclick="window.location.href='ordemservico.php'"></p>
 					</form>
 				</div>
 
