@@ -95,6 +95,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
             mysqli_query($conn,'SET character_set_results=utf8');
 
             // Faz Select na Base de Dados
+            //align="center" bottom="middle"
             $sql = "SELECT idTipo, tipo FROM lavagem";
             echo "<div class='w3-responsive w3-card-4'>";
                                     //botões
@@ -104,14 +105,15 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         <h2>Tipo da Lavagem</h2>
                     </div>
                     <form class="w3-container">
-                        <table>
+                        <table  style="height: :100%; width:100%;">
                             <tr>
-                                <td><label class="w3-text-deep-purple"><b>Lavagem Completa</b></label></td>
-                                <td><a href='lavagemCompletaRegistrar.php'><img src='../imagens/lavaCompleta.png' title='Registrar Lavagem Ducha' width='32'></a></td>
-                            </tr>
-                            <tr>
-                                <td><label class="w3-text-deep-purple"><b>Lavagem Simples</b></label></td>
-                                <td><a href='lavagemDuchaRegistrar.php'><img src='../imagens/lavaDucha.png' title='Registrar Lavagem Ducha' width='32'></a></td>
+                                <td style="width:20%;" ><label class="w3-text-deep-purple"><b>Lavagem Completa</b></label></td>
+
+                                <td style="width:30%;" align="left"><a href='lavagemCompletaRegistrar.php'><img src='../imagens/lavaCompleta.png' title='Registrar Lavagem Completa' width='40' ></a></td>
+                            
+                                <td style="width:20%;"><label class="w3-text-deep-purple"><b>Lavagem Simples</b></label></td>
+
+                                <td style="width:30%;" align="left"><a href='lavagemDuchaRegistrar.php'><img src='../imagens/lavaDucha.png' title='Registrar Lavagem Simples' width='40'></a></td>
                             </tr>
                         </table>    
                     </form>
