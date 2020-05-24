@@ -56,20 +56,20 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                     <div class="w3-container w3-theme">
                         <h2>Informe os dados da Lavagem Realizada</h2>
                     </div>
-                    <form class="w3-container" action="vendasRegistrarBD.php" method="post" onsubmit="return check(this.form)">
+                    <form class="w3-container" action="lavagemDuchaBD.php" method="post" onsubmit="return check(this.form)">
 						<input type="hidden" id="acaoForm" name="acaoForm" value="Cada">
                         <p>
                         <label class="w3-text-deep-purple"><b>Id Lavagem</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="idV" type="text" pattern="[0-9]{1,3}" title="ID do Produto." required></p>
+                        <input class="w3-input w3-border w3-light-grey" name="lavS" type="text" pattern="[0-9]{1,3}" title="ID do Produto." required></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Data</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="idP" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF]$" title="Tipo de Lavagem: Data de realização."></p>
+                        <input class="w3-input w3-border w3-light-grey" name="dataS" type="date" title="Data de inicio do registro."></p>
                         <p>
-                        <label class="w3-text-deep-purple"><b>Horário</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="idP" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF]$" title="Tipo de Lavagem: Horário de solicitação."></p>
+                        <label class="w3-text-deep-purple"><b>Hora</b></label>
+                        <input class="w3-input w3-border w3-light-grey" name="hrS" type="text" title="Data de inicio do registro." ></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Valor</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="idP" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF]$" title="Tipo de Lavagem: Preço da Lavagem Completa."></p>
+                        <input class="w3-input w3-border w3-light-grey" name="valS" type="text" value="15"></p>
 
                         <p>
 						<input type="submit" value="Cadastrar" class="w3-btn w3-green" >

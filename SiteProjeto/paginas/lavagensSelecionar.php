@@ -97,48 +97,27 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
             // Faz Select na Base de Dados
             $sql = "SELECT idTipo, tipo FROM lavagem";
             echo "<div class='w3-responsive w3-card-4'>";
-            if ($result = mysqli_query($conn, $sql)) {
-                echo "<table class='w3-table-all'>";
-                echo "  <tr>";
-                echo "    <th width='20%'>   </th>";
-                echo "    <th width='30%'>Tipo de Lavagem</th>";
-                echo "    <th width='30%'>   </th>";
-                echo "    <th width='20%'>   </th>";
-                echo "  </tr>";
-
-
-                // Apresenta cada linha da tabel
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            $cod = $row["idTipo"];
-                            echo "<tr>";
-                            echo "<td>";
-                            echo $cod;
-                            echo "</td><td>";
-                            echo $row["tipo"];
-                            echo "</td><td>";
-                            echo "</td><td>";
-
-                        //botões
+                                    //botões
                 ?>
-                        
-                        <a href='lavagemCompletaRegistrar.php?id=<?php echo $cod; ?>'><img src='../imagens/lavaCompleta.png' title='Registrar Lavagem Completa' width='32'></a>
-                        </td>
-                        <td>
-               <!--         <a href='lavagemDuchaRegistrar.php?id=<?php echo $cod; ?>'><img src='../imagens/lavaDucha.png' title='Registrar Lavagem Ducha' width='32'></a>
-                        </td> -->
-                 <?php
-             }
-                echo "</table>";
-                echo "</div>";
-            } else {
-                echo "Erro executando SELECT: " . mysqli_error($conn);
-            }
+                <div class="w3-responsive w3-card-4">
+                    <div class="w3-container w3-theme">
+                        <h2>Tipo da Lavagem</h2>
+                    </div>
+                    <form class="w3-container">
+                        <table>
+                            <tr>
+                                <td><label class="w3-text-deep-purple"><b>Lavagem Completa</b></label></td>
+                                <td><a href='lavagemCompletaRegistrar.php'><img src='../imagens/lavaCompleta.png' title='Registrar Lavagem Ducha' width='32'></a></td>
+                            </tr>
+                            <tr>
+                                <td><label class="w3-text-deep-purple"><b>Lavagem Simples</b></label></td>
+                                <td><a href='lavagemDuchaRegistrar.php'><img src='../imagens/lavaDucha.png' title='Registrar Lavagem Ducha' width='32'></a></td>
+                            </tr>
+                        </table>    
+                    </form>
+                </div>
 
-            mysqli_close($conn);  //Encerra conexao com o BD
-
-            ?>
-        </div>
-    </div>
+                
 
 
     <footer class="w3-panel w3-padding-32 w3-card-4 w3-light-grey w3-center w3-opacity">
