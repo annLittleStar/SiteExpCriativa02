@@ -92,6 +92,7 @@ create table if not exists vendaPneu(
     idFunc int not null,
     idProdutoVenda int not null,
     qtdVenda int not null,
+    primary key(idVenda),
     foreign key(idProdutoVenda) references produto(idProd)
 ) engine=innoDB default charset=utf8;
 
