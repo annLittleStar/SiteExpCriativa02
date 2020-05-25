@@ -28,7 +28,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
 <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-  <h1 class="w3-xxlarge">Cadastrar Novo Produto</h1>
+  <h1 class="w3-xxlarge">Registrar Venda de Pneu</h1>
 
   <p class="w3-large">
   <div class="w3-code cssHigh notranslate">
@@ -52,9 +52,13 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		$database = "sea";
 		
 		
-		$idv   = $_POST['idV'];
-		$idp   = $_POST['idP'];
-		$vender = $_POST['Vender'];
+		$idv   		= $_POST['idV'];
+		$idp   		= $_POST['idP'];
+		$idf   		= $_POST['idF'];
+		$vender		= $_POST['Vender'];
+		$dataV		= $_POST['data'];
+		$preco		= $_POST['valor'];
+		$quantidade	= $_POST['qtd'];
 
 		
 		// Cria conexão
@@ -77,36 +81,26 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		// Faz Select na Base de Dados
 
 
-		// Registrar venda não está funcionando (can't convert to int/to string)!!
-
-			// Esqueci de perguntar disso, mas acho q sei como corrigir -- Usar hidden
-
-		$preco = mysqli_query($conn, "SELECT COUNT(preco) FROM produto WHERE id = '$idp'"); 
-		//$preco = mysqli_fetch_row($rPreco);
-
 		$precoT = $preco * $vender;
-
-		$quantidade = mysqli_query($conn, "SELECT COUNT(quantidade) FROM produto WHERE id = '$idp'");
-		//$quantidade = mysqli_fetch_row($rQuantidade);
 
 		$resto = $quantidade - $vender;
 
 
-		$sql = "INSERT INTO oServico (idServico, vTotal) VALUES ('$idv', '$precoT')";
+		$sql = "INSERT INTO vendaPneu (idVenda, totalVenda, dataVenda, idFunc, idProdutoVenda, qtdVenda)
+		VALUES ('$idv', '$precoT', '$dataV', '$idf', '$idp', '$quantidade')";
 
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = mysqli_query($conn, $sql)) {
-			echo "Produto Cadastrado!";
+			echo "Venda realizada!";
 		} else {
 			echo "Erro executando INSERT: " . mysqli_error($conn);
 		}
 		echo "</div>";
 		
-		$sql = "INSERT INTO vendaPneu VALUES ('$idv', '$preco', '$idp', '$vender')";
+		$sql = "UPDATE produto SET quantidadeProd='$resto' WHERE idProd='$idp'";
 		
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = mysqli_query($conn, $sql)) {
-			echo "Produto Cadastrado!";
 		} else {
 			echo "Erro executando INSERT: " . mysqli_error($conn);
 		}

@@ -28,7 +28,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
         }
     </style>
 </head>
-<body onload="w3_show_nav('menuServicos')">
+<body onload="w3_show_nav('menuEstoque')">
 
 <!-- Inclui MENU.PHP  -->
 <?php require 'menu.php';?>
@@ -37,10 +37,12 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
     <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-        <h1 class="w3-xxlarge">Registrar Venda</h1>
+        <h1 class="w3-xxlarge">Registrar Venda de Pneu</h1>
 
         <p class="w3-large">
             <div class="w3-code cssHigh notranslate">
+
+
                 <!-- Acesso em:-->
                 <?php
 
@@ -52,8 +54,46 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 echo "</p> "
                 ?>
 
-                <!-- Rever isso aqui -->
-                <div class="w3-responsive w3-card-4">
+
+                <!-- Acesso ao BD-->
+                <?php
+                
+                $servername = "localhost:3306";
+                $username = "root";
+                $password = "";
+                $database = "SEA";
+                $id=$_GET['id'];
+                
+                // Cria conexão
+                $conn = mysqli_connect($servername, $username, $password, $database);
+
+                // Verifica conexão
+                if (!$conn) {
+                    die("Connection failed: " . mysqli_connect_error());
+                }
+
+                // Configura para trabalhar com caracteres acentuados do português
+                mysqli_query($conn,"SET NAMES 'utf8'");
+                mysqli_query($conn,"SET NAMES 'utf8'");
+                mysqli_query($conn,'SET character_set_connection=utf8');
+                mysqli_query($conn,'SET character_set_client=utf8');
+                mysqli_query($conn,'SET character_set_results=utf8');
+
+
+
+                //Ajustar essa parte ao BD do projeto:
+
+                // Faz Select na Base de Dados
+                $sql = "SELECT * FROM produto WHERE idProd = $id";
+                
+                echo "<div class='w3-responsive w3-card-4'>"; //Inicio form
+                 if ($result = mysqli_query($conn, $sql)) {
+                        if (mysqli_num_rows($result) > 0) {
+
+
+                        // Apresenta cada linha da tabela:
+                            while ($row = mysqli_fetch_assoc($result)) {
+                ?>              
                     <div class="w3-container w3-theme">
                         <h2>Informe os dados da Venda</h2>
                     </div>
@@ -62,30 +102,41 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         <p>
                         <input type="hidden" id="acaoForm" name="acaoForm" value="Cada">
                         <p>
-                        <label class="w3-text-deep-purple"><b>ID</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="id" type="text" pattern="{4,100}$" title="ID do Produto." required></p>
+                        <label class="w3-text-deep-purple"><b>ID Venda</b></label>
+                        <input class="w3-input w3-border w3-light-grey" name="idV" type="text" pattern="[0-9]{1,3}" title="Id da venda."></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Data</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="nome" type="text" value="<?php echo $data; ?>" title="Data de inicio do registro." required readonly=""></p>
+                        <input class="w3-input w3-border w3-light-grey" name="data" type="text" value="<?php echo $data; ?>" title="Data de inicio do registro." required readonly=""></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Funcionario</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="marca" type="text" pattern="{4,100}$" title="Id do funcionário." required></p>
-                        <!--<label class="w3-text-deep-purple"><b>Id Venda</b></label>-->
-                        <input type="hidden" class="w3-input w3-border w3-light-grey" name="idV" type="text" pattern="[0-9]{1,3}" title="ID do Produto." required></p>
+                        <input class="w3-input w3-border w3-light-grey" name="idF" type="text" pattern="[0-9]{1,3}" title="Id do funcionário." required></p>
 						<!-- <p>
                         <label class="w3-text-deep-purple"><b>Nome do Vendedor</b></label>
 						<input class="w3-input w3-border w3-light-grey" name="nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$" title="Nome do Vendedor entre 4 e 100 letras." required></p> -->
                         <p>
-                        <label class="w3-text-deep-purple"><b>Id do Pneu</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="idP" type="text" pattern="[0-9]{1,3}" title="Id do pneu."></p>
+                        <label class="w3-text-deep-purple"><b>ID Pneu</b></label>
+                        <input class="w3-input w3-border w3-light-grey" name="idP" type="text" pattern="[0-9]{1,3}" title="ID do Produto." value="<?php echo "$id" ?>" required readonly></p>
+                        <input type="hidden" name="valor" value="<?php echo $row['precoProd']; ?>">
+                        <input type="hidden" name="qtd" value="<?php echo $row['quantidadeProd']; ?>">
                         <p>
                         <label class="w3-text-deep-purple"><b>Quantidade Vendida</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="Vender" type="text" pattern="[0-9]{1,3}" title="Quantidade Vendida." value="" required></p>
                         <p>
 						<input type="submit" value="Registrar" class="w3-btn w3-green" >
-						<input type="button" value="Cancelar" class="w3-btn w3-red" onclick="window.location.href='ordemservico.php'"></p>
+						<input type="button" value="Cancelar" class="w3-btn w3-red" onclick="window.location.href='vendasListarPneu.php'"></p>
+                        <!-- Colocar a opção de apenas troca ou troca e venda-->
 					</form>
-				</div>
+            <?php 
+            }
+                        }
+                }
+                else {
+                    echo "Erro executando UPDATE: " . mysqli_error($conn);
+                }
+                echo "</div>"; //Fim form
+                mysqli_close($conn);  //Encerra conexao com o BD
+
+            ?>
 
 			</div>
 		</p>

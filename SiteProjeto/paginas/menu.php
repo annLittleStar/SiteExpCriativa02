@@ -62,7 +62,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			</div>
 			<!--Talvez de para juntar os históricos em um só lugar
 			<a class="w3-bar-item w3-button" href='turmaListar.php'>Relação de Serviços</a>-->
-			<a class="w3-bar-item w3-button" href="vendasRegistrar.php">Registrar Vendas</a>
+			<a class="w3-bar-item w3-button" href="vendasListarPneu.php">Registrar Vendas</a>
 			<a class="w3-bar-item w3-button" href="vendasListar.php">Histórico de Vendas</a>
 			<a class="w3-bar-item w3-button" href="lavagensSelecionar.php">Registrar Lavagens</a>
 			<a class="w3-bar-item w3-button" href="lavagensListar.php">Histórico de Lavagens</a>
