@@ -54,7 +54,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
     <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-        <h1 class="w3-xxlarge">Histórico de Venda</h1>
+        <h1 class="w3-xxlarge">Histórico de Vendas</h1>
 
         <p class="w3-large">
         <p>
@@ -100,9 +100,9 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
             if ($result = mysqli_query($conn, $sql)) {
                 echo "<table class='w3-table-all'>";
                 echo "	<tr>";
-                echo "	  <th width='5%'>Id Venda</th>";
+                echo "	  <th width='10%'>Id Venda</th>";
                 echo "	  <th width='15%'>Data/Hora Venda</th>";
-				echo "	  <th width='45%'>Produto</th>";
+				echo "	  <th width='40%'>Produto</th>";
                 echo "    <th width='10%'>Quantidade</th>";
                 echo "    <th width='5%'>Total</th>";
                 echo "	</tr>";
