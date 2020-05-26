@@ -95,7 +95,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			mysqli_query($conn,'SET character_set_results=utf8');
 
             // Faz Select na Base de Dados
-            $sql = "SELECT * FROM vendaPneu JOIN produto ON idProdutoVenda = idProd";
+            $sql = "SELECT * FROM vendaPneu JOIN produto ON idProdutoVenda = idProd ORDER BY dataVenda DESC";
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
                 echo "<table class='w3-table-all'>";
@@ -117,7 +117,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
                 $pesquisar = $_POST['pesquisar'];
                 $result_prod = "SELECT * FROM vendaPneu JOIN produto ON idProdutoVenda = idProd 
-                WHERE nomeProd LIKE '$pesquisar' OR idVenda LIKE '$pesquisar'";
+                WHERE nomeProd LIKE '$pesquisar' OR idVenda LIKE '$pesquisar' ORDER BY dataVenda DESC";
                 $resultado_prod = mysqli_query($conn, $result_prod);
 
                 if (mysqli_num_rows($result) > 0) {
