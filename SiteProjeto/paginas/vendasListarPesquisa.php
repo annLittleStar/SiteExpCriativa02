@@ -54,7 +54,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
     <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-        <h1 class="w3-xxlarge">Histórico de Vendas</h1>
+        <h1 class="w3-xxlarge">Histórico de Venda</h1>
 
         <p class="w3-large">
         <p>
@@ -107,13 +107,44 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 echo "    <th width='5%'>Total</th>";
                 echo "	</tr>";
 
+
                 echo '<form method="POST" action="vendasListarPesquisa.php">
                 <input type="text" name="pesquisar" style="width:90%" placeholder="Digite o Nome do produto vendido ou o ID da venda que deseja encontrar">
-                    <input style="width:10%" type="submit" name="buscar" value="Buscar">
+                <input style="width:10%" type="submit" name="buscar" value="Buscar">
                 </form>';
+
+                //Deve ser o nome exato
+
+                $pesquisar = $_POST['pesquisar'];
+                $result_prod = "SELECT * FROM vendaPneu JOIN produto ON idProdutoVenda = idProd 
+                WHERE nomeProd LIKE '$pesquisar' OR idVenda LIKE '$pesquisar'";
+                $resultado_prod = mysqli_query($conn, $result_prod);
 
                 if (mysqli_num_rows($result) > 0) {
 
+                    if($pesquisar!=null){
+
+                        // Apresenta cada linha pesquisada da tabel
+                        while ($row = mysqli_fetch_array($resultado_prod)) {
+                            $cod = $row["idVenda"];
+                            echo "<tr>";
+                            echo "<td>";
+                            echo $cod;
+                            echo "</td><td>";
+                            echo $row["dataVenda"];
+                            echo "</td><td>";
+                            echo $row["nomeProd"];
+                            echo "</td><td>";
+                            echo $row["qtdVenda"];
+                            echo "</td><td>";
+                            echo $row["totalVenda"];
+                            echo "</td>";
+
+                ?>
+                        </tr>
+                 <?php
+                        }
+                    } else{
                         // Apresenta cada linha da tabel
                         while ($row = mysqli_fetch_assoc($result)) {
                             $cod = $row["idVenda"];
@@ -128,14 +159,14 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo $row["qtdVenda"];
                             echo "</td><td>";
                             echo $row["totalVenda"];
-                            echo "</td>";                        
-
+                            echo "</td>";
+                        
 						//Adicionar, retirar ou excluir registro do produto
 				?>
-                    
                         </tr>
 				 <?php
                     }
+                }
                 }
                 echo "</table>";
                 echo "</div>";

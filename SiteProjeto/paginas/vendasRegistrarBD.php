@@ -87,7 +87,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
 
 		$sql = "INSERT INTO vendaPneu (idVenda, totalVenda, dataVenda, idFunc, idProdutoVenda, qtdVenda)
-		VALUES ('$idv', '$precoT', '$dataV', '$idf', '$idp', '$quantidade')";
+		VALUES ('$idv', '$precoT', '$dataV', '$idf', '$idp', '$vender')";
 
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = mysqli_query($conn, $sql)) {
