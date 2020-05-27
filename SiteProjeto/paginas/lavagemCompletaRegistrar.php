@@ -68,7 +68,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         <label class="w3-text-deep-purple"><b>Horário</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="hrC" type="text" title="Data de inicio do registro."></p> -->
                         <label class="w3-text-deep-purple"><b>Data e Horário</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="data" type="text" value="<?php $dataB = date("Y/m/d H:i:s", time()); echo "$dataB" ?>" title="Data e Horario de inicio do registro." required readonly></p>
+                        <input class="w3-input w3-border w3-light-grey" name="dataHorario" type="text" value="<?php $dataB = date("Y/m/d H:i:s", time()); echo "$dataB" ?>" title="Data e Horario de inicio do registro." required readonly></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Valor em reais</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="valC" type="text"  title="Tipo de Lavagem: Preço da Lavagem Completa." value="30.00" pattern="[0-9]{4,2}" required readonly></p>

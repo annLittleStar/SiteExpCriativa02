@@ -96,7 +96,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
             //Arrumar Aqui
             // Faz Select na Base de Dados
-            $sql = "SELECT idLavagemC, valorLavagemC, dataC, horaC FROM lavagemcompleta";
+            $sql = "SELECT idLavagem, tipo, valorLavagem, dataHorario FROM lavagem";
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
                 echo "<table class='w3-table-all'>";
@@ -104,8 +104,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 echo "    <th width='5%'>Id</th>";
                   echo "  <th width='15%'>Tipo</th>";
                 echo "    <th width='15%'>Valor</th>";
-                echo "    <th width='15%'>Data</th>";
-                echo "    <th width='10%'>Horario</th>";
+                echo "    <th width='15%'>Data e Horario</th>";
                echo "  </tr>";
 
                 //Arrumo isso dpois
@@ -119,45 +118,19 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         //Arrumar qui tbm
                         // Apresenta cada linha da tabel
                         while ($row = mysqli_fetch_assoc($result)) {
-                            $cod = $row["idLavagemC"];
+                            $cod = $row["idLavagem"];
                             echo "<tr>";
                             echo "<td>";
                             echo $cod;
-                            echo "</td><td>Completa";
-                            echo "</td><td>R$";
-                            echo $row["valorLavagemC"];
+                            echo $row["tipo"];
                             echo "</td><td>";
-                            echo $row["dataC"];
+                            echo $row["valorLavagem"];
                             echo "</td><td>";
-                            echo $row["horaC"];
-                            echo "</td>";
+                            echo $row["dataHorario"];
+                            echo "</td><td>";
                             echo "</td>";
                             
-                    }
                 }
-
-                $sql = "SELECT idLavagemS, valorLavagemS, dataS, horaS FROM lavagemsimples";
-                if ($resulta = mysqli_query($conn, $sql)) {
-                    if (mysqli_num_rows($resulta) > 0) {
-
-                        //Arrumar qui tbm
-                        // Apresenta cada linha da tabel
-                        while ($row = mysqli_fetch_assoc($resulta)) {
-                            $cod = $row["idLavagemS"];
-                            echo "<tr>";
-                            echo "<td>";
-                            echo $cod;
-                            echo "</td><td>Simples";
-                            echo "</td><td>R$";
-                            echo $row["valorLavagemS"];
-                            echo "</td><td>";
-                            echo $row["dataS"];
-                            echo "</td><td>";
-                            echo $row["horaS"];
-                            echo "</td>";
-                            echo "</td>";
-                        }
-                    }
                 }
                 echo "</table>";
                 echo "</div>";
