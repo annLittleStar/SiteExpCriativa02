@@ -106,11 +106,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 echo "    <th width='15%'>Valor</th>";
                 echo "    <th width='15%'>Data</th>";
                 echo "    <th width='10%'>Horario</th>";
-                echo "    <th width='5%'> </th>";
-                echo "    <th width='5%'> </th>";
-                echo "    <th width='5%'> </th>";
-                echo "    <th width='5%'> </th>";
-                echo "  </tr>";
+               echo "  </tr>";
 
                 //Arrumo isso dpois
                 echo '<form method="POST" action="estoqueListarPesquisa.php">
@@ -134,7 +130,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo $row["dataC"];
                             echo "</td><td>";
                             echo $row["horaC"];
-                            echo "</td><td>";
+                            echo "</td>";
+                            echo "</td>";
                             
                     }
                 }
@@ -157,7 +154,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo $row["dataS"];
                             echo "</td><td>";
                             echo $row["horaS"];
-                            echo "</td><td>";
+                            echo "</td>";
+                            echo "</td>";
                         }
                     }
                 }

@@ -103,7 +103,7 @@ create table if not exists vendaPneu(
 create table if not exists lavagem(
   idTipo int NOT NULL AUTO_INCREMENT,
   tipo varchar(25) NOT NULL,
-  PRIMARY KEY (idTipo)
+  primary key(idTipo)
 ) engine=innoDB default charset=utf8;
 
 -- --------------------------------------------------------
@@ -115,8 +115,7 @@ create table if not exists lavagemCompleta(
   valorLavagemC float not null,
   dataC date default null,
   horaC time default null,
-  PRIMARY KEY (idLavagemC)
-
+  foreign key(idLavagemC) references lavagem(idTipo)
 ) engine=innoDB default charset=utf8;
 
 -- --------------------------------------------------------
@@ -128,7 +127,7 @@ create table if not exists lavagemSimples(
   valorLavagemS float  not null,
   dataS date default null,
   horaS time default null,
-  PRIMARY KEY (idLavagemS)
+  foreign key(idLavagemS) references lavagem(idTipo)
 ) engine=innoDB default charset=utf8;
 
 -- --------------------------------------------------------
