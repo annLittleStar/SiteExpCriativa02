@@ -46,7 +46,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
         }     
     </style>
 </head>
-<body onload="w3_show_nav('menuServicos')">
+<body onload="w3_show_nav('menuEstoque')">
 <!-- Inclui MENU.PHP  -->
 <?php require 'menu.php'; ?>
 
@@ -76,25 +76,24 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
             $username = "root";
             $password = "";
             $database = "sea";
-            
-            // Verifica conexão
+			
+			// Verifica conexão
             $conn = mysqli_connect($servername, $username, $password, $database);
-            
-            // Verifica conexão 
-            if (!$conn) {
+			
+			// Verifica conexão 
+			if (!$conn) {
                 echo "</table>";
                 echo "</div>";
                 die("Falha na conexão com o Banco de Dados: " . mysqli_connect_error());
             }
-            
-            // Configura para trabalhar com caracteres acentuados do português
-            mysqli_query($conn,"SET NAMES 'utf8'");
-            mysqli_query($conn,"SET NAMES 'utf8'");
-            mysqli_query($conn,'SET character_set_connection=utf8');
-            mysqli_query($conn,'SET character_set_client=utf8');
-            mysqli_query($conn,'SET character_set_results=utf8');
+			
+			// Configura para trabalhar com caracteres acentuados do português
+			mysqli_query($conn,"SET NAMES 'utf8'");
+			mysqli_query($conn,"SET NAMES 'utf8'");
+			mysqli_query($conn,'SET character_set_connection=utf8');
+			mysqli_query($conn,'SET character_set_client=utf8');
+			mysqli_query($conn,'SET character_set_results=utf8');
 
-            
             // Faz Select na Base de Dados
             $sql = "SELECT idTipo, tipo, valorLavagem, dataHorario FROM lavagem order by dataHorario desc";
             echo "<div class='w3-responsive w3-card-4'>";
@@ -107,15 +106,38 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 echo "    <th width='30%'>Data e Horario</th>";
                 echo "  </tr>";
 
-                //Arrumo isso dpois
+
                 echo '<form method="POST" action="lavagensHistoricoPesquisa.php">
-                <input type="text" name="pesquisar" style="width:90%" placeholder="Digite o Tipo de Lavagem que deseja encontrar">
+                <input type="text" name="pesquisar" style="width:90%" placeholder=Digite o Tipo de Lavagem que deseja encontrar">
                     <input style="width:10%" type="submit" name="buscar" value="Buscar">
                 </form>';
 
+                //Deve ser o nome exato
+
+                $pesquisar = $_POST['pesquisar'];
+                $result_prod = "SELECT * FROM lavagem WHERE tipo '$pesquisar'";
+                $resultado_prod = mysqli_query($conn, $result_prod);
+
                 if (mysqli_num_rows($result) > 0) {
 
-                       
+                    if($pesquisar!=null){
+
+                        // Apresenta cada linha pesquisada da tabel
+                        while ($row = mysqli_fetch_array($resultado_prod)) {
+                            $cod = $row["idTipo"];
+                            echo "<tr>";
+                            echo "<td>";
+                            echo $cod;
+                            echo "</td><td>";
+                            echo $row["tipo"];
+                            echo "</td><td>";
+                            echo $row["valorLavagem"];
+                            echo "</td><td>";
+                            echo $row["dataHorario"];
+                            echo "</td></tr>";
+
+                        }
+                    } else{
                         // Apresenta cada linha da tabel
                         while ($row = mysqli_fetch_assoc($result)) {
                             $cod = $row["idTipo"];
@@ -129,7 +151,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo "</td><td>";
                             echo $row["dataHorario"];
                             echo "</td></tr>";
-                            
+                       
+                    }
                 }
                 }
                 echo "</table>";
