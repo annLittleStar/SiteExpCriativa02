@@ -53,6 +53,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		
 		
 		$idTipo   = $_POST['idTipo'];
+		$tipo   = $_POST['tipo'];
 		$dataHorario    = $_POST['dataHorario'];
 		$valorLavagem   = $_POST['valorLavagem'];
 		
@@ -74,8 +75,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			mysqli_query($conn,'SET character_set_results=utf8');
 
 		// Faz Select na Base de Dados
-		$sql = "INSERT INTO lavagem (idTipo, dataHorario,valorLavagem) 
-		VALUES ('$idTipo', '$dataHorario', $valorLavagem)";
+		$sql = "INSERT INTO lavagem (idTipo, tipo, dataHorario,valorLavagem) 
+		VALUES ('$idTipo', '$tipo', '$dataHorario', $valorLavagem)";
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = mysqli_query($conn, $sql)) {
 			echo "Lavagem Registrada!";

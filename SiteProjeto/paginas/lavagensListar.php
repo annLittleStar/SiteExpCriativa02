@@ -128,8 +128,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo $row["valorLavagem"];
                             echo "</td><td>";
                             echo $row["dataHorario"];
-                            echo "</td><td>";
-                            echo "</td>";
+                            echo "</td></tr>";
                             
                 }
                 }
