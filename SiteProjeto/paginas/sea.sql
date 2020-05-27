@@ -104,7 +104,7 @@ create table if not exists lavagem(
   idTipo int NOT NULL AUTO_INCREMENT,
   valorLavagem float not null,
   tipo enum ('Simples', 'Completa') NOT NULL,
-  dataHorario datetime,
+  dataHorario varchar(30),
   primary key(idTipo)
 ) engine=innoDB default charset=utf8;
 
