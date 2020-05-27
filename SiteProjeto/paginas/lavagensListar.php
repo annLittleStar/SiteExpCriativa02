@@ -96,15 +96,15 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
             //Arrumar Aqui
             // Faz Select na Base de Dados
-            $sql = "SELECT idLavagem, tipo, valorLavagem, dataHorario FROM lavagem";
+            $sql = "SELECT idTipo, tipo, valorLavagem, dataHorario FROM lavagem";
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
                 echo "<table class='w3-table-all'>";
                 echo "  <tr>";
-                echo "    <th width='5%'>Id</th>";
-                  echo "  <th width='15%'>Tipo</th>";
-                echo "    <th width='15%'>Valor</th>";
-                echo "    <th width='15%'>dataHorario</th>";
+                echo "    <th width='20%'>Id</th>";
+                  echo "  <th width='25%'>Tipo</th>";
+                echo "    <th width='25%'>Valor</th>";
+                echo "    <th width='30%'>Data e Horario</th>";
                echo "  </tr>";
 
                 //Arrumo isso dpois
@@ -118,10 +118,11 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         //Arrumar qui tbm
                         // Apresenta cada linha da tabel
                         while ($row = mysqli_fetch_assoc($result)) {
-                            $cod = $row["idLavagem"];
+                            $cod = $row["idTipo"];
                             echo "<tr>";
                             echo "<td>";
                             echo $cod;
+                            echo "</td><td>";
                             echo $row["tipo"];
                             echo "</td><td>";
                             echo $row["valorLavagem"];
