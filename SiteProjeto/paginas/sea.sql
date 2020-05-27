@@ -63,14 +63,14 @@ create table if not exists produto(
     tipoProd enum('Pneu', 'Produto de limpeza') not null,
     quantidadeProd int not null,
     idFuncProd int not null,
-    limiteUso int not null default(1), -- Quantidade de vezes que pode ser usada
+    limiteUso int default(1), -- Quantidade de vezes que pode ser usada 
     usado int,
     primary key(idProd)
     -- foreign key(idFunc) references funcionario(id)
 ) engine=innoDB default charset=utf8;
 
 -- --------------------------------------------------------
--- Tabela de Pneu Defeituoso
+-- Tabela de Pneu Defeituoso 
 -- --------------------------------------------------------
 
 create table if not exists pneuDef(
@@ -78,11 +78,11 @@ create table if not exists pneuDef(
     qtdA int not null default(0), -- Isso é para a contagem de quantos defeituosos aguardam recolhimento
     qtdR int not null default(0), -- Isso é para a contagem de quantos defeituosos foram recolhidos
     qtdT int not null default(0), -- Isso é para a contagem de quantos defeituosos já passaram pela loja
-    foreign key(idPneuDef) references produto(idProd) on delete no action on update no action
+    foreign key(idPneuDef) references produto(idProd) on delete cascade on update no action
 ) engine=innoDB default charset=utf8;
 
 -- --------------------------------------------------------
--- Tabela de Venda de Pneus
+-- Tabela de Venda de Pneus 
 -- --------------------------------------------------------
 
 create table if not exists vendaPneu(
@@ -102,33 +102,22 @@ create table if not exists vendaPneu(
 
 create table if not exists lavagem(
   idTipo int NOT NULL AUTO_INCREMENT,
-  tipo varchar(25) NOT NULL,
+  valorLavagem float not null,
+  tipo enum ('Simples', 'Completa') NOT NULL,
+  dataHorario datetime,
   primary key(idTipo)
 ) engine=innoDB default charset=utf8;
 
 -- --------------------------------------------------------
--- Tabela de Lavagens Completas
+-- Tabela de Produto Lavagem  
 -- --------------------------------------------------------
-
-create table if not exists lavagemCompleta(
-  idLavagemC int not null,
-  valorLavagemC float not null,
-  dataC date default null,
-  horaC time default null,
-  foreign key(idLavagemC) references lavagem(idTipo)
-) engine=innoDB default charset=utf8;
-
--- --------------------------------------------------------
--- Tabela de Lavagens Simples
--- --------------------------------------------------------
-
-create table if not exists lavagemSimples(
-  idLavagemS int  not null,
-  valorLavagemS float  not null,
-  dataS date default null,
-  horaS time default null,
-  foreign key(idLavagemS) references lavagem(idTipo)
-) engine=innoDB default charset=utf8;
+/*
+  create table if not exists produtoLavagem(
+  idLavagem int not null,
+  idProduto float not null,
+  foreign key(idLavagemC) references lavagem(idTipo),
+  foreign key(idProduto) references lavagem(idProd)
+) engine=innoDB default charset=utf8;*/
 
 -- --------------------------------------------------------
 -- Tabela de carros 

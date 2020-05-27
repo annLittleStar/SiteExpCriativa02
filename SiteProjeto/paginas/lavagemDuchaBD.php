@@ -52,10 +52,9 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		$database = "sea";
 		
 		
-		$id   = $_POST['lavS'];
-		$data    = $_POST['dataS'];
-		$hora    = $_POST['hrS'];
-		$valor   = $_POST['valS'];
+		$idTipo   = $_POST['idTipo'];
+		$dataHorario    = $_POST['dataHorario'];
+		$valorLavagem   = $_POST['valorLavagem'];
 		
 		// Cria conexão
 		$conn = mysqli_connect($servername, $username, $password, $database);
@@ -75,8 +74,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			mysqli_query($conn,'SET character_set_results=utf8');
 
 		// Faz Select na Base de Dados
-		$sql = "INSERT INTO lavagemsimples (idLavagemS, valorLavagemS, dataS, horaS) 
-		VALUES ('$id', '$valor','$data', $hora)";
+		$sql = "INSERT INTO lavagem (idTipo, dataHorario,valorLavagem) 
+		VALUES ('$idTipo', '$dataHorario', $valorLavagem)";
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = mysqli_query($conn, $sql)) {
 			echo "Lavagem Registrada!";

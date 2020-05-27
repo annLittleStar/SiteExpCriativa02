@@ -62,12 +62,16 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         <label class="w3-text-deep-purple"><b>Id Lavagem</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="lavS" type="text" pattern="[0-9]{5,3}" title="ID do Produto." required></p>
                         <p>
+                            <!--
                         <label class="w3-text-deep-purple"><b>Data</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="dataS" type="date" title="Data de inicio do registro."></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Horário</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="hrS" type="text" title="Data de inicio do registro."></p>
-                        <p>
+                        <p> -->
+                        <label class="w3-text-deep-purple"><b>Data e Horário</b></label>
+                        <input class="w3-input w3-border w3-light-grey" name="data" type="text" value="<?php $dataC = date("Y/m/d H:i:s", time()); echo "$dataC" ?>" title="Data e Horario de inicio do registro." required readonly></p>
+
                         <label class="w3-text-deep-purple"><b>Valor em reais</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="valS" type="text" value="15.00" pattern="[0-9]{4,2}" required readonly></p>
 
