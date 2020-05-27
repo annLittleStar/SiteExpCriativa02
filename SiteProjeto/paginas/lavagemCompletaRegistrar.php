@@ -60,7 +60,9 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 						<input type="hidden" id="acaoForm" name="acaoForm" value="Cada">
                         <p>
                         <label class="w3-text-deep-purple"><b>Id Lavagem</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="lavC" type="text" pattern="[0-9]{1,3}" title="ID do Produto." required></p>
+                        <input class="w3-input w3-border w3-light-grey" name="idTipo" type="text" pattern="[0-9]{1,3}" title="ID do Produto." required></p>
+
+                        <input type="hidden" value="Completa" name="tipo">
                         <p>
                         <!-- <label class="w3-text-deep-purple"><b>Data</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="dataC" type="date" title="Data de inicio do registro."></p> 
@@ -71,7 +73,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         <input class="w3-input w3-border w3-light-grey" name="dataHorario" type="text" value="<?php $dataB = date("Y/m/d H:i:s", time()); echo "$dataB" ?>" title="Data e Horario de inicio do registro." required readonly></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Valor em reais</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="valC" type="text"  title="Tipo de Lavagem: Preço da Lavagem Completa." value="30.00" pattern="[0-9]{4,2}" required readonly></p>
+                        <input class="w3-input w3-border w3-light-grey" name="valorLavagem" type="text"  title="Tipo de Lavagem: Preço da Lavagem Completa." value="30.00" pattern="[0-9]{4,2}" required readonly></p>
 
                         <p>
 						<input type="submit" value="Cadastrar" class="w3-btn w3-green" >

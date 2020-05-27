@@ -104,7 +104,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 echo "    <th width='5%'>Id</th>";
                   echo "  <th width='15%'>Tipo</th>";
                 echo "    <th width='15%'>Valor</th>";
-                echo "    <th width='15%'>Data e Horario</th>";
+                echo "    <th width='15%'>dataHorario</th>";
                echo "  </tr>";
 
                 //Arrumo isso dpois
