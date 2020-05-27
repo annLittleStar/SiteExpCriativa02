@@ -115,15 +115,15 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 //Deve ser o nome exato
 
                 $pesquisar = $_POST['pesquisar'];
-                $result_prod = "SELECT * FROM lavagem WHERE tipo '$pesquisar'";
-                $resultado_prod = mysqli_query($conn, $result_prod);
+                $result_lava = "SELECT * FROM lavagem WHERE tipo LIKE'$pesquisar'";
+                $resultado_lava = mysqli_query($conn, $result_lava);
 
                 if (mysqli_num_rows($result) > 0) {
 
                     if($pesquisar!=null){
 
                         // Apresenta cada linha pesquisada da tabel
-                        while ($row = mysqli_fetch_array($resultado_prod)) {
+                        while ($row = mysqli_fetch_array($resultado_lava)) {
                             $cod = $row["idTipo"];
                             echo "<tr>";
                             echo "<td>";
