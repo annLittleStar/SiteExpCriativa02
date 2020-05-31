@@ -119,8 +119,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         
                             
                                 <label class="w3-text-deep-purple"><b>Modelo</b></label>
-                                <input style="width:60%" class="w3-input w3-border w3-light-grey" name="Nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$" value="<?php echo $row['modelo']; ?>" required readonly></p></td>
-                        <td style="width:18%" text-align="center"><p>
+                                <input style="width:70%" class="w3-input w3-border w3-light-grey" name="Nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$" value="<?php echo $row['modelo']; ?>" required readonly></p></td>
+                        <td style="width:30%" text-align="center"><p>
                         <label class="w3-text-deep-purple"><b>Quantidade em estoque</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="Nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$" value="<?php echo $row['quantidadeProd']; ?>" required readonly></p></td>
                         </table>
