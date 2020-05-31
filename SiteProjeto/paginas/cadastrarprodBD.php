@@ -52,11 +52,11 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		$database = "sea";
 		
 		
-		$id   = $_POST['id'];
 		$nome    = $_POST['nome'];
-		$marca    = $_POST['marca'];
-		$preco    = $_POST['preco'];
+		$marca   = $_POST['marca'];
+		$preco   = $_POST['preco'];
 		$tipo    = $_POST['tipo'];
+		$id 	 = $_POST['id'];
 		
 		// Cria conexão
 		$conn = mysqli_connect($servername, $username, $password, $database);
@@ -75,9 +75,10 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			mysqli_query($conn,'SET character_set_client=utf8');
 			mysqli_query($conn,'SET character_set_results=utf8');
 
+
 		// Faz Select na Base de Dados
 		$sql = "INSERT INTO produto (idProd, nomeProd, marcaProd, precoProd, tipoProd) 
-		VALUES ('$id', '$nome','$marca', '$preco', '$tipo')";
+		VALUES ('$id', '$nome', '$marca', '$preco', '$tipo')";
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = mysqli_query($conn, $sql)) {
 			echo "Produto Cadastrado!";

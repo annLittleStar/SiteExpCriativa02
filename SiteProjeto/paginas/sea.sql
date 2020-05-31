@@ -78,7 +78,7 @@ create table if not exists pneuDef(
     qtdA int not null default(0), -- Isso é para a contagem de quantos defeituosos aguardam recolhimento
     qtdR int not null default(0), -- Isso é para a contagem de quantos defeituosos foram recolhidos
     qtdT int not null default(0), -- Isso é para a contagem de quantos defeituosos já passaram pela loja
-    foreign key(idPneuDef) references produto(idProd) on delete cascade on update no action
+    foreign key(idPneuDef) references produto(idProd) on delete cascade on update cascade
 ) engine=innoDB default charset=utf8;
 
 -- --------------------------------------------------------

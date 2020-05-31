@@ -54,7 +54,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
     <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-        <h1 class="w3-xxlarge">Produtos em Estoque</h1>
+        <h1 class="w3-xxlarge">Pneus em Estoque</h1>
 
         <p class="w3-large">
         <p>
@@ -104,8 +104,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 echo "    <th width='15%'>Nome</th>";
                 echo "    <th width='15%'>Marca</th>";
                 echo "    <th width='10%'>Quantidade</th>";
-                echo "    <th width='15%'>Tipo de produto</th>";
                 echo "    <th width='10%'>Preco </th>";
+                echo "    <th width='5%'> </th>";
                 echo "    <th width='5%'> </th>";
                 echo "    <th width='5%'> </th>";
                 echo "    <th width='5%'> </th>";
@@ -114,7 +114,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
 
                 echo '<form method="POST" action="estoqueListarPesquisa.php">
-                <input type="text" name="pesquisar" style="width:90%" placeholder="Digite o Nome, Marca ou Tipo do Produto que deseja encontrar">
+                <input type="text" name="pesquisar" style="width:90%" placeholder="Digite o Nome ou Marca do Produto que deseja encontrar">
                     <input style="width:10%" type="submit" name="buscar" value="Buscar">
                 </form>';
 
@@ -122,7 +122,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
                 $pesquisar = $_POST['pesquisar'];
                 $result_prod = "SELECT * FROM produto WHERE nomeProd LIKE '$pesquisar'
-                OR marcaProd LIKE '$pesquisar' OR tipoProd LIKE '$pesquisar'";
+                OR marcaProd LIKE '$pesquisar'";
                 $resultado_prod = mysqli_query($conn, $result_prod);
 
                 if (mysqli_num_rows($result) > 0) {
@@ -142,8 +142,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo "</td><td>";
                             echo $row["quantidadeProd"];
                             echo "</td><td>";
-                            echo $row["tipoProd"];
-                            echo "</td><td>";
                             echo $row["precoProd"];
                             echo "</td><td>";
 
@@ -158,6 +156,9 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         </td>
                         <td>
                         <a href='estoqueExcluir.php?id=<?php echo $cod; ?>'><img src='../imagens/deletar.png' title='Excluir Produto' width='34'></a>
+                        </td>
+                        <td>
+                        <a href='entradaPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/aguardando.png' title='Registrar Entrada de Pneu Defeituoso' width='32'></a>
                         </td>
                         </tr>
                  <?php
@@ -176,8 +177,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo "</td><td>";
                             echo $row["quantidadeProd"];
                             echo "</td><td>";
-                            echo $row["tipoProd"];
-                            echo "</td><td>";
                             echo $row["precoProd"];
                             echo "</td><td>";
                         
@@ -193,6 +192,9 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         </td>
                         <td>
                         <a href='estoqueExcluir.php?id=<?php echo $cod; ?>'><img src='../imagens/deletar.png' title='Excluir Produto' width='34'></a>
+                        </td>
+                        <td>
+                        <a href='entradaPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/aguardando.png' title='Registrar Entrada de Pneu Defeituoso' width='32'></a>
                         </td>
                         </tr>
 				 <?php

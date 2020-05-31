@@ -96,7 +96,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
             // Faz Select na Base de Dados
             $sql = "SELECT idProd, nomeProd, marcaProd, qtdA, qtdR FROM produto JOIN pneuDef 
-            ON idProd = idPneuDef";
+            ON idProd = idPneuDef WHERE qtdR>0 OR qtdA>0";
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
                 echo "<table class='w3-table-all'>";
@@ -106,7 +106,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 echo "    <th width='15%'>Marca</th>";
                 echo "    <th width='15%'>Qtd Aguardando</th>";
                 echo "    <th width='15%'>Qtd Recolhida</th>";
-                echo "    <th width='5%'> </th>";
                 echo "    <th width='5%'> </th>";
                 echo "  </tr>";
 
@@ -119,7 +118,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
                 $pesquisar = $_POST['pesquisar'];
                 $result_pesq = "SELECT * FROM produto JOIN pneuDef ON idProd = idPneuDef 
-                WHERE nomeProd LIKE '$pesquisar' OR marcaProd LIKE '$pesquisar'";
+                WHERE (nomeProd LIKE '$pesquisar' OR marcaProd LIKE '$pesquisar') AND (qtdR>0 OR qtdA>0)";
                 $resultado_pesq = mysqli_query($conn, $result_pesq);
 
                 if (mysqli_num_rows($result) > 0) {
@@ -143,9 +142,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo "</td><td>";
 
                 ?>
-                        <a href='entradaPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/aguardando.png' title='Registrar Entrada de Pneu Defeituoso' width='32'></a>
-                        </td>
-                        <td>
+
                         <a href='recolhimentoPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/vrum.png' title='Registrar Recolhimento de Pneu Defeituoso' width='32'></a>
                         </td>
                         </tr>
@@ -169,9 +166,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo "</td><td>";                        
                         //Adicionar, retirar ou excluir registro do produto
                 ?>
-                        <a href='entradaPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/aguardando.png' title='Registrar Entrada de Pneu Defeituoso' width='32'></a>
-                        </td>
-                        <td>
+
                         <a href='recolhimentoPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/vrum.png' title='Registrar Recolhimento de Pneu Defeituoso' width='32'></a>
                         </td>
                         </tr>
