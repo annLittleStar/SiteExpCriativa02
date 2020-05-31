@@ -149,7 +149,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         <a href='estoqueExcluir.php?id=<?php echo $cod; ?>'><img src='../imagens/deletar.png' title='Excluir Produto' width='34'></a>
                         </td>
                         <td>
-                        <a href='entradaPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/aguardando.png' title='Registrar Entrada de Pneu Defeituoso' width='32'></a>
+                        <a href='entradaPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/aguardando.png' title='Registrar Pneu Defeituoso' width='32'></a>
                         </td>
                         </tr>
 				 <?php
