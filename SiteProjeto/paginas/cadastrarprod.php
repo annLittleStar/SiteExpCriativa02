@@ -68,7 +68,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 						<label class="w3-text-deep-purple"><b>Marca</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="marca" type="text" title="Marca do Produto." required></p>
                         <p>
-                        <label class="w3-text-deep-purple"><b>Preco</b></label>
+                        <label class="w3-text-deep-purple"><b>Preço</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="preco" type="text" title="Preco do Produto." pattern="[0-9]{4,2}" required></p>
                         <p>
                         <input class="w3-input w3-border w3-light-grey" name="tipo" type="hidden" value="Pneu" required></p>                            

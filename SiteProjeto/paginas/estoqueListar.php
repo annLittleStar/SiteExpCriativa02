@@ -104,8 +104,9 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 echo "	  <th width='15%'>Nome</th>";
 				echo "	  <th width='15%'>Marca</th>";
                 echo "    <th width='10%'>Quantidade</th>";
-				echo "	  <th width='10%'>Preco </th>";
+				echo "	  <th width='10%'>Preço </th>";
 				echo "	  <th width='5%'> </th>";
+                echo "    <th width='5%'> </th>";
                 echo "    <th width='5%'> </th>";
                 echo "    <th width='5%'> </th>";
                 echo "    <th width='5%'> </th>";
@@ -149,7 +150,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         <a href='estoqueExcluir.php?id=<?php echo $cod; ?>'><img src='../imagens/deletar.png' title='Excluir Produto' width='34'></a>
                         </td>
                         <td>
-                        <a href='entradaPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/aguardando.png' title='Registrar Pneu Defeituoso' width='32'></a>
+                        <a href='entradaPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/defeituoso.png' title='Registrar Pneu Defeituoso' width='32'></a>
                         </td>
                         </tr>
 				 <?php

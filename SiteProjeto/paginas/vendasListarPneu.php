@@ -104,7 +104,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 echo "	  <th width='15%'>Nome</th>";
 				echo "	  <th width='15%'>Marca</th>";
                 echo "    <th width='10%'>Quantidade</th>";
-				echo "	  <th width='10%'>Preco </th>";
+				echo "	  <th width='10%'>Preço</th>";
 				echo "	  <th width='5%'> </th>";
                 echo "	</tr>";
 
