@@ -104,8 +104,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 echo "	  <th width='5%'>Id</th>";
                 echo "	  <th width='15%'>Nome</th>";
 				echo "	  <th width='15%'>Marca</th>";
-                echo "    <th width='15%'>Qtd Aguardando</th>";
-                echo "    <th width='15%'>Qtd Recolhida</th>";
+                echo "    <th width='15%'>Pneus Defeituosos em Estoque</th>";
+                echo "    <th width='15%'>Pneus Recolhidos</th>";
 				echo "	  <th width='5%'> </th>";              
                 echo "	</tr>";
 
