@@ -51,6 +51,33 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 echo $data;
                 echo "</p> "
                 ?>
+                	<!-- Acesso ao BD-->
+	<?php
+		
+		$servername = "localhost:3306";
+		$username = "root";
+		$password = "";
+		$database = "sea";
+		
+		// Cria conexão
+		$conn = mysqli_connect($servername, $username, $password, $database);
+                    
+		// Verifica conexão 
+		if (!$conn) {
+			echo "</table>";
+			echo "</div>";
+			die("Falha na conexão com o Banco de Dados: " . mysqli_connect_error());
+		}
+		
+		// Configura para trabalhar com caracteres acentuados do português
+			mysqli_query($conn,"SET NAMES 'utf8'");
+			mysqli_query($conn,"SET NAMES 'utf8'");
+			mysqli_query($conn,'SET character_set_connection=utf8');
+			mysqli_query($conn,'SET character_set_client=utf8');
+            mysqli_query($conn,'SET character_set_results=utf8');
+            
+            $sql = "SELECT * FROM funcionario";
+    ?>
 
                 <div class="w3-responsive w3-card-4">
                     <div class="w3-container w3-theme">
@@ -76,7 +103,24 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         <input class="w3-input w3-border w3-light-grey" name="valorLavagem" type="text"  title="Tipo de Lavagem: Preço da Lavagem Completa." value="30.00" pattern="[0-9]{4,2}" required readonly></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Funcionário</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="funcLavagem" type="text"  title="Funcionário da lavagem completa" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$" required></p>
+                        <br>
+                        <?php
+                            echo "<select name='funcLavagem' style='width:40%; height:3.5%'>";
+                            if ($result = mysqli_query($conn, $sql)) {
+                                if (mysqli_num_rows($result) > 0) {
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        echo "";
+                                        echo "<option value=";
+                                        echo $row["id"];
+                                        echo ">";
+                                        echo $row['nome'];
+                                        echo "</option>";
+                                        }
+                                    }
+                                }
+                            echo "</select>";
+                        ?>
+                        </p>
                         <p>
 						<input type="submit" value="Cadastrar" class="w3-btn w3-green" >
 						<input type="button" value="Cancelar" class="w3-btn w3-red" onclick="window.location.href='lavagensSelecionar.php'"></p>
@@ -85,7 +129,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
 					</form>
 				</div>
-
 			</div>
 		</p>
 	</div>

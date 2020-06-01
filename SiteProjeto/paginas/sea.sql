@@ -41,17 +41,6 @@ create table if not exists funcionario(
 ) engine=innoDB default charset=utf8;
 
 -- --------------------------------------------------------
--- Tabela de folha ponto
--- --------------------------------------------------------
-
-create table if not exists folhaPonto(
-	idFuncionario int not null,
-    hrEntrada datetime not null,
-    hrSaida datetime
-    -- foreign key(idFuncionario) references funcionario(id)
-) engine=innoDB default charset=utf8;
-
--- --------------------------------------------------------
 -- Tabela de produtos
 -- --------------------------------------------------------
 
@@ -60,13 +49,9 @@ create table if not exists produto(
     nomeProd varchar(30) not null,
     marcaProd varchar(30) not null,
     precoProd double not null,
-    tipoProd enum('Pneu', 'Produto de limpeza') not null,
+    tipoProd enum('Pneu') not null,
     quantidadeProd int not null,
-    idFuncProd int not null,
-    limiteUso int default(1), -- Quantidade de vezes que pode ser usada 
-    usado int,
     primary key(idProd)
-    -- foreign key(idFunc) references funcionario(id)
 ) engine=innoDB default charset=utf8;
 
 -- --------------------------------------------------------
@@ -77,8 +62,7 @@ create table if not exists pneuDef(
 	idPneuDef int not null,
     qtdA int not null default(0), -- Isso é para a contagem de quantos defeituosos aguardam recolhimento
     qtdR int not null default(0), -- Isso é para a contagem de quantos defeituosos foram recolhidos
-    qtdT int not null default(0), -- Isso é para a contagem de quantos defeituosos já passaram pela loja
-    foreign key(idPneuDef) references produto(idProd) on delete cascade on update cascade
+    foreign key(idPneuDef) references produto(idProd) on delete cascade on update no action
 ) engine=innoDB default charset=utf8;
 
 -- --------------------------------------------------------
@@ -89,10 +73,11 @@ create table if not exists vendaPneu(
 	idVenda int not null auto_increment,
     totalVenda float not null,
     dataVenda datetime,
-    idFunc int not null,
+    idFuncVenda int not null,
     idProdutoVenda int not null,
     qtdVenda int not null,
     primary key(idVenda),
+    foreign key(idFuncVenda) references funcionario(id),
     foreign key(idProdutoVenda) references produto(idProd)
 ) engine=innoDB default charset=utf8;
 
@@ -101,27 +86,19 @@ create table if not exists vendaPneu(
 -- --------------------------------------------------------
 
 create table if not exists lavagem(
-  idTipo int NOT NULL AUTO_INCREMENT,
+  idTipo int not null auto_increment,
   valorLavagem float not null,
-  tipo enum ('Simples', 'Completa') NOT NULL,
+  idFuncLavagem int not null,
+  tipo enum ('Simples', 'Completa') not null,
   dataHorario dateTime,
-  primary key(idTipo)
+  primary key(idTipo),
+  foreign key(idFuncLavagem) references funcionario(id)
 ) engine=innoDB default charset=utf8;
-
--- --------------------------------------------------------
--- Tabela de Produto Lavagem  
--- --------------------------------------------------------
-/*
-  create table if not exists produtoLavagem(
-  idLavagem int not null,
-  idProduto float not null,
-  foreign key(idLavagemC) references lavagem(idTipo),
-  foreign key(idProduto) references lavagem(idProd)
-) engine=innoDB default charset=utf8;*/
 
 -- --------------------------------------------------------
 -- Tabela de carros 
 -- --------------------------------------------------------
+
 create table if not exists carro(
 	idCarro int not null,
     marcaCarro varchar(30) not null,
@@ -133,12 +110,12 @@ create table if not exists carro(
 -- Tabela de pneus indicados 
 -- --------------------------------------------------------
 
-CREATE TABLE if not exists pneu (
+create table if not exists pneu (
 	idPneu int not null,
 	modelo varchar(45) not null,
 	carro int not null,
 	disponibilidade int,
 	primary key(idPneu),
-	foreign key(disponibilidade) references produto(idProd), -- arrumar para a quantidade aqui
+	foreign key(disponibilidade) references produto(idProd),
 	foreign key(carro) references carro(idCarro)
 )engine=innoDB default charset=utf8;

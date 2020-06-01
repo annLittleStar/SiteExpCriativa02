@@ -12,43 +12,43 @@ INSERT INTO `funcionario` (`id`, `nome`, `login`, `senha`, `tipo`, `cpf`, `telef
 -- Produtos
 -- --------------------------------------------------------
 
-INSERT INTO `produto` (`idProd`, `nomeProd`, `marcaProd`, `precoProd`, `tipoProd`, `quantidadeProd`, `idFuncProd`) VALUES 
-('2', 'Tornado Beta 4 Lonas', 'Pirelli', '150.45', 'Pneu', '8', '1'),
-('3', 'Scorpion STR', 'Pirelli', '123.44', 'Pneu', '15', '1'),
-('4', 'Scorpion ATR', 'Pirelli', '177.83', 'Pneu', '7', '1'),
-('5', 'Scorpion MUD', 'Pirelli', '183.73', 'Pneu', '6', '1'),
-('6', 'Laufen S FIT', 'Hankook', '205.47', 'Pneu', '3', '1'),
-('7', 'Direzza DZ102', 'Dunlop', '203.82', 'Pneu', '10', '1'),
-('8', 'Touring R1', 'Dunlop', '165', 'Pneu', '1', '1'),
-('9', 'Cinturato P1', 'Pirelli', '162.63', 'Pneu', '21', '1'),
-('10', 'SP Sport LM704', 'Dunlop', '148.90', 'Pneu', '18', '1'),
-(11,'Dynamic RA03','Hankook',250,'Pneu',5,1),
-(12,'Technic aro 14','Technic',200,'Pneu',7,1),
-(13,'Ecsta PA31','Kumho',230,'Pneu',6,1),
-(14,'Assurance Touring','Goodyear',200,'Pneu',9,1),
-(15,'Primacy 3','Michelin',215,'Pneu',11,1),
-(16,'Turanza ER370','Bridgestone',270,'Pneu',2,1);
+INSERT INTO `produto` (`idProd`, `nomeProd`, `marcaProd`, `precoProd`, `tipoProd`, `quantidadeProd`) VALUES 
+('2', 'Tornado Beta 4 Lonas', 'Pirelli', '150.45', 'Pneu', '8'),
+('3', 'Scorpion STR', 'Pirelli', '123.44', 'Pneu', '15'),
+('4', 'Scorpion ATR', 'Pirelli', '177.83', 'Pneu', '7'),
+('5', 'Scorpion MUD', 'Pirelli', '183.73', 'Pneu', '6'),
+('6', 'Laufen S FIT', 'Hankook', '205.47', 'Pneu', '3'),
+('7', 'Direzza DZ102', 'Dunlop', '203.82', 'Pneu', '10'),
+('8', 'Touring R1', 'Dunlop', '165', 'Pneu', '1'),
+('9', 'Cinturato P1', 'Pirelli', '162.63', 'Pneu', '21'),
+('10', 'SP Sport LM704', 'Dunlop', '148.90', 'Pneu', '18'),
+(11,'Dynamic RA03','Hankook',250,'Pneu',5),
+(12,'Technic aro 14','Technic',200,'Pneu',7),
+(13,'Ecsta PA31','Kumho',230,'Pneu',6),
+(14,'Assurance Touring','Goodyear',200,'Pneu',9),
+(15,'Primacy 3','Michelin',215,'Pneu',11),
+(16,'Turanza ER370','Bridgestone',270,'Pneu',2);
 
 -- --------------------------------------------------------
 -- Registro de Pneus defeituosos
 -- --------------------------------------------------------
 
 INSERT INTO `pneuDef` VALUES 
-('2', default, default, default),
-('3', default, default, default),
-('4', default, default, default),
-('5', default, default, default),
-('6', default, default, default),
-('7', default, default, default),
-('8', default, default, default),
-('9', default, default, default),
-('10', default, default, default),
-('11', default, default, default),
-('12', default, default, default),
-('13', default, default, default),
-('14', default, default, default),
-('15', default, default, default),
-('16', default, default, default);
+('2', default, default),
+('3', default, default),
+('4', default, default),
+('5', default, default),
+('6', default, default),
+('7', default, default),
+('8', default, default),
+('9', default, default),
+('10', default, default),
+('11', default, default),
+('12', default, default),
+('13', default, default),
+('14', default, default),
+('15', default, default),
+('16', default, default);
 
 -- --------------------------------------------------------
 -- Carros
@@ -81,27 +81,3 @@ INSERT INTO `pneu` VALUES
 (13,'Michelin Primacy 3',5,15),
 (14,'Bridgestone Turanza ER370',5,16),
 (15,'Dunlop SP SPORT LM704',5,10);
-
--- --------------------------------------------------------
--- Lavagens
--- --------------------------------------------------------
-/*
-INSERT INTO `lavagem` VALUES 
-(1,'Lavagem Completa'),
-(2,'Lavagem Simples');
-
--- --------------------------------------------------------
--- Lavagem Completa
--- --------------------------------------------------------
-
-INSERT INTO `lavagemcompleta` VALUES 
-(1,25,'2020-04-12','02:02:02'),
-(3,25,'2020-05-24','17:00:00');
-
--- --------------------------------------------------------
--- Lavagem Simples
--- --------------------------------------------------------
-
-INSERT INTO `lavagemsimples` VALUES 
-(1,50,'2020-05-24','16:53:00'),
-(2,50,'2020-05-24','16:53:00');*/

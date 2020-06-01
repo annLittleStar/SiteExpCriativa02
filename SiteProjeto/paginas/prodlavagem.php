@@ -49,24 +49,24 @@
         <h1 class="w3-xxlarge">Produtos de Lavagem</h1>
         <table style="height: :100%; width:100%;">
             <tr>
-                <td style="width:30%;" align="center">
+                <td style="width:30%; text-align:center">
                     <label class="w3-text-deep-purple"><b>Pneu Pretinho</b></label> <br>
                 </td>
-                <td style="width:30%;" align="center">
+                <td style="width:30%; text-align:center">
                     <label class="w3-text-deep-purple"><b>Shampoo Automotivo</b></label>
                 </td>
-                <td style="width:30%;" align="center">
+                <td style="width:30%; text-align:center">
                     <label class="w3-text-deep-purple"><b>Silicone em Spray</b></label>
                 </td>
             </tr>
             <tr>
-                <td style="width:30%;" align="center">
+                <td style="width:30%; text-align:center">
                    <a href="https://www.americanas.com.br/busca/pretinho-pneu" ><img src="../imagens/pretinho.png" class="w3-circle"  width="45%" height="5%"></a>
                 </td>
-                <td style="width:30%;" align="center">
+                <td style="width:30%; text-align:center">
                    <a href="https://www.americanas.com.br/busca/shampoo-automotivo"><img src="../imagens/shampoo.jpg" class="w3-circle"  width="45%" height="12%"></a>
                 </td>
-                <td style="width:30%;" align="center">
+                <td style="width:30%; text-align:center">
                    <a href="https://www.americanas.com.br/busca/silicone-spray"><img src="../imagens/silicone.jpg"  class="w3-circle"  width="45%" height="55%"></a>
                 </td>
             </tr>
@@ -75,7 +75,7 @@
             <!-- Acesso em:-->
             
         </div>
-    </div>
+
 
 
     <footer class="w3-panel w3-padding-32 w3-card-4 w3-light-grey w3-center w3-opacity">
