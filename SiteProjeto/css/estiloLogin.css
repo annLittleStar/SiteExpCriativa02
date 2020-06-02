@@ -33,7 +33,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 .textoLogin{
 	height: 50px;
 	width: 368px;
-	background-color: #87CEEB;
+	background-color: rgb(156, 230, 255);
 	font-family:Centaur; 
 	text-align: center;
 	border-style: solid 2px #CCC;
@@ -60,21 +60,21 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 h3{
 	font-family:Centaur; 
 	text-align: center;
-	color: white;
+	color: black;
 	font-size: 25px;
 }
 
 table{
 	border: 2px solid;
-	border-color: #191970;
+	border-color: white;
 	border-radius: 10px;
 	padding: 40px;
-	background-color: black;
+	background-color: white;
 	margin-top: 7%;
 }
 
 body{
-	background-color: #00BFFF;
+	background-color: #4169E1;
 }
 
 .img{
