@@ -34,7 +34,7 @@ create table if not exists funcionario(
     nome varchar(30) not null,
     login varchar(30) not null,
     senha varchar(30) not null,  
-    tipo enum('Dono', 'Funcionario') not null, 
+    cargo enum('Dono', 'Funcionario') not null, 
     cpf varchar(15) not null unique,
     telefone varchar(20) not null unique,
 	primary key(id)

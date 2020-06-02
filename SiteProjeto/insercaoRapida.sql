@@ -1,12 +1,13 @@
 use sea;
 
 -- --------------------------------------------------------
--- Pseudo funcionario
+-- Funcionarios da loja
 -- --------------------------------------------------------
-# Ainda tem que rever esse, mas por enquanto serve para fazer o login
 
-INSERT INTO `funcionario` (`id`, `nome`, `login`, `senha`, `tipo`, `cpf`, `telefone`) VALUES 
-('01', 'admin', 'admin', 'admin', 'dono', '12312312344', '12341234');
+INSERT INTO funcionario (id, nome, login, senha, cargo, cpf, telefone) VALUES 
+('01', 'Arnaldo Machado', 'arnaldoMachado', 'arnaldo01', 'Dono', '81405195029', '986806810'),
+('02', 'Rosa Lorena Barbara Peixoto', 'rosaPeixoto', 'rosa02', 'Funcionario', '44402848920', '981913110'),
+('03', 'Sebastian Renato Martins', 'sebastianMartins', 'sebastian03', 'Funcionario', '66430165922', '981358657');
 
 -- --------------------------------------------------------
 -- Produtos

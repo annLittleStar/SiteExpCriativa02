@@ -54,7 +54,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		
 		$idv   		= $_POST['idV'];
 		$idp   		= $_POST['idP'];
-		$idf   		= $_POST['idF'];
+		$idf   		= $_POST['funcVenda'];
 		$vender		= $_POST['Vender'];
 		$dataV		= $_POST['data'];
 		$preco		= $_POST['valor'];
@@ -86,7 +86,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		$resto = $quantidade - $vender;
 
 
-		$sql = "INSERT INTO vendaPneu (idVenda, totalVenda, dataVenda, idFunc, idProdutoVenda, qtdVenda)
+		$sql = "INSERT INTO vendaPneu (idVenda, totalVenda, dataVenda, idFuncVenda, idProdutoVenda, qtdVenda)
 		VALUES ('$idv', '$precoT', '$dataV', '$idf', '$idp', '$vender')";
 
 		echo "<div class='w3-responsive w3-card-4'>";

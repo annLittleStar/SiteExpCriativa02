@@ -28,7 +28,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
         }
     </style>
 </head>
-<body onload="w3_show_nav('menuEstoque')">
+<body onload="w3_show_nav('menuServicos')">
 
 <!-- Inclui MENU.PHP  -->
 <?php require 'menu.php';?>
@@ -107,12 +107,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         <p>
                         <label class="w3-text-deep-purple"><b>Data</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="data" type="text" value="<?php $dataA = date("Y/m/d H:i:s", time()); echo "$dataA" ?>" title="Data de inicio do registro." required readonly=""></p>
-                        <p>
-                        <label class="w3-text-deep-purple"><b>Funcionario</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="idF" type="text" pattern="[0-9]{1,3}" title="Id do funcionário." required></p>
-						<!-- <p>
-                        <label class="w3-text-deep-purple"><b>Nome do Vendedor</b></label>
-						<input class="w3-input w3-border w3-light-grey" name="nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$" title="Nome do Vendedor entre 4 e 100 letras." required></p> -->
+
                         <p>
                         <label class="w3-text-deep-purple"><b>ID Pneu</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="idP" type="text" pattern="[0-9]{1,3}" title="ID do Produto." value="<?php echo "$id" ?>" required readonly></p>
@@ -122,9 +117,29 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         <label class="w3-text-deep-purple"><b>Quantidade Vendida</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="Vender" type="text" pattern="[0-9]{1,3}" title="Quantidade Vendida." value="" required></p>
                         <p>
+                        <label class="w3-text-deep-purple"><b>Funcionario</b></label>
+                        <br>
+                        <?php
+                            $sql = "SELECT * FROM funcionario";
+                            echo "<select class='w3-input w3-border w3-light-grey' name='funcVenda' style='width:40%; height:4.5%'>";
+                            if ($result = mysqli_query($conn, $sql)) {
+                                if (mysqli_num_rows($result) > 0) {
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        echo "";
+                                        echo "<option value=";
+                                        echo $row["id"];
+                                        echo ">";
+                                        echo $row['nome'];
+                                        echo "</option>";
+                                        }
+                                    }
+                                }
+                            echo "</select>";
+                        ?>
+                        </p>
+                        <p>
 						<input type="submit" value="Registrar" class="w3-btn w3-green" >
 						<input type="button" value="Cancelar" class="w3-btn w3-red" onclick="window.location.href='vendasListarPneu.php'"></p>
-                        <!-- Colocar a opção de apenas troca ou troca e venda-->
 					</form>
             <?php 
             }

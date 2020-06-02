@@ -28,7 +28,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
 <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-  <h1 class="w3-xxlarge">Cadastrar Novo Produto</h1>
+  <h1 class="w3-xxlarge">Formulário de Registro de Lavagem</h1>
 
   <p class="w3-large">
   <div class="w3-code cssHigh notranslate">
@@ -51,7 +51,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		$password = "";
 		$database = "sea";
 		
-		
+		$funcLavagem = $_POST['funcLavagem'];
 		$idTipo   = $_POST['idTipo'];
 		$tipo   = $_POST['tipo'];
 		$dataHorario    = $_POST['dataHorario'];
@@ -75,8 +75,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			mysqli_query($conn,'SET character_set_results=utf8');
 
 		// Faz Select na Base de Dados
-		$sql = "INSERT INTO lavagem (idTipo, tipo, dataHorario,valorLavagem) 
-		VALUES ('$idTipo', '$tipo', '$dataHorario', $valorLavagem)";
+		$sql = "INSERT INTO lavagem (idTipo, tipo, dataHorario,valorLavagem, idFuncLavagem)
+		VALUES ('$idTipo', '$tipo', '$dataHorario', $valorLavagem, $funcLavagem)";
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = mysqli_query($conn, $sql)) {
 			echo "Lavagem Registrada!";

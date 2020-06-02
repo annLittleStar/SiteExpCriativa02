@@ -96,20 +96,21 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
             
             // Faz Select na Base de Dados
-            $sql = "SELECT idTipo, tipo, valorLavagem, dataHorario FROM lavagem order by dataHorario desc";
+            $sql = "SELECT * FROM lavagem JOIN funcionario ON idFuncLavagem=id ORDER BY dataHorario DESC";
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
                 echo "<table class='w3-table-all'>";
                 echo "  <tr>";
-                echo "    <th width='20%'>Id</th>";
-                echo "  <th width='25%'>Tipo</th>";
-                echo "    <th width='25%'>Valor</th>";
+                echo "    <th width='10%'>Id</th>";
+                echo "    <th width='20%'>Tipo</th>";
+                echo "    <th width='30%'>Lavador(a)</th>";
+                echo "    <th width='20%'>Valor</th>";
                 echo "    <th width='30%'>Data e Horario</th>";
                 echo "  </tr>";
 
                 //Arrumo isso dpois
                 echo '<form method="POST" action="lavagensHistoricoPesquisa.php">
-                <input type="text" name="pesquisar" style="width:90%" placeholder="Digite o Tipo de Lavagem que deseja encontrar">
+                <input type="text" name="pesquisar" style="width:90%" placeholder="Digite o Tipo de Lavagem ou o Nome do funcionário que deseja encontrar">
                     <input style="width:10%" type="submit" name="buscar" value="Buscar">
                 </form>';
 
@@ -124,6 +125,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo $cod;
                             echo "</td><td>";
                             echo $row["tipo"];
+                            echo "</td><td>";
+                            echo $row["nome"];
                             echo "</td><td>";
                             echo $row["valorLavagem"];
                             echo "</td><td>";
