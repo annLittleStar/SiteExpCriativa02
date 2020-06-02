@@ -117,7 +117,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
                 $pesquisar = $_POST['pesquisar'];
                 $result_lava = "SELECT * FROM lavagem JOIN funcionario ON idFuncLavagem=id
-                WHERE tipo LIKE'$pesquisar' OR nome LIKE '$pesquisar' ORDER BY dataHorario DESC";
+                WHERE tipo LIKE'$pesquisar' OR nome LIKE '%$pesquisar%' ORDER BY dataHorario DESC";
                 $resultado_lava = mysqli_query($conn, $result_lava);
 
                 if (mysqli_num_rows($result) > 0) {

@@ -101,12 +101,12 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
             if ($result = mysqli_query($conn, $sql)) {
                 echo "<table class='w3-table-all'>";
                 echo "	<tr>";
-                echo "	  <th width='10%'>Id Venda</th>";
-                echo "	  <th width='15%'>Data/Hora Venda</th>";
-                echo "	  <th width='20%'>Produto</th>";
-                echo "	  <th width='20%'>Vendedor(a)</th>";
+                echo "    <th width='5%'>Id</th>";
+                echo "    <th width='20%'>Produto</th>";
+                echo "    <th width='20%'>Vendedor(a)</th>";
                 echo "    <th width='10%'>Quantidade</th>";
                 echo "    <th width='5%'>Total</th>";
+                echo "    <th width='15%'>Data e Hora</th>";
                 echo "	</tr>";
 
 
@@ -119,7 +119,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
                 $pesquisar = $_POST['pesquisar'];
                 $result_prod = "SELECT * FROM vendaPneu JOIN produto ON idProdutoVenda = idProd JOIN funcionario ON idFuncVenda=id
-                WHERE nomeProd LIKE '$pesquisar' OR idVenda LIKE '$pesquisar' OR nome LIKE '$pesquisar' ORDER BY dataVenda DESC";
+                WHERE nomeProd LIKE '$pesquisar' OR idVenda LIKE '$pesquisar' OR nome LIKE '%$pesquisar%' ORDER BY dataVenda DESC";
                 $resultado_prod = mysqli_query($conn, $result_prod);
 
                 if (mysqli_num_rows($result) > 0) {
@@ -133,8 +133,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo "<td>";
                             echo $cod;
                             echo "</td><td>";
-                            echo $row["dataVenda"];
-                            echo "</td><td>";
                             echo $row["nomeProd"];
                             echo "</td><td>";
                             echo $row["nome"];
@@ -142,7 +140,9 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo $row["qtdVenda"];
                             echo "</td><td>";
                             echo $row["totalVenda"];
-                            echo "</td>";
+                            echo "</td><td>";
+                            echo $row["dataVenda"];
+                            echo "</td>";                        
 
                 ?>
                         </tr>
@@ -156,8 +156,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo "<td>";
                             echo $cod;
                             echo "</td><td>";
-                            echo $row["dataVenda"];
-                            echo "</td><td>";
                             echo $row["nomeProd"];
                             echo "</td><td>";
                             echo $row["nome"];
@@ -165,7 +163,9 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo $row["qtdVenda"];
                             echo "</td><td>";
                             echo $row["totalVenda"];
-                            echo "</td>";
+                            echo "</td><td>";
+                            echo $row["dataVenda"];
+                            echo "</td>";                        
                         
 						//Adicionar, retirar ou excluir registro do produto
 				?>

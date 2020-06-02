@@ -101,12 +101,12 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
             if ($result = mysqli_query($conn, $sql)) {
                 echo "<table class='w3-table-all'>";
                 echo "	<tr>";
-                echo "	  <th width='10%'>Id Venda</th>";
-                echo "	  <th width='15%'>Data/Hora Venda</th>";
+                echo "	  <th width='5%'>Id</th>";
                 echo "	  <th width='20%'>Produto</th>";
                 echo "	  <th width='20%'>Vendedor(a)</th>";
                 echo "    <th width='10%'>Quantidade</th>";
                 echo "    <th width='5%'>Total</th>";
+                echo "    <th width='15%'>Data e Hora</th>";
                 echo "	</tr>";
 
                 echo '<form method="POST" action="vendasListarPesquisa.php">
@@ -123,8 +123,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo "<td>";
                             echo $cod;
                             echo "</td><td>";
-                            echo $row["dataVenda"];
-                            echo "</td><td>";
                             echo $row["nomeProd"];
                             echo "</td><td>";
                             echo $row["nome"];
@@ -132,6 +130,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo $row["qtdVenda"];
                             echo "</td><td>";
                             echo $row["totalVenda"];
+                            echo "</td><td>";
+                            echo $row["dataVenda"];
                             echo "</td>";                        
 
 						//Adicionar, retirar ou excluir registro do produto
