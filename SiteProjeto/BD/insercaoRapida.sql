@@ -58,7 +58,7 @@ INSERT INTO `pneuDef` VALUES
 INSERT INTO `carro` VALUES
 ('1', 'Chevrolet', 'Opala Comodoro'),
 ('2', 'Mitsubishi', 'Pajero TR4'),
-('3', 'Huyndai', 'Veloster'),
+('3', 'Hyundai', 'Veloster'),
 ('4', 'Peugeot', '2007'),
 ('5', 'Honda', 'HRV');
 

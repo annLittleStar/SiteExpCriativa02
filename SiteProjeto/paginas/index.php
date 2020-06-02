@@ -48,8 +48,9 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 				<img src="../imagens/estoque.png" class="w3-square" width="12%" height="18%">
 				<img src="../imagens/nota.png" class="w3-square"  width="13%" height="19%">
 				<img src="../imagens/grafico.png" class="w3-square"  width="12%" height="19%">
-
-
+				</div>
+				<div>
+				
 				<footer class="w3-panel w3-padding-32 w3-card-4 w3-light-grey w3-center w3-opacity">
 					<p>
 						<nav>
