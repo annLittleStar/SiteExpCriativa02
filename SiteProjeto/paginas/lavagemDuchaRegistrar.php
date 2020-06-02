@@ -101,7 +101,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         <label class="w3-text-deep-purple"><b>Funcionário</b></label>
                         <br>
                         <?php
-                            echo "<select class='w3-input w3-border w3-light-grey' name='funcLavagem' style='width:40%; height:4.5%'>";
+                            echo "<select class='w3-input w3-border w3-light-grey' name='funcLavagem' style='width:40%; height:4.5%; padding:0%; padding-left:8px'>";
                             if ($result = mysqli_query($conn, $sql)) {
                                 if (mysqli_num_rows($result) > 0) {
                                     while ($row = mysqli_fetch_assoc($result)) {
