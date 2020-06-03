@@ -71,8 +71,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		mysqli_query($conn,'SET character_set_client=utf8');
 		mysqli_query($conn,'SET character_set_results=utf8');
 
-		// Faz Select na Base de Dados
-
+		// Faz Update na Base de Dados
 		$resultado = $qtd - $remover;
 
 		if($resultado >= 0 && $remover > 0){
@@ -81,9 +80,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			$sql = "UPDATE produto SET quantidadeProd = '$qtd' WHERE idProd = $id";
 		}
 
-
 		echo "<div class='w3-responsive w3-card-4'>";
-
 		if ($result = mysqli_query($conn, $sql) && $resultado >= 0 && $remover <= 0) {
 			echo "Insira uma quantidade válida a ser removida!";
 		}else if ($result = mysqli_query($conn, $sql) && $resultado >= 0) {

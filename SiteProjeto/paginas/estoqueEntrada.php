@@ -79,10 +79,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 mysqli_query($conn,'SET character_set_client=utf8');
                 mysqli_query($conn,'SET character_set_results=utf8');
 
-
-
-                //Ajustar essa parte ao BD do projeto:
-
                 // Faz Select na Base de Dados
                 $sql = "SELECT idProd, nomeProd, tipoProd, quantidadeProd FROM produto WHERE idProd = $id";
                 echo "<div class='w3-responsive w3-card-4'>"; //Inicio form
@@ -99,25 +95,21 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                                 <form class="w3-container" action="estoqueEntradaBD.php" method="post" onsubmit="return check(this.form)">
                                     <input type="hidden" id="Id" name="Id" value="<?php echo $row['idProd']; ?>">
                                     <p>
-                                        <!--Arrumar isso para evitar que sejam alteradas as informações-->
                                     <label class="w3-text-deep-purple"><b>Nome</b></label>
                                     <input class="w3-input w3-border w3-light-grey" name="Nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$"
                                            title="Nome do produto entre 4 e 100 letras." value="<?php echo $row['nomeProd']; ?>" required readonly></p>
                                     <p>
                                     <label class="w3-text-deep-purple"><b>Tipo</b></label>
                                     <input class="w3-input w3-border w3-light-grey" name="Tipo" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$"
-                                           title="Tipo do produto entre 4 e 100 letras." value="<?php echo $row['tipoProd']; ?>" required readonly></p>
-                                                                    
+                                           title="Tipo do produto entre 4 e 100 letras." value="<?php echo $row['tipoProd']; ?>" required readonly></p>                            
                                     <p>
                                     <label class="w3-text-deep-purple"><b>Quantidade</b></label>
                                     <input class="w3-input w3-border w3-light-grey" name="Quantidade" type="text" pattern="[0-9]{1,3}"
                                            title="Quantidade de itens." value="<?php echo $row['quantidadeProd']; ?>" required readonly></p>
                                     <p>
-                                        <p>
                                     <label class="w3-text-deep-purple"><b>Quantidade de Entrada</b></label>
                                     <input class="w3-input w3-border w3-light-grey" name="Entrar" type="text" pattern="[0-9]{1,3}"
                                            title="Quantidade de Entrada." value="" required></p>
-
                                     <p>
                                     <input type="submit" value="Adicionar" class="w3-btn w3-theme" >
                                     <input type="button" value="Cancelar" class="w3-btn w3-red" onclick="window.location.href='estoqueListar.php'"></p>

@@ -119,7 +119,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
                 if (mysqli_num_rows($result) > 0) {
 
-                        // Apresenta cada linha da tabel
+                        // Apresenta cada linha da tabela
                         while ($row = mysqli_fetch_assoc($result)) {
                             $cod = $row["idProd"];
                             echo "<tr>";
@@ -135,8 +135,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo $row["precoProd"];
                             echo "</td><td>";
                         
-
-						//Adicionar, retirar ou excluir registro do produto
 				?>
                         <a href='estoqueSaida.php?id=<?php echo $cod; ?>'><img src='../imagens/caixinhaSaida.png' title='Registrar Saida de Produto' width='32'></a>
                         </td>

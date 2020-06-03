@@ -109,13 +109,12 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 echo "    <th width='15%'>Data e Hora</th>";
                 echo "	</tr>";
 
-
                 echo '<form method="POST" action="vendasListarPesquisa.php">
                 <input type="text" name="pesquisar" style="width:90%" placeholder="Digite o Nome do produto vendido, ID da venda ou Nome do funcionário que deseja encontrar">
                 <input style="width:10%" type="submit" name="buscar" value="Buscar">
                 </form>';
 
-                //Deve ser o nome exato
+                //Deve ser o nome exato, exceto nome de funcionário
 
                 $pesquisar = $_POST['pesquisar'];
                 $result_prod = "SELECT * FROM vendaPneu JOIN produto ON idProdutoVenda = idProd JOIN funcionario ON idFuncVenda=id
@@ -126,7 +125,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
                     if($pesquisar!=null){
 
-                        // Apresenta cada linha pesquisada da tabel
+                        // Apresenta cada linha pesquisada da tabela
                         while ($row = mysqli_fetch_array($resultado_prod)) {
                             $cod = $row["idVenda"];
                             echo "<tr>";
@@ -149,7 +148,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                  <?php
                         }
                     } else{
-                        // Apresenta cada linha da tabel
+                        // Apresenta cada linha da tabela
                         while ($row = mysqli_fetch_assoc($result)) {
                             $cod = $row["idVenda"];
                             echo "<tr>";
@@ -167,7 +166,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo $row["dataVenda"];
                             echo "</td>";                        
                         
-						//Adicionar, retirar ou excluir registro do produto
 				?>
                         </tr>
 				 <?php

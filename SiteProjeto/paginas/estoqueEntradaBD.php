@@ -72,8 +72,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		mysqli_query($conn,'SET character_set_client=utf8');
 		mysqli_query($conn,'SET character_set_results=utf8');
 
-		// Faz Select na Base de Dados
-
+		// Faz Update na Base de Dados
 		$soma = $qtd + $entrar;
 
 		if($entrar > 0){

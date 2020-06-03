@@ -125,7 +125,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
                     if($pesquisar!=null){
 
-                        // Apresenta cada linha pesquisada da tabel
+                        // Apresenta cada linha pesquisada da tabela
                         while ($row = mysqli_fetch_array($resultado_prod)) {
                             $cod = $row["idProd"];
                             echo "<tr>";
@@ -148,7 +148,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                  <?php
                         }
                     } else{
-                        // Apresenta cada linha da tabel
+                        // Apresenta cada linha da tabela
                         while ($row = mysqli_fetch_assoc($result)) {
                             $cod = $row["idProd"];
                             echo "<tr>";
@@ -164,7 +164,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo $row["precoProd"];
                             echo "</td><td>";
                         
-						//Adicionar, retirar ou excluir registro do produto
 				?>
                         <a href='vendasRegistrar.php?id=<?php echo $cod; ?>'><img src='../imagens/vendaPneu.png' title='Registrar Venda' width='32'></a>
                         </td>

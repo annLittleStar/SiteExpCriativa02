@@ -108,16 +108,13 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 echo "    <th width='30%'>Data e Horario</th>";
                 echo "  </tr>";
 
-                //Arrumo isso dpois
                 echo '<form method="POST" action="lavagensHistoricoPesquisa.php">
                 <input type="text" name="pesquisar" style="width:90%" placeholder="Digite o Tipo de Lavagem ou o Nome do funcionário que deseja encontrar">
                     <input style="width:10%" type="submit" name="buscar" value="Buscar">
                 </form>';
 
                 if (mysqli_num_rows($result) > 0) {
-
-                       
-                        // Apresenta cada linha da tabel
+                        // Apresenta cada linha da tabela
                         while ($row = mysqli_fetch_assoc($result)) {
                             $cod = $row["idTipo"];
                             echo "<tr>";

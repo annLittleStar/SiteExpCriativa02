@@ -125,7 +125,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
                     if($pesquisar!=null){
 
-                        // Apresenta cada linha pesquisada da tabel
+                        // Apresenta cada linha pesquisada da tabela
                         while ($row = mysqli_fetch_array($resultado_pesq)) {
                             $cod = $row["idProd"];
                             echo "<tr>";
@@ -149,7 +149,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                  <?php
                         }
                     } else{
-                        // Apresenta cada linha da tabel
+                        // Apresenta cada linha da tabela
                         while ($row = mysqli_fetch_assoc($result)) {
                             $cod = $row["idProd"];
                             echo "<tr>";
@@ -164,7 +164,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo "</td><td>";
                             echo $row["qtdR"];
                             echo "</td><td>";                        
-                        //Adicionar, retirar ou excluir registro do produto
                 ?>
 
                         <a href='recolhimentoPneuDef.php?id=<?php echo $cod; ?>'><img src='../imagens/vrum.png' title='Registrar Recolhimento de Pneu Defeituoso' width='32'></a>

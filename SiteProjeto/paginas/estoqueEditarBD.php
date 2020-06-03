@@ -53,9 +53,9 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		
 		$id      = $_POST['Id'];
 		$nome    = $_POST['Nome'];
-    $marca   = $_POST['Marca'];
+    	$marca   = $_POST['Marca'];
 		$tipo    = $_POST['Tipo'];
-    $valor	 = $_POST['Venda'];
+    	$valor	 = $_POST['Venda'];
 		
 		// Cria conexão
 		$conn = mysqli_connect($servername, $username, $password, $database);
@@ -72,14 +72,12 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		mysqli_query($conn,'SET character_set_results=utf8');
 
 		// Faz Select na Base de Dados
-
-    //parece certo
-    if($valor > 0 && $nome != null && $tipo != null && $marca != null){
-      $sql = "UPDATE produto SET precoProd='$valor', nomeProd='$nome', tipoProd='$tipo', marcaProd='$marca'
-      WHERE idProd=$id";
-    }else{
-      $sql = "UPDATE produto SET idProd='$id' WHERE idProd=$id";
-    }
+    	if($valor > 0 && $nome != null && $tipo != null && $marca != null){
+      		$sql = "UPDATE produto SET precoProd='$valor', nomeProd='$nome', tipoProd='$tipo', marcaProd='$marca'
+      		WHERE idProd=$id";
+    	}else{
+      		$sql = "UPDATE produto SET idProd='$id' WHERE idProd=$id";
+    	}
 
         echo "<div class='w3-responsive w3-card-4'>";
 

@@ -114,7 +114,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
                 if (mysqli_num_rows($result) > 0) {
 
-                        // Apresenta cada linha da tabel
+                        // Apresenta cada linha da tabela
                         while ($row = mysqli_fetch_assoc($result)) {
                             $cod = $row["idCarro"];
                             echo "<tr>";
@@ -126,7 +126,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo $row["nomeCarro"];
                             echo "</td><td>";
                         
-						//Exibir pneus específicos para este carro
 				?>
                         <a href='estoqueListarPneuIndica.php?id=<?php echo $cod; ?>'><img src='../imagens/pneu.png' title='Exibir Pneus Indicados' width='30'></a>
 				 <?php

@@ -129,11 +129,9 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 					echo "Erro executando UPDATE: " . mysqli_error($conn);
 				}
 				?>
-												<p>
-								<!--	<input type="submit" value="Acessar Estoque" class="w3-btn w3-green" onclick= "window.location.href='estoqueListar.php'"> -->
-
-									<input type="button" value="Voltar" class="w3-btn w3-theme" onclick="window.location.href='estoqueListarPneu.php'"></p>
-								</form>
+					    <p>
+						<input type="button" value="Voltar" class="w3-btn w3-theme" onclick="window.location.href='estoqueListarPneu.php'"></p>
+						</form>
 			<?php 
 				echo "</div>"; //Fim form
 				mysqli_close($conn);  //Encerra conexao com o BD

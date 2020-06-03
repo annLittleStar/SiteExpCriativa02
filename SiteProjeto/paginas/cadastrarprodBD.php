@@ -76,7 +76,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			mysqli_query($conn,'SET character_set_results=utf8');
 
 
-		// Faz Select na Base de Dados
+		// Faz Insert na Base de Dados
 		$sql = "INSERT INTO produto (idProd, nomeProd, marcaProd, precoProd, tipoProd) 
 		VALUES ('$id', '$nome', '$marca', '$preco', '$tipo')";
 		echo "<div class='w3-responsive w3-card-4'>";

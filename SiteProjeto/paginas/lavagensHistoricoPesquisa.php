@@ -113,7 +113,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                     <input style="width:10%" type="submit" name="buscar" value="Buscar">
                 </form>';
 
-                //Deve ser o nome exato
+                //Deve ser o nome exato, exceto nome de funcionário
 
                 $pesquisar = $_POST['pesquisar'];
                 $result_lava = "SELECT * FROM lavagem JOIN funcionario ON idFuncLavagem=id
@@ -124,7 +124,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
                     if($pesquisar!=null){
 
-                        // Apresenta cada linha pesquisada da tabel
+                        // Apresenta cada linha pesquisada da tabela
                         while ($row = mysqli_fetch_array($resultado_lava)) {
                             $cod = $row["idTipo"];
                             echo "<tr>";
@@ -142,7 +142,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
                         }
                     } else{
-                        // Apresenta cada linha da tabel
+                        // Apresenta cada linha da tabela
                         while ($row = mysqli_fetch_assoc($result)) {
                             $cod = $row["idTipo"];
                             echo "<tr>";

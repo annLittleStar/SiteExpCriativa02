@@ -79,17 +79,12 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 mysqli_query($conn,'SET character_set_client=utf8');
                 mysqli_query($conn,'SET character_set_results=utf8');
 
-
-
-                //Ajustar essa parte ao BD do projeto:
-
                 // Faz Select na Base de Dados
                 $sql = "SELECT * FROM produto WHERE idProd = $id";
                 
                 echo "<div class='w3-responsive w3-card-4'>"; //Inicio form
                  if ($result = mysqli_query($conn, $sql)) {
                         if (mysqli_num_rows($result) > 0) {
-
 
                         // Apresenta cada linha da tabela:
                             while ($row = mysqli_fetch_assoc($result)) {
@@ -107,7 +102,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         <p>
                         <label class="w3-text-deep-purple"><b>Data</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="data" type="text" value="<?php $dataA = date("Y/m/d H:i:s", time()); echo "$dataA" ?>" title="Data de inicio do registro." required readonly=""></p>
-
                         <p>
                         <label class="w3-text-deep-purple"><b>ID Pneu</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="idP" type="text" pattern="[0-9]{1,3}" title="ID do Produto." value="<?php echo "$id" ?>" required readonly></p>

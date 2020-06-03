@@ -70,11 +70,10 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		mysqli_query($conn,'SET character_set_client=utf8');
 		mysqli_query($conn,'SET character_set_results=utf8');
 
-		// Faz Select na Base de Dados
-
+		// Faz Update na Base de Dados
 		$resultado = $qtd + $qtdE;
-
 		$sql = "UPDATE pneuDef SET qtdA = '$qtdE' WHERE idPneuDef = $id";
+		
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = mysqli_query($conn, $sql) && $qtdE <= 0) {
 			echo "Insira uma quantidade válida a ser removida!";

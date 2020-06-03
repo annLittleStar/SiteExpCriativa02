@@ -1,4 +1,3 @@
-<html lang="pt">
 <!-------------------------------------------------------------------------------
 PROJETO DE EXPERIÊNCIA CRIATIVA 02:
 SEA+
@@ -7,6 +6,7 @@ ENGENHARIA DE SOFTWARE
 
 Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 ---------------------------------------------------------------------------------->
+<html lang="pt">
 	<title>SEA+</title>
 	<link rel="icon" type="image/png" href="../imagens/logoReduzida.png" >
 	<meta name="viewport" content="width=device-width, initial-scale=1">

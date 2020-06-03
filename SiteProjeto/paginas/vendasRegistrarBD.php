@@ -78,14 +78,9 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			mysqli_query($conn,'SET character_set_client=utf8');
 			mysqli_query($conn,'SET character_set_results=utf8');
 
-		// Faz Select na Base de Dados
-
-
+		// Faz Insert na Base de Dados
 		$precoT = $preco * $vender;
-
 		$resto = $quantidade - $vender;
-
-
 		$sql = "INSERT INTO vendaPneu (idVenda, totalVenda, dataVenda, idFuncVenda, idProdutoVenda, qtdVenda)
 		VALUES ('$idv', '$precoT', '$dataV', '$idf', '$idp', '$vender')";
 

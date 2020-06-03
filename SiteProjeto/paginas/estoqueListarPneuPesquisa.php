@@ -124,7 +124,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
                     if($pesquisar!=null){
 
-                        // Apresenta cada linha pesquisada da tabel
+                        // Apresenta cada linha pesquisada da tabela
                         while ($row = mysqli_fetch_array($result_carro)) {
                             $cod = $row["idCarro"];
                             echo "<tr>";
@@ -141,7 +141,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                  <?php
                         }
                     } else{
-                        // Apresenta cada linha da tabel
+                        // Apresenta cada linha da tabela
                         while ($row = mysqli_fetch_assoc($result)) {
                             $cod = $row["idCarro"];
                             echo "<tr>";
@@ -153,7 +153,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo $row["nomeCarro"];
                             echo "</td><td>";
                         
-						//Exibir pneus específicos para este carro
 				?>
                         <a href='estoqueListarPneuIndica.php?id=<?php echo $cod; ?>'><img src='../imagens/pneu.png' title='Exibir Pneus Recomendados' width='32'></a>
 				 <?php

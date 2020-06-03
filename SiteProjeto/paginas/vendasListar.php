@@ -116,7 +116,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
                 if (mysqli_num_rows($result) > 0) {
 
-                        // Apresenta cada linha da tabel
+                        // Apresenta cada linha da tabela
                         while ($row = mysqli_fetch_assoc($result)) {
                             $cod = $row["idVenda"];
                             echo "<tr>";
@@ -134,7 +134,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo $row["dataVenda"];
                             echo "</td>";                        
 
-						//Adicionar, retirar ou excluir registro do produto
 				?>
                     
                         </tr>

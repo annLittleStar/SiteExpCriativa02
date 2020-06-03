@@ -7,8 +7,6 @@ ENGENHARIA DE SOFTWARE
 Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 ---------------------------------------------------------------------------------->
 
-<!--Tem varias coisas a se arrumar aqui ainda-->
-
 <html>
 <head>
     <title>SEA+</title>
@@ -46,7 +44,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
         <p class="w3-large">
             <div class="w3-code cssHigh notranslate">
 
-
                 <!-- Acesso em:-->
                 <?php
 
@@ -57,8 +54,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 echo $data;
                 echo "</p> "
                 ?>
-
-
 
                 <!-- Acesso ao BD-->
                 <?php
@@ -83,10 +78,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 mysqli_query($conn,'SET character_set_connection=utf8');
                 mysqli_query($conn,'SET character_set_client=utf8');
                 mysqli_query($conn,'SET character_set_results=utf8');
-
-
-
-                //Ajustar essa parte ao BD do projeto:
 
                 // Faz Select na Base de Dados
                 $sql = "SELECT idProd, nomeProd, qtdA FROM produto INNER JOIN pneuDef 

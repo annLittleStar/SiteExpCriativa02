@@ -95,10 +95,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
             mysqli_query($conn,'SET character_set_results=utf8');
 
             // Faz Select na Base de Dados
-            //align="center" bottom="middle"
             $sql = "SELECT idTipo, tipo FROM lavagem";
             echo "<div class='w3-responsive w3-card-4'>";
-                                    //botões
                 ?>
                 <div class="w3-responsive w3-card-4">
                     <div class="w3-container w3-theme">

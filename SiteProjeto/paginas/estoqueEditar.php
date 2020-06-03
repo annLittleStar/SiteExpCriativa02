@@ -49,7 +49,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
                 <!-- Acesso em:-->
                 <?php
-
                 date_default_timezone_set("America/Sao_Paulo");
                 $data = date("d/m/Y H:i:s", time());
                 echo "<p class='w3-small' > ";
@@ -57,8 +56,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 echo $data;
                 echo "</p> "
                 ?>
-
-
 
                 <!-- Acesso ao BD-->
 				<?php
@@ -83,9 +80,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 				mysqli_query($conn,'SET character_set_connection=utf8');
 				mysqli_query($conn,'SET character_set_client=utf8');
 				mysqli_query($conn,'SET character_set_results=utf8');
-
-
-				//Ajustar essa parte ao BD do projeto:
+				
 
 				// Faz Select na Base de Dados
 				$sql = "SELECT idProd, nomeProd, marcaProd, tipoProd, quantidadeProd, precoProd 
