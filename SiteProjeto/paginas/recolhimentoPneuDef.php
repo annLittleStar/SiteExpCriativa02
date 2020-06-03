@@ -7,8 +7,6 @@ ENGENHARIA DE SOFTWARE
 Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 ---------------------------------------------------------------------------------->
 
-<!--Tem varias coisas a se arrumar aqui ainda-->
-
 <html>
 <head>
     <title>SEA+</title>
