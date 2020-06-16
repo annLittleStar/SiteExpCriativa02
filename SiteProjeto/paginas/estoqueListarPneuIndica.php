@@ -84,7 +84,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 				mysqli_query($conn,'SET character_set_results=utf8');
 
 				// Faz Select na Base de Dados
-            $sql = "SELECT nomeCarro, marcaCarro, modelo, quantidadeProd FROM ((carro JOIN pneu ON carro = idCarro)  JOIN produto ON disponibilidade = idProd) WHERE carro = $id" ;
+            $sql = "SELECT nomeCarro, idProd, marcaCarro, modelo, quantidadeProd FROM ((carro JOIN pneu ON carro = idCarro)  JOIN produto ON disponibilidade = idProd) WHERE carro = $id" ;
 
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
@@ -102,7 +102,9 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
             <?php 
                     }
                 }
-            }            
+            }    
+
+
 
             echo "<div class='w3-responsive w3-card-4'>";
             if ($resulta = mysqli_query($conn, $sql)) {
@@ -110,17 +112,28 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
                         // Apresenta cada linha da tabela:
                     while ($row = mysqli_fetch_assoc($resulta)) {
+                        $cod = $row["idProd"];
                 ?>
-                                
+                              
                         <form class="w3-container" action="estoqueListarPneuBD.php" method="post" onsubmit="return check(this.form)">
                         <table style="width:100%">
                         <tr>
-                        <td style="width:70%"><p>
+                        <td style="width:4%"><p>
+                        <label class="w3-text-deep-purple"><b>ID</b></label>
+                        <input class="w3-input w3-border w3-light-grey" name="id" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$" value="<?php echo $row['idProd']; ?>" required 
+                        readonly></p></td>
+                        <td style="width:73%"><p>
                         <label class="w3-text-deep-purple"><b>Modelo</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="Nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$" value="<?php echo $row['modelo']; ?>" required readonly></p></td>
-                        <td style="width:30%" text-align="center"><p>
+                        <input class="w3-input w3-border w3-light-grey" name="Nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$" value="<?php echo $row['modelo']; ?>" required
+                         readonly></p></td>
+                        <td style="width:20%" text-align="center"><p>
                         <label class="w3-text-deep-purple"><b>Quantidade em estoque</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="Nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$" value="<?php echo $row['quantidadeProd']; ?>" required readonly></p></td>
+                        <input class="w3-input w3-border w3-light-grey" name="qtd" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$" value="<?php echo $row['quantidadeProd']; ?>" required readonly></p></td>
+
+                        <td style="width:10%" text-align="center"><p>
+                        <label class="w3-text-deep-purple"><b>Vender</b></label>
+                        <a href='vendasRegistrar.php ? id=<?php echo $cod; ?>'><img src='../imagens/vendaPneu.png' title='Registrar Venda' width='32'></a></td>
+                        </tr>
                         </table>
                                          <?php 
                         }
