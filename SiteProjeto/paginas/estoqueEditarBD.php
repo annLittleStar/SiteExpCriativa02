@@ -27,7 +27,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
 <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-  <h1 class="w3-xxlarge">Editar Produto</h1>
+  <h1 class="w3-xxlarge">Editar Dados do Pneu</h1>
 
   <p class="w3-large">
   <div class="w3-code cssHigh notranslate">
@@ -54,7 +54,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		$id      = $_POST['Id'];
 		$nome    = $_POST['Nome'];
     	$marca   = $_POST['Marca'];
-		$tipo    = $_POST['Tipo'];
     	$valor	 = $_POST['Venda'];
 		
 		// Cria conexão
@@ -72,8 +71,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		mysqli_query($conn,'SET character_set_results=utf8');
 
 		// Faz Select na Base de Dados
-    	if($valor > 0 && $nome != null && $tipo != null && $marca != null){
-      		$sql = "UPDATE produto SET precoProd='$valor', nomeProd='$nome', tipoProd='$tipo', marcaProd='$marca'
+    	if($valor > 0 && $nome != null && $marca != null){
+      		$sql = "UPDATE produto SET precoProd='$valor', nomeProd='$nome', marcaProd='$marca'
       		WHERE idProd=$id";
     	}else{
       		$sql = "UPDATE produto SET idProd='$id' WHERE idProd=$id";
@@ -82,15 +81,13 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
         echo "<div class='w3-responsive w3-card-4'>";
 
 
-        if ($result = mysqli_query($conn, $sql) && $valor > 0 || $nome != null || $tipo != null || $marca != null) {
+        if ($result = mysqli_query($conn, $sql) && $valor > 0 || $nome != null || $marca != null) {
             echo "Informações do produto atualizados!";
-        }else if ($result = mysqli_query($conn, $sql) && $valor < 0 && $nome == null && $tipo == null && $marca == null) {
+        }else if ($result = mysqli_query($conn, $sql) && $valor < 0 && $nome == null && $marca == null) {
                 echo "Não foi possível atualizar as informações dos produtos";
-                echo "<br>";
         }else {
             echo "Erro executando UPDATE: " . mysqli_error($conn);
         }
-
         echo "</div>";
 		mysqli_close($conn);  //Encerra conexao com o BD
 

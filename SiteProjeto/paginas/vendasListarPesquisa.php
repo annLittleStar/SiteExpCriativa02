@@ -117,8 +117,10 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 //Deve ser o nome exato, exceto nome de funcionário
 
                 $pesquisar = $_POST['pesquisar'];
-                $result_prod = "SELECT * FROM vendaPneu JOIN produto ON idProdutoVenda = idProd JOIN funcionario ON idFuncVenda=id
-                WHERE nomeProd LIKE '$pesquisar' OR idVenda LIKE '$pesquisar' OR nome LIKE '%$pesquisar%' ORDER BY dataVenda DESC";
+                $result_prod = "SELECT * FROM vendaPneu JOIN produto ON idProdutoVenda = idProd 
+                JOIN funcionario ON idFuncVenda=id 
+                WHERE nomeProd LIKE '$pesquisar%' OR idVenda LIKE '$pesquisar' 
+                OR nome LIKE '%$pesquisar%' ORDER BY dataVenda DESC";
                 $resultado_prod = mysqli_query($conn, $result_prod);
 
                 if (mysqli_num_rows($result) > 0) {

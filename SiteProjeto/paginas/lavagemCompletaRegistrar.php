@@ -85,9 +85,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                     </div>
                     <form class="w3-container" action="lavagemCompletaBD.php" method="post" onsubmit="return check(this.form)">
 						<input type="hidden" id="acaoForm" name="acaoForm" value="Cada">
-                        <p>
-                        <label class="w3-text-deep-purple"><b>Id Lavagem</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="idTipo" type="text" pattern="[0-9]{1,3}" title="ID do Produto." required></p>
                         <input type="hidden" value="Completa" name="tipo">
                         <p>
                         <label class="w3-text-deep-purple"><b>Data e Horário</b></label>

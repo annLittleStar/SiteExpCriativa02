@@ -52,7 +52,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		$database = "sea";
 		
 		$funcLavagem = $_POST['funcLavagem'];
-		$idTipo   = $_POST['idTipo'];
 		$tipo   = $_POST['tipo'];
 		$dataHorario    = $_POST['dataHorario'];
 		$valorLavagem   = $_POST['valorLavagem'];
@@ -76,7 +75,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
 		// Faz Insert na Base de Dados
 		$sql = "INSERT INTO lavagem (idTipo, tipo, dataHorario, valorLavagem, idFuncLavagem) 
-		VALUES ('$idTipo', '$tipo', '$dataHorario', $valorLavagem, '$funcLavagem')";
+		VALUES (DEFAULT, '$tipo', '$dataHorario', $valorLavagem, '$funcLavagem')";
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = mysqli_query($conn, $sql)) {
 			echo "Lavagem Registrada!";

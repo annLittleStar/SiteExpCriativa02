@@ -117,7 +117,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 //Deve ser o nome exato
 
                 $pesquisar = $_POST['pesquisar'];
-                $result_prod = "SELECT * FROM produto WHERE (nomeProd LIKE '$pesquisar'
+                $result_prod = "SELECT * FROM produto WHERE (nomeProd LIKE '$pesquisar%'
                 OR marcaProd LIKE '$pesquisar') AND tipoProd='Pneu' AND quantidadeProd>0";
                 $resultado_prod = mysqli_query($conn, $result_prod);
 

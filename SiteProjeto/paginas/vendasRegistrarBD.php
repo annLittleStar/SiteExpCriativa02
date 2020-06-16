@@ -51,8 +51,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		$password = "";
 		$database = "sea";
 		
-		
-		$idv   		= $_POST['idV'];
 		$idp   		= $_POST['idP'];
 		$idf   		= $_POST['funcVenda'];
 		$vender		= $_POST['Vender'];
@@ -81,25 +79,35 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		// Faz Insert na Base de Dados
 		$precoT = $preco * $vender;
 		$resto = $quantidade - $vender;
-		$sql = "INSERT INTO vendaPneu (idVenda, totalVenda, dataVenda, idFuncVenda, idProdutoVenda, qtdVenda)
-		VALUES ('$idv', '$precoT', '$dataV', '$idf', '$idp', '$vender')";
+
+		if($resto>=0){
+			$sql = "INSERT INTO vendaPneu (idVenda, totalVenda, dataVenda, idFuncVenda, idProdutoVenda, qtdVenda) VALUES (DEFAULT, '$precoT', '$dataV', '$idf', '$idp', '$vender')";
+		}else{
+			$sql = "UPDATE produto SET quantidadeProd = '$quantidade' WHERE idProd = $idp";
+		}
 
 		echo "<div class='w3-responsive w3-card-4'>";
-		if ($result = mysqli_query($conn, $sql)) {
+		if ($result = mysqli_query($conn, $sql) && $resto>=0) {
 			echo "Venda realizada!";
-		} else {
+		} else if ($result = mysqli_query($conn, $sql) && !($resto>0)){
+			echo "Impossivel realizar venda";
+			echo "<br>";
+			echo "Tentativa de vender mais produtos que o disponível";
+		}else {
 			echo "Erro executando INSERT: " . mysqli_error($conn);
 		}
 		echo "</div>";
 		
-		$sql = "UPDATE produto SET quantidadeProd='$resto' WHERE idProd='$idp'";
+		if($resto>=0){
+			$sql = "UPDATE produto SET quantidadeProd='$resto' WHERE idProd='$idp'";
 		
-		echo "<div class='w3-responsive w3-card-4'>";
-		if ($result = mysqli_query($conn, $sql)) {
-		} else {
-			echo "Erro executando INSERT: " . mysqli_error($conn);
-		}
-        echo "</div>";
+			echo "<div class='w3-responsive w3-card-4'>";
+			if ($result = mysqli_query($conn, $sql)) {
+			} else {
+				echo "Erro executando INSERT: " . mysqli_error($conn);
+			}
+        	echo "</div>";
+    	}
 		mysqli_close($conn);  //Encerra conexao com o BD
 
 	?>

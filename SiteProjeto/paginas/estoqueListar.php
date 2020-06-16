@@ -95,7 +95,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			mysqli_query($conn,'SET character_set_results=utf8');
 
             // Faz Select na Base de Dados
-            $sql = "SELECT idProd, nomeProd, marcaProd, quantidadeProd, tipoProd, precoProd FROM produto";
+            $sql = "SELECT idProd, nomeProd, marcaProd, quantidadeProd, tipoProd, precoProd FROM produto
+            WHERE disponivel = 'Sim'";
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
                 echo "<table class='w3-table-all'>";

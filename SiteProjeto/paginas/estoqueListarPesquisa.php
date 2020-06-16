@@ -95,7 +95,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			mysqli_query($conn,'SET character_set_results=utf8');
 
             // Faz Select na Base de Dados
-            $sql = "SELECT idProd, nomeProd, marcaProd, quantidadeProd, tipoProd, precoProd FROM produto";
+            $sql = "SELECT idProd, nomeProd, marcaProd, quantidadeProd, tipoProd, precoProd FROM produto
+            WHERE disponivel = 'Sim'";
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
                 echo "<table class='w3-table-all'>";
@@ -121,8 +122,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 //Deve ser o nome exato
 
                 $pesquisar = $_POST['pesquisar'];
-                $result_prod = "SELECT * FROM produto WHERE nomeProd LIKE '$pesquisar'
-                OR marcaProd LIKE '$pesquisar'";
+                $result_prod = "SELECT * FROM produto WHERE disponivel = 'Sim' AND 
+                (nomeProd LIKE '$pesquisar%' OR marcaProd LIKE '$pesquisar')";
                 $resultado_prod = mysqli_query($conn, $result_prod);
 
                 if (mysqli_num_rows($result) > 0) {

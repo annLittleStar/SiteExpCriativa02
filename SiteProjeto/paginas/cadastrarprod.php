@@ -58,9 +58,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                     </div>
                     <form class="w3-container" action="cadastrarprodBD.php" method="post" onsubmit="return check(this.form)">
 						<input type="hidden" id="acaoForm" name="acaoForm" value="Cada">
-                        <p>
-                        <label class="w3-text-deep-purple"><b>ID</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="id" type="text" attern="{4,100}$" title="ID do Produto." required></p>
 						<p>
 						<label class="w3-text-deep-purple"><b>Nome</b></label>
 						<input class="w3-input w3-border w3-light-grey" name="nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$" title="Nome do Produto entre 4 e 100 letras." required></p>

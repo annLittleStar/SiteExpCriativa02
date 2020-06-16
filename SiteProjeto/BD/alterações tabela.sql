@@ -9,4 +9,5 @@ set categoria = 'Vendedor' where id = 2;
 update funcionario
 set categoria = 'Lavador' where id = 3;
 
-select*from funcionario;
+alter table produto
+add column disponivel enum('Sim', 'Nao') not null;

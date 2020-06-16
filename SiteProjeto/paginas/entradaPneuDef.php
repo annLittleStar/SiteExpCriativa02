@@ -39,7 +39,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
     <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-        <h1 class="w3-xxlarge">Registrar Saída de Produto</h1>
+        <h1 class="w3-xxlarge">Registrar Chegada de Pneu Defeituoso</h1>
 
         <p class="w3-large">
             <div class="w3-code cssHigh notranslate">
@@ -109,7 +109,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                                            title="Quantidade a ser removida." value="" required></p>
                                     <p>
                                     <input type="submit" value="Registrar" class="w3-btn w3-theme" >
-                                    <input type="button" value="Cancelar" class="w3-btn w3-red" onclick="window.location.href='registroPneuDef.php'"></p>
+                                    <input type="button" value="Cancelar" class="w3-btn w3-red" onclick="window.location.href='estoqueListar.php'"></p>
                                 </form>
             <?php 
                             }

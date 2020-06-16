@@ -28,7 +28,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
 <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-  <h1 class="w3-xxlarge">Cadastrar Novo Produto</h1>
+  <h1 class="w3-xxlarge">Cadastrar Novo Pneu</h1>
 
   <p class="w3-large">
   <div class="w3-code cssHigh notranslate">
@@ -56,7 +56,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		$marca   = $_POST['marca'];
 		$preco   = $_POST['preco'];
 		$tipo    = $_POST['tipo'];
-		$id 	 = $_POST['id'];
 		
 		// Cria conexão
 		$conn = mysqli_connect($servername, $username, $password, $database);
@@ -78,7 +77,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
 		// Faz Insert na Base de Dados
 		$sql = "INSERT INTO produto (idProd, nomeProd, marcaProd, precoProd, tipoProd) 
-		VALUES ('$id', '$nome', '$marca', '$preco', '$tipo')";
+		VALUES (DEFAULT, '$nome', '$marca', '$preco', '$tipo')";
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = mysqli_query($conn, $sql)) {
 			echo "Produto Cadastrado!";
@@ -86,15 +85,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			echo "Erro executando INSERT: " . mysqli_error($conn);
 		}
         echo "</div>";
-
-        if($tipo=='Pneu'){
-			$sql = "INSERT INTO pneuDef	VALUES ('$id', DEFAULT, DEFAULT)";
-			echo "<div class='w3-responsive w3-card-4'>";
-			if ($result = mysqli_query($conn, $sql)) {
-			} else {
-				echo "Erro executando INSERT: " . mysqli_error($conn);
-			}
-    	}
 		mysqli_close($conn);  //Encerra conexao com o BD
 
 	?>

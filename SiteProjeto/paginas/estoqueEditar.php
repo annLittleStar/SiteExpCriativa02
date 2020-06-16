@@ -41,7 +41,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
     <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-        <h1 class="w3-xxlarge">Editar Produto</h1>
+        <h1 class="w3-xxlarge">Editar Dados do Pneu</h1>
 
         <p class="w3-large">
             <div class="w3-code cssHigh notranslate">
@@ -106,11 +106,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 									<label class="w3-text-deep-purple"><b>Marca</b></label>
 									<input class="w3-input w3-border w3-light-grey" name="Marca" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$"
 										   title="Nome do Produto entre 4 e 100 letras." value="<?php echo $row['marcaProd']; ?>" required></p>
-									<p>
-									<label class="w3-text-deep-purple"><b>Tipo</b></label>
-									<input class="w3-input w3-border w3-light-grey" name="Tipo" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$"
-										   title="Tipo do Produto: Pneu ou Produto de Limpeza." value="<?php echo $row['tipoProd']; ?>" required></p>
-
 									<p>
 									<label class="w3-text-deep-purple"><b>Valor de Venda</b></label>
 									<input class="w3-input w3-border w3-light-grey" name="Venda" type="text" pattern="[0-9]{4,2}"

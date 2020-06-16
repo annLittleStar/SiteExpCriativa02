@@ -85,12 +85,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                     </div>
                     <form class="w3-container" action="lavagemDuchaBD.php" method="post" onsubmit="return check(this.form)">
 						<input type="hidden" id="acaoForm" name="acaoForm" value="Cada">
-                        <p>
-                        <label class="w3-text-deep-purple"><b>Id Lavagem</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="idTipo" type="text" pattern="[0-9]{5,3}" title="ID do Produto." required></p>
-                        
                         <input type="hidden" value="Simples" name="tipo">
-
                         <p>
                         <label class="w3-text-deep-purple"><b>Data e Horário</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="dataHorario" type="text" value="<?php $dataC = date("Y/m/d H:i:s", time()); echo "$dataC" ?>" title="Data e Horario de inicio do registro." required readonly></p>

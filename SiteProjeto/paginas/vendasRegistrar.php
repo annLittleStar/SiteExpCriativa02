@@ -97,16 +97,18 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         <p>
                         <input type="hidden" id="acaoForm" name="acaoForm" value="Cada">
                         <p>
-                        <label class="w3-text-deep-purple"><b>ID Venda</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="idV" type="text" pattern="[0-9]{1,3}" title="Id da venda."></p>
-                        <p>
                         <label class="w3-text-deep-purple"><b>Data</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="data" type="text" value="<?php $dataA = date("Y/m/d H:i:s", time()); echo "$dataA" ?>" title="Data de inicio do registro." required readonly=""></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>ID Pneu</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="idP" type="text" pattern="[0-9]{1,3}" title="ID do Produto." value="<?php echo "$id" ?>" required readonly></p>
                         <input type="hidden" name="valor" value="<?php echo $row['precoProd']; ?>">
-                        <input type="hidden" name="qtd" value="<?php echo $row['quantidadeProd']; ?>">
+                        <p>
+                        <label class="w3-text-deep-purple"><b>Pneu</b></label>
+                        <input class="w3-input w3-border w3-light-grey" type="text" title="Nome do Produto." value="<?php echo $row['nomeProd'] ?>" required readonly></p>
+                        <p>
+                        <label class="w3-text-deep-purple"><b>Quantidade</b></label>
+                        <input class="w3-input w3-border w3-light-grey" name="qtd" type="text" pattern="[0-9]{1,3}" title="Quantidade de itens." value="<?php echo $row['quantidadeProd']; ?>" required readonly></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Quantidade Vendida</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="Vender" type="text" pattern="[0-9]{1,3}" title="Quantidade Vendida." value="" required></p>

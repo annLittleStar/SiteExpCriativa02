@@ -28,7 +28,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
 <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-  <h1 class="w3-xxlarge">Contratar Funcionário</h1>
+  <h1 class="w3-xxlarge">Cadastrar Funcionário</h1>
 
   <p class="w3-large">
   <div class="w3-code cssHigh notranslate">
@@ -51,8 +51,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		$password = "";
 		$database = "sea";
 		
-		
-		$id 	 = $_POST['id'];
 		$nome    = $_POST['nome'];
 		$cpf	 = $_POST['cpf'];
 		$tel   	 = $_POST['tel'];
@@ -81,10 +79,10 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 		// Faz Insert na Base de Dados
 		if($cargo!='Dono'){
 			$sql = "INSERT INTO funcionario (id, nome, login, senha, cargo, cpf, telefone, categoria)
-			VALUES ('$id', '$nome', '$usuario', '$senha', 'Funcionario', '$cpf', '$tel', '$cargo')";
+			VALUES (DEFAULT, '$nome', '$usuario', '$senha', 'Funcionario', '$cpf', '$tel', '$cargo')";
 		}else{
 			$sql = "INSERT INTO funcionario (id, nome, login, senha, cargo, cpf, telefone, categoria)
-			VALUES ('$id', '$nome', '$usuario', '$senha', 'Dono', '$cpf', '$tel', '$cargo')";
+			VALUES (DEFAULT, '$nome', '$usuario', '$senha', 'Dono', '$cpf', '$tel', '$cargo')";
 		}
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = mysqli_query($conn, $sql)) {
