@@ -116,8 +116,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         <label class="w3-text-deep-purple"><b>Funcionario</b></label>
                         <br>
                         <?php
-                            $sql = "SELECT * FROM funcionario 
-                            WHERE categoria = 'Dono' OR categoria = 'Vendedor'";
+                            $sql = "SELECT * FROM funcionario WHERE ativo='Sim' AND 
+                            (categoria = 'Dono' OR categoria = 'Vendedor')";
                             echo "<select class='w3-input w3-border w3-light-grey' name='funcVenda' style='width:40%; height:4.5%; padding:0%; padding-left:8px'>";
                             if ($result = mysqli_query($conn, $sql)) {
                                 if (mysqli_num_rows($result) > 0) {

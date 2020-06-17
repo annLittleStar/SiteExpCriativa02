@@ -76,7 +76,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			mysqli_query($conn,'SET character_set_client=utf8');
             mysqli_query($conn,'SET character_set_results=utf8');
             
-            $sql = "SELECT * FROM funcionario WHERE categoria = 'Dono' OR categoria = 'Lavador'";
+            $sql = "SELECT * FROM funcionario WHERE ativo='Sim' AND 
+            (categoria = 'Dono' OR categoria = 'Lavador')";
     ?>
 
                 <div class="w3-responsive w3-card-4">

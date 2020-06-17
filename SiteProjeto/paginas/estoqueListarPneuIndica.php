@@ -84,7 +84,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 				mysqli_query($conn,'SET character_set_results=utf8');
 
 				// Faz Select na Base de Dados
-            $sql = "SELECT nomeCarro, idProd, marcaCarro, modelo, quantidadeProd FROM ((carro JOIN pneu ON carro = idCarro)  JOIN produto ON disponibilidade = idProd) WHERE carro = $id" ;
+            $sql = "SELECT nomeCarro, idProd, marcaCarro, modelo, quantidadeProd, disponivel FROM ((carro JOIN pneu ON carro = idCarro)  JOIN produto ON disponibilidade = idProd) WHERE carro = $id" ;
 
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
@@ -104,8 +104,6 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                 }
             }    
 
-
-
             echo "<div class='w3-responsive w3-card-4'>";
             if ($resulta = mysqli_query($conn, $sql)) {
                 if (mysqli_num_rows($resulta) > 0) {
@@ -122,17 +120,25 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         <label class="w3-text-deep-purple"><b>ID</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="id" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$" value="<?php echo $row['idProd']; ?>" required 
                         readonly></p></td>
-                        <td style="width:73%"><p>
+                        <td style="width:65%"><p>
                         <label class="w3-text-deep-purple"><b>Modelo</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="Nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$" value="<?php echo $row['modelo']; ?>" required
                          readonly></p></td>
-                        <td style="width:20%" text-align="center"><p>
+                        <td style="width:25%" text-align="center"><p>
                         <label class="w3-text-deep-purple"><b>Quantidade em estoque</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="qtd" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$" value="<?php echo $row['quantidadeProd']; ?>" required readonly></p></td>
-
-                        <td style="width:10%" text-align="center"><p>
-                        <label class="w3-text-deep-purple"><b>Vender</b></label>
-                        <a href='vendasRegistrar.php ? id=<?php echo $cod; ?>'><img src='../imagens/vendaPneu.png' title='Registrar Venda' width='32'></a></td>
+                        <td style='width:10%' text-align='center'><p>
+                        <label class='w3-text-deep-purple'><b>Vender</b></label>
+                        <?php
+                        if($row['disponivel']=="Sim"){
+                            echo "<a href='vendasRegistrar.php?id=".$cod."'>",
+                            "<img src='../imagens/vendaPneu.png' title='Registrar Venda' width='32'>",
+                            "</a>";
+                        }else{
+                            echo "<img src='../imagens/indisponivel.png' title='Pneu Indisponível para venda' width='32'>";
+                        }
+                        ?>
+                        </td>
                         </tr>
                         </table>
                                          <?php 
@@ -151,6 +157,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			?>
 
 			</div>
+        </div>
 	</div>
 
     <footer class="w3-panel w3-padding-32 w3-card-4 w3-light-grey w3-center w3-opacity">

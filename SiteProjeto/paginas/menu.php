@@ -43,9 +43,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 			<div class="w3-container">
 				<h3>Funcionários</h3>
 			</div>
-			<a class="w3-bar-item w3-button" href="emDesenvolvimento.php">Relação de Funcionários</a>
+			<a class="w3-bar-item w3-button" href="listarFuncionario.php">Relação de Funcionários</a>
 			<a class="w3-bar-item w3-button" href="contratarFuncionario.php">Contratação</a>
-			<a class="w3-bar-item w3-button" href="emDesenvolvimento.php">Demissao</a>
 		</div>
 		<div id="menuEstoque" class="myMenu" >
 			<div class="w3-container">
