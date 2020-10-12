@@ -92,7 +92,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         <input class="w3-input w3-border w3-light-grey" name="dataHorario" type="text" value="<?php $dataC = date("Y/m/d H:i:s", time()); echo "$dataC" ?>" title="Data e Horario de inicio do registro." required readonly></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Valor em reais</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="valorLavagem" type="text" value="15.00" pattern="[0-9]{4,2}" required readonly></p>
+                        <input class="w3-input w3-border w3-light-grey" name="valorLavagem" type="text" value="15.00" pattern="[0-9]+(.[0-9][0-9]?)?" required readonly></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Funcionário</b></label>
                         <br>

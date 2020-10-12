@@ -4,10 +4,10 @@ use sea;
 -- Funcionarios da loja
 -- --------------------------------------------------------
 
-INSERT INTO `funcionario` (`id`, `nome`, `login`, `senha`, `cargo`, `cpf`, `telefone`) VALUES 
-('01', 'Arnaldo Machado', 'arnaldoMachado', 'arnaldo01', 'Dono', '81405195029', '986806810'),
-('02', 'Rosa Lorena Barbara Peixoto', 'rosaPeixoto', 'rosa02', 'Funcionario', '44402848920', '981913110'),
-('03', 'Sebastian Renato Martins', 'sebastianMartins', 'sebastian03', 'Funcionario', '66430165922', '981358657');
+INSERT INTO `funcionario` (`id`, `nome`, `login`, `senha`, `cargo`, `cpf`, `telefone`, `categoria`) VALUES 
+('01', 'Arnaldo Machado', 'arnaldoMachado', 'arnaldo01', 'Dono', '81405195029', '986806810', 'Dono'),
+('02', 'Rosa Lorena Barbara Peixoto', 'rosaPeixoto', 'rosa02', 'Funcionario', '44402848920', '981913110', 'Vendedor'),
+('03', 'Sebastian Renato Martins', 'sebastianMartins', 'sebastian03', 'Funcionario', '66430165922', '981358657', 'Lavador');
 
 -- --------------------------------------------------------
 -- Produtos

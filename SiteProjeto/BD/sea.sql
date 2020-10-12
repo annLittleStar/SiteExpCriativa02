@@ -37,6 +37,8 @@ create table if not exists funcionario(
     cargo enum('Dono', 'Funcionario') not null, 
     cpf varchar(15) not null unique,
     telefone varchar(20) not null unique,
+    categoria enum('Dono', 'Vendedor', 'Lavador') not null,
+    ativo enum('Sim', 'Nao') not null,
 	primary key(id)
 ) engine=innoDB default charset=utf8;
 
@@ -51,6 +53,7 @@ create table if not exists produto(
     precoProd double not null,
     tipoProd enum('Pneu') not null,
     quantidadeProd int not null,
+    disponivel enum('Sim', 'Nao') not null,
     primary key(idProd)
 ) engine=innoDB default charset=utf8;
 
@@ -77,8 +80,8 @@ create table if not exists vendaPneu(
     idProdutoVenda int not null,
     qtdVenda int not null,
     primary key(idVenda),
-    foreign key(idFuncVenda) references funcionario(id),
-    foreign key(idProdutoVenda) references produto(idProd)
+    foreign key(idFuncVenda) references funcionario(id) on delete cascade on update cascade,
+    foreign key(idProdutoVenda) references produto(idProd) on delete cascade on update cascade
 ) engine=innoDB default charset=utf8;
 
 -- --------------------------------------------------------

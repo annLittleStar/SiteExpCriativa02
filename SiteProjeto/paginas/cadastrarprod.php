@@ -60,13 +60,13 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 						<input type="hidden" id="acaoForm" name="acaoForm" value="Cada">
 						<p>
 						<label class="w3-text-deep-purple"><b>Nome</b></label>
-						<input class="w3-input w3-border w3-light-grey" name="nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{4,100}$" title="Nome do Produto entre 4 e 100 letras." required></p>
+						<input class="w3-input w3-border w3-light-grey" name="nome" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Nome do Produto." required></p>
 						<p>
 						<label class="w3-text-deep-purple"><b>Marca</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="marca" type="text" title="Marca do Produto." required></p>
+                        <input class="w3-input w3-border w3-light-grey" name="marca" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Marca do Produto." required></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Preço</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="preco" type="text" title="Preco do Produto." pattern="[0-9]{4,2}" required></p>
+                        <input class="w3-input w3-border w3-light-grey" name="preco" type="text" title="Preco do Produto." pattern="[0-9]+(.[0-9][0-9]?)?" required></p>
                         <p>
                         <input class="w3-input w3-border w3-light-grey" name="tipo" type="hidden" value="Pneu" required></p>                            
                         </p>
