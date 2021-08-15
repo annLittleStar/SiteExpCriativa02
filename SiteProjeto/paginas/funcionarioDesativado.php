@@ -8,11 +8,11 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 ---------------------------------------------------------------------------------->
 <html>
 <head>
- <title>SEA+</title>
- <link rel="icon" type="image/png" href="../imagens/Logo.ico"/>
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
- <style>
+   <title>SEA+</title>
+   <link rel="icon" type="image/png" href="../imagens/Logo.ico"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <style>
     .w3-theme {
         color: #ffff !important;
         background-color: royalblue !important
@@ -88,14 +88,43 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo "    <th width='5%'> </th>";
                             echo "  </tr>";
 
-                            echo '<form method="POST" action="funcionarioDesativadoPesquisa.php">
+                            echo '<form method="GET" action="" name="">
                             <input type="text" name="pesquisar" style="width:90%" placeholder="Digite o Nome ou CPF do Funcionário que deseja encontrar">
-                            <input style="width:10%" type="submit" name="buscar" value="Buscar">
+                            <input style="width:10%" type="submit" name="" value="Buscar">
                             </form>';
 
                             if (mysqli_num_rows($result) > 0) {
+                                if(isset($_GET['pesquisar']) && $_GET['pesquisar']!==''){
+                                    $pesquisar = trim($_GET['pesquisar']);
 
-                        // Apresenta cada linha da tabela
+                                    $result_p = "SELECT * FROM funcionario WHERE ativo='Não' AND
+                                    (nome LIKE '%$pesquisar%' OR categoria LIKE '$pesquisar')
+                                    ORDER BY categoria ASC";
+                                    
+                                    require 'pesquisa.php';
+
+                                    // Apresenta cada linha da tabela
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        $cod = $row["id"];
+                                        echo "</td><td>";
+                                        echo $row["nome"];
+                                        echo "</td><td>";
+                                        echo $row["categoria"];
+                                        echo "</td><td>";
+                                        echo $row["cpf"];
+                                        echo "</td><td>";
+                                        echo $row["telefone"];
+                                        echo "</td>";
+
+                                        ?>
+                                        <td>
+                                            <a href='#?id=<?php echo $cod ?>'><img src='../imagens/editarFunc.png' title='Reativar Funcionário' width='30'></a>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                }
+                            } else {
+                                    // Apresenta cada linha da tabela
                                 while ($row = mysqli_fetch_assoc($result)) {
                                     $cod = $row["id"];
                                     echo "</td><td>";
@@ -116,11 +145,12 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                                 <?php
                             }
                         }
-                        echo "</table>";
-                        echo "</div>";
-                    } else {
-                        echo "Erro executando SELECT: " . mysqli_error($conn);
                     }
+                    echo "</table>";
+                    echo "</div>";
+                } else {
+                    echo "Erro executando SELECT: " . mysqli_error($conn);
+                }
 
             mysqli_close($conn);  //Encerra conexao com o BD
 

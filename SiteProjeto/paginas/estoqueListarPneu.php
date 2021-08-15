@@ -87,30 +87,56 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo "  </tr>";
 
 
-                            echo '<form method="POST" action="estoqueListarPneuPesquisa.php">
+                            echo '<form method="GET" action="" name="">
                             <input type="text" name="pesquisar" style="width:90%" placeholder="Digite o Nome ou Marca do carro que deseja pesquisar">
-                            <input style="width:10%" type="submit" name="buscar" value="Buscar">
+                            <input style="width:10%" type="submit" name="" value="Buscar">
                             </form>';
 
                             if (mysqli_num_rows($result) > 0) {
+                                if(isset($_GET['pesquisar']) && $_GET['pesquisar']!==''){
+                                    $pesquisar = trim($_GET['pesquisar']);
+
+                                    $result_p = "SELECT * FROM carro WHERE marcaCarro LIKE '$pesquisar'
+                                    OR nomeCarro LIKE '%$pesquisar%'";
+                                    
+                                    require 'pesquisa.php';
 
                                 // Apresenta cada linha da tabela
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                    $cod = $row["idCarro"];
-                                    echo "<tr>";
-                                    echo "<td>";
-                                    echo $cod;
-                                    echo "</td><td>";
-                                    echo $row["marcaCarro"];
-                                    echo "</td><td>";
-                                    echo $row["nomeCarro"];
-                                    echo "</td><td>";
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        $cod = $row["idCarro"];
+                                        echo "<tr>";
+                                        echo "<td>";
+                                        echo $cod;
+                                        echo "</td><td>";
+                                        echo $row["marcaCarro"];
+                                        echo "</td><td>";
+                                        echo $row["nomeCarro"];
+                                        echo "</td><td>";
 
-                                    ?>
-                                    <a href='estoqueListarPneuIndica.php?id=<?php echo $cod; ?>'><img src='../imagens/pneu.png' title='Exibir Pneus Indicados' width='30'></a>
-                                    <?php
+                                        ?>
+                                        <a href='estoqueListarPneuIndica.php?id=<?php echo $cod; ?>'><img src='../imagens/pneu.png' title='Exibir Pneus Indicados' width='30'></a>
+                                        <?php
+                                    }
+                                } else {
+                                                                    // Apresenta cada linha da tabela
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        $cod = $row["idCarro"];
+                                        echo "<tr>";
+                                        echo "<td>";
+                                        echo $cod;
+                                        echo "</td><td>";
+                                        echo $row["marcaCarro"];
+                                        echo "</td><td>";
+                                        echo $row["nomeCarro"];
+                                        echo "</td><td>";
+
+                                        ?>
+                                        <a href='estoqueListarPneuIndica.php?id=<?php echo $cod; ?>'><img src='../imagens/pneu.png' title='Exibir Pneus Indicados' width='30'></a>
+                                        <?php
+                                    }
                                 }
                             }
+
                             echo "</table>";
                             echo "</div>";
                         } else {

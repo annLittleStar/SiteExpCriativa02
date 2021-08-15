@@ -8,11 +8,11 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 ---------------------------------------------------------------------------------->
 <html>
 <head>
- <title>SEA+</title>
- <link rel="icon" type="image/png" href="../imagens/Logo.ico"/>
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
- <style>
+   <title>SEA+</title>
+   <link rel="icon" type="image/png" href="../imagens/Logo.ico"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <style>
     .w3-theme {
         color: #ffff !important;
         background-color: royalblue !important
@@ -88,42 +88,77 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo "	  <th width='5%'> </th>";
                             echo "	</tr>";
 
-                            echo '<form method="POST" action="vendasListarPneuPesquisa.php">
+                            echo '<form method="GET" action="" name="">
                             <input type="text" name="pesquisar" style="width:90%" placeholder="Digite o Nome ou a Marca do Pneu que deseja encontrar">
                             <input style="width:10%" type="submit" name="buscar" value="Buscar">
                             </form>';
 
                             if (mysqli_num_rows($result) > 0) {
+                                if (isset($_GET['pesquisar']) && $_GET['pesquisar']!==''){
+                                    $pesquisar = trim($_GET['pesquisar']);
 
-                                // Apresenta cada linha da tabela
-                                while ($row = mysqli_fetch_assoc($result)) {
+                                    $result_p = "SELECT * FROM produto WHERE (nomeProd LIKE '%$pesquisar%'
+                                    OR marcaProd LIKE '$pesquisar') AND tipoProd='Pneu' AND quantidadeProd>0";
+                                    
+                                    require 'pesquisa.php';
 
-                                    $cod = $row["idProd"];
-                                    echo "<tr>";
-                                    echo "<td>";
-                                    echo $cod;
-                                    echo "</td><td>";
-                                    echo $row["nomeProd"];
-                                    echo "</td><td>";
-                                    echo $row["marcaProd"];
-                                    echo "</td><td>";
-                                    echo $row["quantidadeProd"];
-                                    echo "</td><td>";
-                                    echo $row["precoProd"];
-                                    echo "</td><td>";
+                                    // Apresenta cada linha da tabela
+                                    while ($row = mysqli_fetch_assoc($result)) {
 
-                                    ?>
-                                    <a href='vendasRegistrar.php?id=<?php echo $cod; ?>'><img src='../imagens/vendaPneu.png' title='Registrar Venda' width='32'></a>
-                                </td>
-                            </tr>
-                            <?php
-                        }
+                                        $cod = $row["idProd"];
+                                        echo "<tr>";
+                                        echo "<td>";
+                                        echo $cod;
+                                        echo "</td><td>";
+                                        echo $row["nomeProd"];
+                                        echo "</td><td>";
+                                        echo $row["marcaProd"];
+                                        echo "</td><td>";
+                                        echo $row["quantidadeProd"];
+                                        echo "</td><td>";
+                                        echo $row["precoProd"];
+                                        echo "</td><td>";
+
+                                        ?>
+                                        <a href='vendasRegistrar.php?id=<?php echo $cod; ?>'><img src='../imagens/vendaPneu.png' title='Registrar Venda' width='32'></a>
+                                    </td>
+                                </tr>
+                                <?php
+                            }
+
+                        } else {
+                            // Apresenta cada linha da tabela
+                            while ($row = mysqli_fetch_assoc($result)) {
+
+                                $cod = $row["idProd"];
+                                echo "<tr>";
+                                echo "<td>";
+                                echo $cod;
+                                echo "</td><td>";
+                                echo $row["nomeProd"];
+                                echo "</td><td>";
+                                echo $row["marcaProd"];
+                                echo "</td><td>";
+                                echo $row["quantidadeProd"];
+                                echo "</td><td>";
+                                echo $row["precoProd"];
+                                echo "</td><td>";
+
+                                ?>
+                                <a href='vendasRegistrar.php?id=<?php echo $cod; ?>'><img src='../imagens/vendaPneu.png' title='Registrar Venda' width='32'></a>
+                            </td>
+                        </tr>
+                        <?php
                     }
-                    echo "</table>";
-                    echo "</div>";
-                } else {
-                    echo "Erro executando SELECT: " . mysqli_error($conn);
+
                 }
+
+            }
+            echo "</table>";
+            echo "</div>";
+        } else {
+            echo "Erro executando SELECT: " . mysqli_error($conn);
+        }
 
             mysqli_close($conn);  //Encerra conexao com o BD
 

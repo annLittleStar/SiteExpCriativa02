@@ -8,11 +8,11 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 ---------------------------------------------------------------------------------->
 <html>
 <head>
-   <title>SEA+</title>
-   <link rel="icon" type="image/png" href="../imagens/Logo.ico"/>
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-   <style>
+ <title>SEA+</title>
+ <link rel="icon" type="image/png" href="../imagens/Logo.ico"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+ <style>
     .w3-theme {
         color: #ffff !important;
         background-color: royalblue !important
@@ -88,28 +88,54 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo "    <th width='30%'>Data e Horario</th>";
                             echo "  </tr>";
 
-                            echo '<form method="POST" action="lavagensHistoricoPesquisa.php">
+                            echo '<form method="GET" action="" name="">
                             <input type="text" name="pesquisar" style="width:90%" placeholder="Digite o Tipo de Lavagem ou o Nome do funcionário que deseja encontrar">
-                            <input style="width:10%" type="submit" name="buscar" value="Buscar">
+                            <input style="width:10%" type="submit" name="" value="Buscar">
                             </form>';
 
                             if (mysqli_num_rows($result) > 0) {
-                                // Apresenta cada linha da tabela
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                    $cod = $row["idTipo"];
-                                    echo "<tr>";
-                                    echo "<td>";
-                                    echo $cod;
-                                    echo "</td><td>";
-                                    echo $row["tipo"];
-                                    echo "</td><td>";
-                                    echo $row["nome"];
-                                    echo "</td><td>";
-                                    echo $row["valorLavagem"];
-                                    echo "</td><td>";
-                                    echo $row["dataHorario"];
-                                    echo "</td></tr>";
+                                if(isset($_GET['pesquisar']) && $_GET['pesquisar']!==''){
+                                    $pesquisar = trim($_GET['pesquisar']);
 
+                                    $result_p = "SELECT * FROM lavagem JOIN funcionario ON idFuncLavagem=id
+                                    WHERE tipo LIKE'$pesquisar' OR nome LIKE '%$pesquisar%' ORDER BY dataHorario DESC";
+                                    
+                                    require 'pesquisa.php';
+                                    // Apresenta cada linha da tabela
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        $cod = $row["idTipo"];
+                                        echo "<tr>";
+                                        echo "<td>";
+                                        echo $cod;
+                                        echo "</td><td>";
+                                        echo $row["tipo"];
+                                        echo "</td><td>";
+                                        echo $row["nome"];
+                                        echo "</td><td>";
+                                        echo $row["valorLavagem"];
+                                        echo "</td><td>";
+                                        echo $row["dataHorario"];
+                                        echo "</td></tr>";
+
+                                    }
+                                } else {
+                                    // Apresenta cada linha da tabela
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        $cod = $row["idTipo"];
+                                        echo "<tr>";
+                                        echo "<td>";
+                                        echo $cod;
+                                        echo "</td><td>";
+                                        echo $row["tipo"];
+                                        echo "</td><td>";
+                                        echo $row["nome"];
+                                        echo "</td><td>";
+                                        echo $row["valorLavagem"];
+                                        echo "</td><td>";
+                                        echo $row["dataHorario"];
+                                        echo "</td></tr>";
+
+                                    }
                                 }
                             }
                             echo "</table>";
