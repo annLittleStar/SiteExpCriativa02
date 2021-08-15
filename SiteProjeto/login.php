@@ -24,4 +24,4 @@ if ($row == 1) {
 	header('Location: entrar.php');
 }
 
- ?>
+?>
