@@ -116,7 +116,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                                                                     "<img src='../imagens/vendaPneu.png' title='Registrar Venda' width='32'>",
                                                                     "</a>";
                                                                 }else{
-                                                                    echo "<img src='../imagens/indisponivel.png' title='Não há pneus em estoque' width='32'>";
+                                                                    echo "<img src='../imagens/placeholderIcon.png' title='Não há pneus em estoque' width='32'>";
                                                                 }
                                                             }else{
                                                                 echo "<img src='../imagens/indisponivel.png' title='Pneu Indisponível para venda' width='32'>";

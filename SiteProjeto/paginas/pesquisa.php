@@ -1,3 +1,11 @@
+<!-------------------------------------------------------------------------------
+PROJETO DE REÚSO DE SOFTWARE:
+SEA+
+PUCPR
+ENGENHARIA DE SOFTWARE
+
+Equipe: Ana Schran, Gabriel Barboza, José Guilherme
+---------------------------------------------------------------------------------->
 <?php
 
 $result = mysqli_query($conn, $result_p);

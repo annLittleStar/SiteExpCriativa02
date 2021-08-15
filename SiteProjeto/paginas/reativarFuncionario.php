@@ -75,9 +75,9 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 							?>				
 
 							<div class="w3-container w3-theme">
-								<h2>Edite as informações necessárias [<?php echo $row['id']; ?>]</h2>
+								<h2>Edite as informações necessárias antes de reativar [<?php echo $row['id']; ?>]</h2>
 							</div>
-							<form class="w3-container" action="editarFuncionarioBD.php" method="post" onsubmit="return check(this.form)">
+							<form class="w3-container" action="reativarFuncionarioBD.php" method="post" onsubmit="return check(this.form)">
 								<input type="hidden" id="Id" name="Id" value="<?php echo $row['id']; ?>">
 								<p>
 									<label class="w3-text-deep-purple"><b>Nome</b></label>
@@ -101,7 +101,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 									</p>
 									<p>
 										<input type="submit" value="Confirmar" class="w3-btn w3-theme" >
-										<input type="button" value="Cancelar" class="w3-btn w3-red" onclick="window.location.href='listarFuncionario.php'"></p>
+										<input type="button" value="Cancelar" class="w3-btn w3-red" onclick="window.location.href='funcionarioDesativado.php'"></p>
 									</form>
 									<?php 
 								}

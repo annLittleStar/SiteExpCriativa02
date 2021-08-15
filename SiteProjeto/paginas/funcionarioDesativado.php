@@ -100,7 +100,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                                     $result_p = "SELECT * FROM funcionario WHERE ativo='Não' AND
                                     (nome LIKE '%$pesquisar%' OR categoria LIKE '$pesquisar')
                                     ORDER BY categoria ASC";
-                                    
+
                                     require 'pesquisa.php';
 
                                     // Apresenta cada linha da tabela
@@ -118,7 +118,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
                                         ?>
                                         <td>
-                                            <a href='#?id=<?php echo $cod ?>'><img src='../imagens/editarFunc.png' title='Reativar Funcionário' width='30'></a>
+                                            <a href='reativarFuncionario.php?id=<?php echo $cod ?>'><img src='../imagens/placeholderIcon.png' title='Reativar Funcionário' width='30'></a>
                                         </td>
                                     </tr>
                                     <?php
@@ -139,7 +139,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
                                     ?>
                                     <td>
-                                        <a href='#?id=<?php echo $cod ?>'><img src='../imagens/editarFunc.png' title='Reativar Funcionário' width='30'></a>
+                                        <a href='reativarFuncionario.php?id=<?php echo $cod ?>'><img src='../imagens/placeholderIcon.png' title='Reativar Funcionário' width='30'></a>
                                     </td>
                                 </tr>
                                 <?php
