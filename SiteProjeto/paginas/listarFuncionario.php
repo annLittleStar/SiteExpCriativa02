@@ -81,9 +81,9 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                         if ($result = mysqli_query($conn, $sql)) {
                             echo "<table class='w3-table-all'>";
                             echo "	<tr>";
-                            echo "	  <th width='20%'>Nome</th>";
-                            echo "	  <th width='15%'>Cargo</th>";
-                            echo "    <th width='10%'>CPF</th>";
+                            echo "	  <th width='25%'>Nome</th>";
+                            echo "	  <th width='10%'>Cargo</th>";
+                            echo "    <th width='15%'>CPF</th>";
                             echo "	  <th width='10%'>Telefone</th>";
                             echo "    <th width='5%'> </th>";
                             echo "    <th width='5%'> </th>";

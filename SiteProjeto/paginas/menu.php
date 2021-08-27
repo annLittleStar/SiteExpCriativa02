@@ -12,7 +12,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 	<div class="w3-row w3-white w3-padding">
 
 		<div class="w3-half" style="margin:4px 0 6px 0">
-			<a href="."><img src='..\imagens/logotest.png' alt='SEA+' width="89px" height="32px"></a>
+			<a href="."><img src='..\imagens/placeholderIcon.png' alt='SEA+' width="89px" height="32px"></a>
 		</div>
 
 		<div class="w3-half w3-margin-top w3-wide w3-hide-medium w3-hide-small">
@@ -21,7 +21,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 	</div>
 	<div class="w3-bar w3-theme w3-large" style="z-index:4;">
 		<a class="w3-bar-item w3-button w3-left w3-hide-large w3-hover-blue w3-large w3-theme w3-padding-16" href="javascript:void(0)" onclick="w3_open()">☰</a>
-		<a class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-hover-blue w3-padding-16" href="javascript:void(0)" onclick="w3_show_nav('menuFuncionario')">FUNCIONARIOS</a>
+		<a class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-hover-blue w3-padding-16" href="javascript:void(0)" onclick="w3_show_nav('menuFuncionario')">FUNCIONÁRIOS</a>
 		<a class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-hover-blue w3-padding-16" href="javascript:void(0)" onclick="w3_show_nav('menuEstoque')">ESTOQUE</a>
 		<a class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-hover-blue w3-padding-16" href="javascript:void(0)" onclick="w3_show_nav('menuServicos')">SERVIÇOS</a>
 	</div>
